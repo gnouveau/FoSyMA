@@ -1,0 +1,15 @@
+mapname:exam2015
+treasure:99:100
+treasure:50:60
+treasure:17:17
+treasure:33:46
+treasure:6:6
+treasure:14:24
+treasure:19:47
+
+wumpus:Golem:140
+agent:Agent1:70:70
+agent:Agent2:13:18
+agent:Agent3:3:41
+agent:Agent4:22:41
+agent:Agent5:50:50

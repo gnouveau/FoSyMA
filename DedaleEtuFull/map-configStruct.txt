@@ -1,0 +1,12 @@
+mapname:mapName
+well:nodeId
+well:nodeId
+treasure:nodeId:value
+treasure:nodeId:value
+treasure:nodeId:value
+diamonds:nodeId:value
+wumpus:wumpusName:nodeId
+wumpus:wumpusName:nodeId
+agent:agentName:nodeId:BackPackCapacity:BackPackCapacityD
+agent:agentName:nodeId:BackPackCapacity:BackPackCapacityD
+agent:agentName:nodeId:BackPackCapacity:BackPackCapacityD
