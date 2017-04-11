@@ -63,6 +63,7 @@ public class ManageBlock {
 		if(!conflictNode.isEmpty()){
 			this.dodgeOrNotDodge();
 		}
+		System.out.println("je prend le chemin : "+finalGoal);
 		return finalGoal;
 	}
 
@@ -185,24 +186,30 @@ public class ManageBlock {
 	// ne marche que pour 2 agents
 	private void detectSameGoal()
 	{
+		System.out.println("je veux etre en : "+myGoal);
 		Node mygoal = myGoal.get(myGoal.size()-1);	
 		Node ag2goal = goalAgents.get(0).getRight().get(goalAgents.get(0).getRight().size()-1);
 
 		//si ils ont le meme but
+		System.out.println("On test si on a le meme but");
 		if (mygoal.getId().equals(ag2goal.getId()))
 		{
 			Integer valueTresor = mygoal.getValue();
 			// si ag1 a la capacité parfaite
+			System.out.println("On test si ag1 a la capacité parfaite");
 			if(valueTresor == mycapacity)
 			{
 				//si ag2 aussi
+				System.out.println("On test si ag2 a la capacité parfaite aussi");
 				if(valueTresor == listCapcityAgents.get(0).getRight())
 				{
 					// si la taille de leur 2 chemins sont égales alors je donne une priorité a un chemin en fonction de la valeur en ID du noeud de départ 
+					System.out.println("on teste si ils ont la meme taille de chemin");
 					if(myGoal.size() == goalAgents.get(0).getRight().size())
 					{
 						if( Integer.valueOf(myGoal.get(0).getId()) > Integer.valueOf(goalAgents.get(0).getRight().get(0).getId()))
 						{
+							System.out.println("Ag 2 change de chemin malgres égalité");
 							// on ajoute le noeud goal on noeud conflits de manaExplo
 							managerExplo.setVisited(new ArrayList<>(myGoal));
 							//on fait un nouveau chemin pour ag2
@@ -210,19 +217,23 @@ public class ManageBlock {
 
 						}else{
 							//sinon c'est le goal de l'agent 1 qui change
+							System.out.println("Ag 1 change de chemin malgres égalité");
 							managerExplo.setVisited(new ArrayList<>(myGoal));
 							myGoal = managerExplo.solveProblemByDepth(myGoal.get(0), mycapacity);
 						}
 					}else{
 
 						//si ag1 va plus vite vers sont but , ou si ag2 va plus vite vers sont but
+						System.out.println("on regarde qui a le chemin le plus court entre les deux");
 						if(myGoal.size() < goalAgents.get(0).getRight().size())
 						{
+							System.out.println("Ag 2 change de chemin");
 							// on ajoute le noeud goal on noeud conflits de manaExplo
 							managerExplo.setVisited(new ArrayList<>(myGoal));
 							//on fait un nouveau chemin pour ag2
 							goalAgents.set(0, new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight())));
 						}else{
+							System.out.println("Ag 1 change de chemin");
 							//sinon c'est le goal de l'agent 1 qui change
 							managerExplo.setVisited(new ArrayList<>(myGoal));
 							myGoal = managerExplo.solveProblemByDepth(myGoal.get(0), mycapacity);
@@ -230,7 +241,7 @@ public class ManageBlock {
 					}
 				}else{
 					//sinon c'est l'ag2 qui doit changer
-
+					System.out.println("Ag 2 change de chemin car ag1 a une meilleur capacité");
 					// on ajoute le noeud goal on noeud conflits de manaExplo
 					managerExplo.setVisited(new ArrayList<>(myGoal));
 					//on fait un nouveau chemin pour ag2
@@ -239,21 +250,25 @@ public class ManageBlock {
 			}else{
 				//sinon je regarde si c'est l'agent 2 qui a une capacité égale
 				//si oui c'est l'ag1 qui doit changer
+				System.out.println("on regarde si l'agent 2 à une capacité parfaite");
 				if(valueTresor == listCapcityAgents.get(0).getRight())
 				{
 					managerExplo.setVisited(new ArrayList<>(myGoal));
 					myGoal = managerExplo.solveProblemByDepth(myGoal.get(0), mycapacity);
 				}
 			}
+			System.out.println("on regarde si l'agent 1 à un meilleur capa que ag 2");
 			if(mycapacity >listCapcityAgents.get(0).getRight())
 			{
 				//c'est a l'agt2 de changer de but
 				// on ajoute le noeud goal on noeud conflits de manaExplo
+				System.out.println("c'est a l'agt2 de changer de but");
 				managerExplo.setVisited(new ArrayList<>(myGoal));
 				//on fait un nouveau chemin pour ag2
 				goalAgents.set(0, new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight())));
 			}else{
 				//sinon c'est a l'agt1 de changer de but
+				System.out.println("c'est a l'agt1 de changer de but");
 				managerExplo.setVisited(new ArrayList<>(myGoal));
 				myGoal = managerExplo.solveProblemByDepth(myGoal.get(0), mycapacity);
 			}
