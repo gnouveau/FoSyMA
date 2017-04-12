@@ -61,6 +61,8 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 			}
 			goalSent = true;
 			t = System.currentTimeMillis();
+			System.out.println("DEBUG : ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +"Goal envoye");
+			System.out.println(myGoal.toString());
 		}
 		
 		// L'agent recupere le premier message de sa boite au lettre correspondant a la reception d'un goal
@@ -85,6 +87,8 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 			} catch (UnreadableException e) {
 				e.printStackTrace();
 			}
+			System.out.println("DEBUG : ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +"Goal reçu");
+			System.out.println(othersGoalList.get(othersGoalList.size() - 1).toString());
 		}
 		
 		/**
@@ -104,8 +108,8 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		else if(myFosymaAgent.getFilterGoalList().isEmpty() && goalSent){
 			// Resolution des conflits entre son propre chemin objectif et celui des autres agents
 			for(Goal g : othersGoalList){
-				System.out.println("MON BUT : "+ myAgent.getName() +" : "+ myFosymaAgent.getMyPath());
-				System.out.println("RESOLUTION CONFLITS avec "+ g.getNameAgt()+" : "+ g.getGoalPath());
+				System.out.println("DEBUG : ExchangeGoalBehaviour : MON BUT : "+ myAgent.getName() +" : "+ myFosymaAgent.getMyPath());
+				System.out.println("DEBUG : ExchangeGoalBehaviour : RESOLUTION CONFLITS avec "+ g.getNameAgt()+" : "+ g.getGoalPath());
 				ManageBlock managerBlock = new ManageBlock(myFosymaAgent.getMyPath(), myFosymaAgent.getBackPackFreeSpace(), g);
 				myFosymaAgent.setMyPath(managerBlock.solveBlock());				
 			}

@@ -7,7 +7,7 @@ public class MultiBehaviour extends FSMBehaviour{
 	
 	private static final long serialVersionUID = 1L;
 	private FosymaAgent myFosymaAgent;
-	private String[] tabStates = {"observation" , "initConversation","explore","exchangeMap", "calculGoal", "exchangeGoal", "theEnd"};
+	private String[] tabStates = {"observation" , "initConversation","exchangeMap", "calculGoal", "exchangeGoal", "explore", "theEnd"};
 	
 	public MultiBehaviour(final FosymaAgent agent){
 		super(agent);

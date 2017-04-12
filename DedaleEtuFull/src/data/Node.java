@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Node implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Node> fils = new ArrayList<>();
 	private String id;
 	private int value;

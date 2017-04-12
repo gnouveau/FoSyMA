@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class KnownMap implements Serializable{
 
-	
+	private static final long serialVersionUID = 1L;
 	private HashMap<String, Node> dicoPere = new HashMap<>();
 	private HashMap<String, Node> dicoFils = new HashMap<>();
 	

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class StopParcoursException extends Exception{
 	
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Node> fin;
 	
 	public StopParcoursException(ArrayList<Node> list)
