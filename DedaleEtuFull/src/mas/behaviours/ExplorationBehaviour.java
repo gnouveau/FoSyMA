@@ -37,7 +37,7 @@ public class ExplorationBehaviour extends SimpleBehaviour{
 		if (!myFosymaAgent.getMyPath().isEmpty()){
 			Node nodeToGo = myFosymaAgent.getMyPath().get(0);
 			
-			System.out.println(myAgent.getName() + " I'm in position : "+ myPosition +". I'm moving in "+ nodeToGo);
+			System.out.println("ExplorationBehaviour : "+ myAgent.getName() + " : I'm in position : "+ myPosition +". I'm moving in "+ nodeToGo);
 			((mas.abstractAgent) this.myAgent).moveTo(nodeToGo.getId());
 		}
 	}

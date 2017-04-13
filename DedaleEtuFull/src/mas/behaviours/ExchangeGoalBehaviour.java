@@ -37,6 +37,9 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		Random rand = new Random();
 		myFosymaAgent.doWait(rand.nextInt(500)+499);
 		
+		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : debut de ExchangeGoalBehaviour");
+		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : mon list_IdConversation() : "+ myFosymaAgent.getList_IdConversation());
+		
 		// Creation de son propre but qu'il veut transmettre
 		ArrayList<Node> goalPath = myFosymaAgent.getMyPath();
 		Goal myGoal = new Goal(myAgent.getName(), goalPath, myFosymaAgent.getBackPackFreeSpace());
@@ -61,8 +64,6 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 			}
 			goalSent = true;
 			t = System.currentTimeMillis();
-			System.out.println("DEBUG : ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +"Goal envoye");
-			System.out.println(myGoal.toString());
 		}
 		
 		// L'agent recupere le premier message de sa boite au lettre correspondant a la reception d'un goal
@@ -87,8 +88,6 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 			} catch (UnreadableException e) {
 				e.printStackTrace();
 			}
-			System.out.println("DEBUG : ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +"Goal reçu");
-			System.out.println(othersGoalList.get(othersGoalList.size() - 1).toString());
 		}
 		
 		/**
@@ -108,8 +107,8 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		else if(myFosymaAgent.getFilterGoalList().isEmpty() && goalSent){
 			// Resolution des conflits entre son propre chemin objectif et celui des autres agents
 			for(Goal g : othersGoalList){
-				System.out.println("DEBUG : ExchangeGoalBehaviour : MON BUT : "+ myAgent.getName() +" : "+ myFosymaAgent.getMyPath());
-				System.out.println("DEBUG : ExchangeGoalBehaviour : RESOLUTION CONFLITS avec "+ g.getNameAgt()+" : "+ g.getGoalPath());
+				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : MON BUT : "+ myFosymaAgent.getMyPath());
+				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : RESOLUTION CONFLITS avec : "+ g.getNameAgt()+" qui a pour but : "+ g.getGoalPath());
 				ManageBlock managerBlock = new ManageBlock(myFosymaAgent.getMyPath(), myFosymaAgent.getBackPackFreeSpace(), g);
 				myFosymaAgent.setMyPath(managerBlock.solveBlock());				
 			}

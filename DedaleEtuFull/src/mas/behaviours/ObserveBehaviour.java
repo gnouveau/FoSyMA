@@ -44,7 +44,7 @@ public class ObserveBehaviour extends SimpleBehaviour{
 		if (myPosition!=""){
 			//List of observable from the agent's current position
 			List<Couple<String,List<Attribute>>> lobs=((mas.abstractAgent)this.myAgent).observe();
-			System.out.println(this.myAgent.getName()+" -- list of observables: "+lobs);
+			System.out.println("ObserveBehaviour : "+ this.myAgent.getName()+" -- list of observables: "+lobs);
 			
 			if(!myFosymaAgent.getMyPath().isEmpty()){		
 				if(!lobs.get(0).getRight().isEmpty() 
@@ -55,7 +55,6 @@ public class ObserveBehaviour extends SimpleBehaviour{
 					myFosymaAgent.pick();
 					myFosymaAgent.setMyCapacity(myFosymaAgent.getBackPackFreeSpace());
 					lobs=((mas.abstractAgent)this.myAgent).observe();
-//					System.out.println(this.myAgent.getName()+" -- list of observables: "+lobs);
 				}
 				myFosymaAgent.getMyPath().remove(0);
 			}

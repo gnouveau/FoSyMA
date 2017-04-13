@@ -36,7 +36,6 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 
 	@Override
 	public void action() {
-//		System.out.println(myAgent.getName() + ": In InitConversationBehaviour");
 		
 		Random rand = new Random();
 		myFosymaAgent.doWait(rand.nextInt(500)+499);
@@ -44,7 +43,8 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 		MessageTemplate firstContactFilter = MessageTemplate.MatchPerformative(ACLMessage.QUERY_IF);
 		ACLMessage firstContactMsg = this.myAgent.receive(firstContactFilter);
 
-		MessageTemplate firstContactResponseFilter = MessageTemplate.MatchPerformative(ACLMessage.INFORM);
+		String msgContent = "firstContactResponse";
+		MessageTemplate firstContactResponseFilter = MessageTemplate.MatchPerformative(ACLMessage.INFORM).MatchContent(msgContent);
 		ACLMessage firstContactResponseMsg = this.myAgent.receive(firstContactResponseFilter);
 		
 		if (firstContactMsg != null) {
@@ -58,9 +58,11 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 			msg.addReceiver(senderAID);
 			
 			msg.setConversationId(String.valueOf(IdTickTime));
-			myFosymaAgent.getList_IdConversation().add(new Couple<String, Couple<String, String>> (firstContactMsg.getSender().getName(), new Couple<String, String>(String.valueOf(IdTickTime),firstContactMsg.getConversationId())));
+			Couple<String, String> c1 = new Couple<String, String>(String.valueOf(IdTickTime),firstContactMsg.getConversationId());
+			Couple<String, Couple<String, String>> c2 = new Couple<String, Couple<String, String>>(firstContactMsg.getSender().getName(), c1);
+			myFosymaAgent.getList_IdConversation().add(c2);
 			
-			msg.setContent(this.myAgent.getName() + ": Hey! Dear "+ senderAID.getName() + ", "+ this.myAgent.getName() + " here!");
+			msg.setContent(msgContent);
 			((mas.abstractAgent) this.myAgent).sendMessage(msg);
 						
 		} else if (firstContactResponseMsg != null) {
@@ -90,7 +92,6 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 					msg.addReceiver(aid);
 				}
 				
-				msg.setContent(this.myAgent.getName()+ ": Is there someone?");
 				((mas.abstractAgent) this.myAgent).sendMessage(msg);
 				waiting = true;
 				t = System.currentTimeMillis();
