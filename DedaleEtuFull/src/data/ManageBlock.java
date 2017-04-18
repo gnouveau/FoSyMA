@@ -59,7 +59,20 @@ public class ManageBlock {
 		System.out.println("Le but de l'autre agent est : "+s);
 		
 		this.detectSameGoal();
+		System.out.println("apres detection du meme but on reaffiche les goals choisis");
 		
+		s="";
+		for(Node n : myGoal)
+		{
+			s += n.getId()+" ";
+		}
+		System.out.println("Mon but est : "+ s);
+		s="";
+		for(Node n : goalAgents.get(0).getRight())
+		{
+			s += n.getId()+" ";
+		}
+		System.out.println("Le but de l'autre agent est : "+s);
 		this.detectConflictNode();
 		if(!conflictNode.isEmpty()){
 			this.dodgeOrNotDodge();
@@ -107,8 +120,9 @@ public class ManageBlock {
 			}
 			if(i<=4 && sortie)
 			{
+				System.out.println("#######################################################");
 				System.out.println("NOEUD CONFLIT DETECTE : "+ conflict + " en indice : "+i);
-				System.exit(0);
+				System.out.println("#######################################################");
 				conflictNode.add(new Couple<String, ArrayList<Node>>(c.getLeft(), conflict));
 				listIndiceConflits.add( new Couple<String, Integer>(c.getLeft(), i));
 			}
@@ -189,7 +203,7 @@ public class ManageBlock {
 	// ne marche que pour 2 agents
 	private void detectSameGoal()
 	{
-		System.out.println("je veux etre en : "+myGoal);
+		
 		Node mygoal = myGoal.get(myGoal.size()-1);	
 		Node ag2goal = goalAgents.get(0).getRight().get(goalAgents.get(0).getRight().size()-1);
 
