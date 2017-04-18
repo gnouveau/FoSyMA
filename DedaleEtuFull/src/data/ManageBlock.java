@@ -15,7 +15,7 @@ public class ManageBlock {
 	private ArrayList<Couple<String,ArrayList<Node>>> conflictNode = new ArrayList<>();
 	private ArrayList<Couple<String,Integer>> listIndiceConflits = new ArrayList<>();
 
-	private ManageExplo managerExplo = new ManageExplo();
+	private ManageExplo managerExplo;
 	private ArrayList<Node> finalGoal = new ArrayList<>();
 
 	private Integer mycapacity;
@@ -44,6 +44,7 @@ public class ManageBlock {
 
 	public ArrayList<Node> solveBlock()
 	{
+		managerExplo = new ManageExplo();
 		String s="";
 		for(Node n : myGoal)
 		{
@@ -62,6 +63,8 @@ public class ManageBlock {
 		this.detectConflictNode();
 		if(!conflictNode.isEmpty()){
 			this.dodgeOrNotDodge();
+		}else{
+			finalGoal = myGoal;
 		}
 		System.out.println("je prend le chemin : "+finalGoal);
 		return finalGoal;
@@ -88,7 +91,7 @@ public class ManageBlock {
 				String name11 = nodeG11.getId();
 				String name22 = nodeG22.getId();
 
-				if(name1.equals(name1))
+				if(name1.equals(name22))
 				{
 					conflict.add(nodeG1);
 					sortie = true;
@@ -211,14 +214,18 @@ public class ManageBlock {
 						{
 							System.out.println("Ag 2 change de chemin malgres égalité");
 							// on ajoute le noeud goal on noeud conflits de manaExplo
-							managerExplo.setVisited(new ArrayList<>(myGoal));
+							ArrayList<Node>temp = new ArrayList<>();
+							temp.add(mygoal);
+							managerExplo.setVisited(temp);
 							//on fait un nouveau chemin pour ag2
 							goalAgents.set(0, new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight())));
 
 						}else{
 							//sinon c'est le goal de l'agent 1 qui change
 							System.out.println("Ag 1 change de chemin malgres égalité");
-							managerExplo.setVisited(new ArrayList<>(myGoal));
+							ArrayList<Node>temp = new ArrayList<>();
+							temp.add(mygoal);
+							managerExplo.setVisited(temp);
 							myGoal = managerExplo.solveProblemByDepth(myGoal.get(0), mycapacity);
 						}
 					}else{
@@ -229,13 +236,17 @@ public class ManageBlock {
 						{
 							System.out.println("Ag 2 change de chemin");
 							// on ajoute le noeud goal on noeud conflits de manaExplo
-							managerExplo.setVisited(new ArrayList<>(myGoal));
+							ArrayList<Node>temp = new ArrayList<>();
+							temp.add(mygoal);
+							managerExplo.setVisited(temp);
 							//on fait un nouveau chemin pour ag2
 							goalAgents.set(0, new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight())));
 						}else{
 							System.out.println("Ag 1 change de chemin");
 							//sinon c'est le goal de l'agent 1 qui change
-							managerExplo.setVisited(new ArrayList<>(myGoal));
+							ArrayList<Node>temp = new ArrayList<>();
+							temp.add(mygoal);
+							managerExplo.setVisited(temp);
 							myGoal = managerExplo.solveProblemByDepth(myGoal.get(0), mycapacity);
 						}
 					}
@@ -243,7 +254,9 @@ public class ManageBlock {
 					//sinon c'est l'ag2 qui doit changer
 					System.out.println("Ag 2 change de chemin car ag1 a une meilleur capacité");
 					// on ajoute le noeud goal on noeud conflits de manaExplo
-					managerExplo.setVisited(new ArrayList<>(myGoal));
+					ArrayList<Node>temp = new ArrayList<>();
+					temp.add(mygoal);
+					managerExplo.setVisited(temp);
 					//on fait un nouveau chemin pour ag2
 					goalAgents.set(0, new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight())));
 				}
@@ -253,7 +266,9 @@ public class ManageBlock {
 				System.out.println("on regarde si l'agent 2 à une capacité parfaite");
 				if(valueTresor == listCapcityAgents.get(0).getRight())
 				{
-					managerExplo.setVisited(new ArrayList<>(myGoal));
+					ArrayList<Node>temp = new ArrayList<>();
+					temp.add(mygoal);
+					managerExplo.setVisited(temp);
 					myGoal = managerExplo.solveProblemByDepth(myGoal.get(0), mycapacity);
 				}
 			}
@@ -263,13 +278,17 @@ public class ManageBlock {
 				//c'est a l'agt2 de changer de but
 				// on ajoute le noeud goal on noeud conflits de manaExplo
 				System.out.println("c'est a l'agt2 de changer de but");
-				managerExplo.setVisited(new ArrayList<>(myGoal));
+				ArrayList<Node>temp = new ArrayList<>();
+				temp.add(mygoal);
+				managerExplo.setVisited(temp);
 				//on fait un nouveau chemin pour ag2
 				goalAgents.set(0, new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight())));
 			}else{
 				//sinon c'est a l'agt1 de changer de but
 				System.out.println("c'est a l'agt1 de changer de but");
-				managerExplo.setVisited(new ArrayList<>(myGoal));
+				ArrayList<Node>temp = new ArrayList<>();
+				temp.add(mygoal);
+				managerExplo.setVisited(temp);
 				myGoal = managerExplo.solveProblemByDepth(myGoal.get(0), mycapacity);
 			}
 		}
