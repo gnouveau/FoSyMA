@@ -44,13 +44,15 @@ public class ManageBlock {
 
 	public ArrayList<Node> solveBlock()
 	{
+		
+		
 		managerExplo = new ManageExplo();
-		String s="";
+		String s="/!\\ /!\\ /!\\ /!\\ /!\\ SYSOUT SOLVE BLOCK /!\\ /!\\ /!\\ /!\\ /!\\ \n Mon but est : ";
 		for(Node n : myGoal)
 		{
 			s += n.getId()+" ";
 		}
-		System.out.println("Mon but est : "+ s);
+		System.out.println(s);
 		s="";
 		for(Node n : goalAgents.get(0).getRight())
 		{
@@ -73,13 +75,23 @@ public class ManageBlock {
 			s += n.getId()+" ";
 		}
 		System.out.println("Le but de l'autre agent est : "+s);
+		
+		
 		this.detectConflictNode();
+		
+		
 		if(!conflictNode.isEmpty()){
 			this.dodgeOrNotDodge();
 		}else{
 			finalGoal = myGoal;
 		}
-		System.out.println("je prend le chemin : "+finalGoal);
+		s="";
+		for(Node n : finalGoal)
+		{
+			s += n.getId()+" ";
+		}
+		System.out.println("Mon but est final est  : "+ s);
+		System.out.println("/!\\ /!\\ /!\\ /!\\ /!\\ SYSOUT SOLVE BLOCK /!\\ /!\\ /!\\ /!\\ /!\\");
 		return finalGoal;
 	}
 
@@ -104,13 +116,13 @@ public class ManageBlock {
 				String name11 = nodeG11.getId();
 				String name22 = nodeG22.getId();
 
-				if(name1.equals(name22))
+				if(name1.equals(name11))
 				{
 					conflict.add(nodeG1);
 					sortie = true;
 					break;
 				}
-				if(name1.equals(name22) && name2.equals(name11))
+				if(name1.equals(name22) && name11.equals(name2))
 				{
 					conflict.add(nodeG1);
 					sortie = true;
@@ -131,6 +143,7 @@ public class ManageBlock {
 	// ne marche que pour 2 agents
 	private void dodgeOrNotDodge()
 	{
+		managerExplo = new ManageExplo();
 		ArrayList<Node> pathGoalag1 = this.myGoal;
 		ArrayList<Node> pathGoalag2 = goalAgents.get(0).getRight();
 
@@ -213,7 +226,7 @@ public class ManageBlock {
 		{
 			Integer valueTresor = mygoal.getValue();
 			// si ag1 a la capacité parfaite
-			System.out.println("On test si ag1 a la capacité parfaite");
+			System.out.println("On a le meme but \n On test si ag1 a la capacité parfaite");
 			if(valueTresor == mycapacity)
 			{
 				//si ag2 aussi
@@ -292,11 +305,23 @@ public class ManageBlock {
 				//c'est a l'agt2 de changer de but
 				// on ajoute le noeud goal on noeud conflits de manaExplo
 				System.out.println("c'est a l'agt2 de changer de but");
+				System.out.println("le but a eviter est :");
 				ArrayList<Node>temp = new ArrayList<>();
 				temp.add(mygoal);
+				System.out.println("le but a eviter est :"+ temp);
 				managerExplo.setVisited(temp);
 				//on fait un nouveau chemin pour ag2
-				goalAgents.set(0, new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight())));
+				ArrayList<Node> newPath = managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight());
+				
+				String s="";
+				for(Node n : newPath)
+				{
+					s += n.getId()+" ";
+				}
+				System.out.println("le nouveau but est: "+s);
+				
+				Couple<String, ArrayList<Node>> c = new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), newPath);
+				goalAgents.set(0 , c);
 			}else{
 				//sinon c'est a l'agt1 de changer de but
 				System.out.println("c'est a l'agt1 de changer de but");
