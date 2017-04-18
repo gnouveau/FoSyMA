@@ -264,8 +264,11 @@ public class ManageExplo {
 	// par exploration en profondeur
 	public  ArrayList<Node> solveProblemByDepth(Node n, Integer value)
 	{
-		if(visited == null)
+		if(visited ==  null )
 		{
+			
+			
+			//STP
 			visited = new ArrayList<>();	
 		}
 		explo = new ArrayList<Node>();
