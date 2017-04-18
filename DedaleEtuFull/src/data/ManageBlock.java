@@ -319,7 +319,7 @@ public class ManageBlock {
 					s += n.getId()+" ";
 				}
 				System.out.println("le nouveau but est: "+s);
-				
+				System.out.println("fin de sysout dans sameGoald");
 				Couple<String, ArrayList<Node>> c = new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), newPath);
 				goalAgents.set(0 , c);
 			}else{
