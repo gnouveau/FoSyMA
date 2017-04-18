@@ -268,7 +268,7 @@ public class ManageExplo {
 		{
 			
 			
-			//STP
+		
 			visited = new ArrayList<>();	
 		}
 		explo = new ArrayList<Node>();
@@ -297,8 +297,11 @@ public class ManageExplo {
 	// meme qu'avant avec ajout de noeud conflit et on cherche un noeud but à la place d'une valeur
 	public  ArrayList<Node> solveProblemByDepth(Node n, Node Goal,Node conflit)
 	{
-		if(visited.isEmpty())
+		if(visited ==  null )
 		{
+			
+			
+		
 			visited = new ArrayList<>();	
 		}
 		explo = new ArrayList<Node>();
@@ -320,7 +323,13 @@ public class ManageExplo {
 	//renvoie le premier noeud qui n'est pas un noeud de conflit
 	public  ArrayList<Node> solveProblemByDepth(Node n,ArrayList<Node> conflit)
 	{
-		visited = new ArrayList<>();
+		if(visited ==  null )
+		{
+			
+			
+		
+			visited = new ArrayList<>();	
+		}
 		explo = new ArrayList<Node>();
 		for(Node nc : conflit)
 		{
