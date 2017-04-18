@@ -48,6 +48,8 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		 * I didn't sent my goal => I have to send my goal
 		 */
 		if(!goalSent){
+			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" :J'ENVOIS MON GOAL");
+			
 			for (Couple<String, Couple<String, String>> couple : myFosymaAgent.getList_IdConversation()) {
 
 				ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
@@ -85,6 +87,7 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 			try {
 				// Stockage du but de l'autre agent
 				othersGoalList.add((Goal) goalPathReceptionMsg.getContentObject());
+				System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" :J'AI RECU LE GOAL DE : "+ othersGoalList.get(othersGoalList.size() - 1).getNameAgt());
 			} catch (UnreadableException e) {
 				e.printStackTrace();
 			}
@@ -94,6 +97,7 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		 * CASE 2: Got no message, but still waiting for receiving some goals
 		 */
 		else if(myFosymaAgent.getFilterGoalList().size() > 0){
+			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" :J'ATTENDS");
 			if (goalSent && System.currentTimeMillis() - t < maxWaitingTime) {
 				block();
 			} else {
@@ -124,6 +128,8 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 	public int onEnd() {
 		goalSent = false;
 		finish = false;
+		t = 0;
+		othersGoalList = new ArrayList<Goal>();
 		return 7;
 	}
 }

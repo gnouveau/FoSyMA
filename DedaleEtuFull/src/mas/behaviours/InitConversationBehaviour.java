@@ -36,7 +36,7 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 
 	@Override
 	public void action() {
-		
+//		System.out.println("InitConversationBehaviourBehaviour : "+ myFosymaAgent.getName() +" :");
 		Random rand = new Random();
 		myFosymaAgent.doWait(rand.nextInt(500)+499);
 		
@@ -48,7 +48,7 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 		ACLMessage firstContactResponseMsg = this.myAgent.receive(firstContactResponseFilter);
 		
 		if (firstContactMsg != null) {
-			
+//			System.out.println("InitConversationBehaviourBehaviour : "+ myFosymaAgent.getName() +" : ON M'A CONTACTE");
 			IdTickTime = System.currentTimeMillis();
 			onContact = true;
 			
@@ -66,7 +66,7 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 			((mas.abstractAgent) this.myAgent).sendMessage(msg);
 						
 		} else if (firstContactResponseMsg != null) {
-			
+//			System.out.println("InitConversationBehaviourBehaviour : "+ myFosymaAgent.getName() +" : ON M'A REPONDU");
 			onContact = true;
 						
 			Couple<String, String> c1 = new Couple<String, String>(String.valueOf(IdTickTime),firstContactResponseMsg.getConversationId());
@@ -123,6 +123,7 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 	public void reset(){
 		timeOut = false;
 		waiting = false;
+		onContact = false;
 		t = 0;
 		
 	}
