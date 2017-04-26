@@ -153,21 +153,29 @@ public class ManageMap {
 		{
 			int value = -1;
 			String id = couple.getLeft();
+			String type ="";
 			if(father)
 			{
 				 value = 0;
 			}
 			List<Attribute> listAttribute = couple.getRight();
 			for(Attribute a:listAttribute){
+				
 				switch (a) {
+				
 				case TREASURE:
 					value=(int) a.getValue();
+					type = a.getName();
+					break;
+				case DIAMONDS:
+					value=(int) a.getValue();
+					type = a.getName();
 					break;
 				default:
 					break;
 				}
 			}
-			Node f = new Node(id,value);
+			Node f = new Node(id,value,type);
 			if(father)
 			{
 
