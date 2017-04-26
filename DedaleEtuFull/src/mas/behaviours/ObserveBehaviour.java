@@ -49,7 +49,7 @@ public class ObserveBehaviour extends SimpleBehaviour{
 			if(!myFosymaAgent.getMyPath().isEmpty()){		
 				if(!lobs.get(0).getRight().isEmpty() 
 						&& myFosymaAgent.getMyPath().get(myFosymaAgent.getMyPath().size()-1).getId().equals(lobs.get(0).getLeft()) 
-						&& lobs.get(0).getRight().get(0).equals(Attribute.TREASURE)
+						&& lobs.get(0).getRight().get(0).equals(myFosymaAgent.getMyTreasureType())
 						&& (int)lobs.get(0).getRight().get(0).getValue() <= myFosymaAgent.getMyCapacity())
 				{
 					myFosymaAgent.pick();

@@ -39,7 +39,14 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 				}
 				// Explo Gilles et mathias wombo combo
 				int maxDepth = 5;
-				myFosymaAgent.setMyPath(managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth));
+				if(myFosymaAgent.getBackPackFreeSpace() != 0)
+				{
+					myFosymaAgent.setMyPath(managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth));
+				}else{
+					ArrayList<Node> tmp = new ArrayList<Node>();
+					tmp.add(node);
+					myFosymaAgent.setMyPath(tmp);
+				}
 
 				// Explo Mathias
 //				ArrayList<Node> goalPath = managerExplo.solveProblemByDepth(node,myFosymaAgent.getMyCapacity());

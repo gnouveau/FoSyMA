@@ -38,6 +38,9 @@ public class ManageBlock {
 
 		Couple<String,Integer> c1 = new Couple<String, Integer>(goal.getNameAgt(), goal.getMyCapacity());
 		listCapcityAgents.add(c1);
+		
+		Couple<String, Goal> c2 = new Couple<String, Goal>(goal.getNameAgt(), goal);
+		listGoalAgents.add(c2);
 	}
 
 	public void addGoalAgent(Goal goal)
@@ -153,6 +156,9 @@ public class ManageBlock {
 		managerExplo = new ManageExplo(myObjectGoal.getMyType());
 		ArrayList<Node> pathGoalag1 = this.myGoal;
 		ArrayList<Node> pathGoalag2 = goalAgents.get(0).getRight();
+		
+		Priorite prioag1 = priorite;
+		Priorite prioag2 = listGoalAgents.get(0).getRight().getPriorite();
 
 		Node conflict = conflictNode.get(0).getRight().get(0);
 		int indiceConflict =0;
