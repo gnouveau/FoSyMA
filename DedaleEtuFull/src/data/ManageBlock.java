@@ -18,8 +18,8 @@ public class ManageBlock {
 
 	private ManageExplo managerExplo;
 	private ArrayList<Node> finalGoal = new ArrayList<>();
-	
-	
+
+
 	private Priorite priorite;
 	private ArrayList<Couple<String,Goal>> listGoalAgents = new ArrayList<>();
 
@@ -38,7 +38,7 @@ public class ManageBlock {
 
 		Couple<String,Integer> c1 = new Couple<String, Integer>(goal.getNameAgt(), goal.getMyCapacity());
 		listCapcityAgents.add(c1);
-		
+
 		Couple<String, Goal> c2 = new Couple<String, Goal>(goal.getNameAgt(), goal);
 		listGoalAgents.add(c2);
 	}
@@ -54,8 +54,8 @@ public class ManageBlock {
 
 	public ArrayList<Node> solveBlock()
 	{
-		
-		
+
+
 		managerExplo = new ManageExplo(myObjectGoal.getMyType());
 		String s="/!\\ /!\\ /!\\ /!\\ /!\\ SYSOUT SOLVE BLOCK /!\\ /!\\ /!\\ /!\\ /!\\ \n Mon but est : ";
 		for(Node n : myGoal)
@@ -69,10 +69,10 @@ public class ManageBlock {
 			s += n.getId()+" ";
 		}
 		System.out.println("Le but de l'autre agent est : "+s);
-		
+
 		this.detectSameGoal();
 		System.out.println("apres detection du meme but on reaffiche les goals choisis");
-		
+
 		s="";
 		for(Node n : myGoal)
 		{
@@ -85,11 +85,11 @@ public class ManageBlock {
 			s += n.getId()+" ";
 		}
 		System.out.println("Le but de l'autre agent est : "+s);
-		
-		
+
+
 		this.detectConflictNode();
-		
-		
+
+
 		if(!conflictNode.isEmpty()){
 			this.dodgeOrNotDodge();
 		}else{
@@ -156,13 +156,13 @@ public class ManageBlock {
 		managerExplo = new ManageExplo(myObjectGoal.getMyType());
 		ArrayList<Node> pathGoalag1 = this.myGoal;
 		ArrayList<Node> pathGoalag2 = goalAgents.get(0).getRight();
-		
+
 		Priorite prioag1 = priorite;
 		Priorite prioag2 = listGoalAgents.get(0).getRight().getPriorite();
 
 		Node conflict = conflictNode.get(0).getRight().get(0);
 		int indiceConflict =0;
-		
+
 		for(Couple<String, Integer> c : listIndiceConflits)
 		{
 			if(c.getLeft().equals(conflictNode.get(0).getLeft()))
@@ -174,7 +174,7 @@ public class ManageBlock {
 		ArrayList<Node> pathAg1DodgeAg2 = managerExplo.solveProblemByDepth(pathGoalag1.get(0), pathGoalag1.get(pathGoalag1.size()-1), conflictNode.get(0).getRight());
 
 		ArrayList<Node> pathAg2DodgeAg1 = managerExplo.solveProblemByDepth(pathGoalag2.get(0), pathGoalag2.get(pathGoalag2.size()-1), conflictNode.get(0).getRight());
-		
+
 		int sizePathDodgeAg1=9999999;
 		int sizePathDodgeAg2=9999999;
 
@@ -191,26 +191,38 @@ public class ManageBlock {
 		// car celui avec le chemin le plus long veut partir de la zone de conflit
 		if (sizePathDodgeAg1 ==  9999999 && sizePathDodgeAg2 == 9999999)
 		{
-			if(pathGoalag1.size() < pathGoalag2.size())
+
+			if(pathGoalag1.size() == pathGoalag2.size())
 			{
-				//on recupere les noeuds allant de la position de début de l'agent au chemin le plus long jusqu'au noeud conflit
-				ArrayList<Node> forbid = new ArrayList<>();
-				for(int i=0; i<indiceConflict;i++)
+				if( Integer.valueOf(pathGoalag1.get(0).getId()) > Integer.valueOf(pathGoalag2.get(0).getId()))
 				{
-					forbid.add(pathGoalag2.get(i));
+					this.finalGoal=pathGoalag1;
+				}else{
+					this.finalGoal=pathAg1DodgeAg2;
 				}
-				finalGoal = managerExplo.solveProblemByDepth(pathGoalag1.get(0), forbid);
-				//on attend a l'emplacement trouvé le temps que l'autre agent soit passer par le noeud conflit
-				if(finalGoal.size() < indiceConflict)
-				{
-					Node wait = finalGoal.get(finalGoal.size()-1);
-					for(int i = (finalGoal.size()-1); i < indiceConflict + 1 ; i ++)
-					{
-						finalGoal.add(wait);
-					}
-				}
+
 			}else{
-				finalGoal = pathGoalag1;
+				if(pathGoalag1.size() < pathGoalag2.size())
+				{
+					//on recupere les noeuds allant de la position de début de l'agent au chemin le plus long jusqu'au noeud conflit
+					ArrayList<Node> forbid = new ArrayList<>();
+					for(int i=0; i<indiceConflict;i++)
+					{
+						forbid.add(pathGoalag2.get(i));
+					}
+					finalGoal = managerExplo.solveProblemByDepth(pathGoalag1.get(0), forbid);
+					//on attend a l'emplacement trouvé le temps que l'autre agent soit passer par le noeud conflit
+					if(finalGoal.size() < indiceConflict)
+					{
+						Node wait = finalGoal.get(finalGoal.size()-1);
+						for(int i = (finalGoal.size()-1); i < indiceConflict + 1 ; i ++)
+						{
+							finalGoal.add(wait);
+						}
+					}
+				}else{
+					finalGoal = pathGoalag1;
+				}
 			}
 		}
 
@@ -238,7 +250,7 @@ public class ManageBlock {
 	// ne marche que pour 2 agents
 	private void detectSameGoal()
 	{
-		
+
 		Node mygoal = myGoal.get(myGoal.size()-1);	
 		Node ag2goal = goalAgents.get(0).getRight().get(goalAgents.get(0).getRight().size()-1);
 
@@ -338,7 +350,7 @@ public class ManageBlock {
 				managerExplo.setType(ag2goal.getType());
 				//on fait un nouveau chemin pour ag2
 				ArrayList<Node> newPath = managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight());
-				
+
 				String s="";
 				for(Node n : newPath)
 				{
