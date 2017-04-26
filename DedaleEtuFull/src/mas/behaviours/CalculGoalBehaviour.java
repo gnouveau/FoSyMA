@@ -14,7 +14,7 @@ import env.Attribute;
 public class CalculGoalBehaviour extends SimpleBehaviour {
 	private static final long serialVersionUID = -5357674075048934805L;
 	private FosymaAgent myFosymaAgent;
-	private ManageExplo managerExplo = new ManageExplo(Attribute.TREASURE.getName());
+	private ManageExplo managerExplo = new ManageExplo(myFosymaAgent.getMyTreasureType());
 
 	public CalculGoalBehaviour(final FosymaAgent agent) {
 		super(agent);

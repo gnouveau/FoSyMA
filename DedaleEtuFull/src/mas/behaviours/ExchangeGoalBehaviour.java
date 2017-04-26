@@ -43,7 +43,7 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		
 		// Creation de son propre but qu'il veut transmettre
 		ArrayList<Node> goalPath = myFosymaAgent.getMyPath();
-		Goal myGoal = new Goal(myAgent.getName(), goalPath, myFosymaAgent.getBackPackFreeSpace(),Attribute.TREASURE.getName());
+		Goal myGoal = new Goal(myAgent.getName(), goalPath, myFosymaAgent.getBackPackFreeSpace(),myFosymaAgent.getMyTreasureType());
 		
 		/**
 		 * I didn't sent my goal => I have to send my goal
