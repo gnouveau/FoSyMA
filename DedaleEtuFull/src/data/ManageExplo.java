@@ -371,7 +371,7 @@ public class ManageExplo {
 	 * @param maxDepth
 	 * @return
 	 */
-	public ArrayList<Node> breadthResearch(Node paramNode, ManageMap myKnowledge, int myCapacity, int maxDepth,String monType){
+	public ArrayList<Node> breadthResearch(Node paramNode, ManageMap myKnowledge, int myCapacity, int maxDepth){
 		System.out.println("DEBUG : breadthResearch : ma capacite : "+ myCapacity);
 		ArrayList<Node> path = new ArrayList<Node>();
 
@@ -439,7 +439,7 @@ public class ManageExplo {
 				/*
 				 * J'ai trouve un tresor qui m'interesse
 				 */
-				if(0 < n.getValue() && n.getValue() <= myCapacity && treasureFound == null){
+				if(n.getType().equals(type) && 0 < n.getValue() && n.getValue() <= myCapacity && treasureFound == null){
 					System.out.println("DEBUG : breadthResearch : j'ai trouve un tresor interessant");
 					whoIsYourDaddy.put(n.getId(),node);
 					treasureFound = n;
@@ -488,7 +488,7 @@ public class ManageExplo {
 			finalNode = leafFound;
 		}else if(maxDepthNode != null){
 			System.out.println("DEBUG : breadthResearch : profondeur max atteinte ! "+ maxDepthNode.getId() +" "+ depthDict.get(maxDepthNode));
-			ManageExplo managerExplo = new ManageExplo(monType);
+			ManageExplo managerExplo = new ManageExplo(type);
 			return managerExplo.solveProblemByDepth(paramNode, myCapacity);
 		}else{
 			System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
@@ -540,5 +540,13 @@ public class ManageExplo {
 
 	public void setExplo(ArrayList<Node> explo) {
 		this.explo = explo;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}	
 }
