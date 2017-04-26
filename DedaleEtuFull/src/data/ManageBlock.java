@@ -18,16 +18,21 @@ public class ManageBlock {
 
 	private ManageExplo managerExplo;
 	private ArrayList<Node> finalGoal = new ArrayList<>();
+	
+	
+	private Priorite priorite;
+	private ArrayList<Couple<String,Goal>> listGoalAgents = new ArrayList<>();
 
 	private Integer mycapacity;
 	private ArrayList<Couple<String,Integer>> listCapcityAgents = new ArrayList<>();
+
 
 	public ManageBlock(ArrayList<Node> listgoal,Integer capacity,Goal goal, Goal mygoalinit)
 	{
 		myObjectGoal = mygoalinit;
 		myGoal = myObjectGoal.getGoalPath();
 		mycapacity = capacity;
-
+		priorite = mygoalinit.getPriorite();
 		Couple<String, ArrayList<Node>> c = new Couple<String, ArrayList<Node>>(goal.getNameAgt(), goal.getGoalPath());
 		goalAgents.add(c);
 

@@ -10,6 +10,7 @@ public class Goal implements Serializable{
 	private ArrayList<Node> goalPath;
 	private Integer myCapacity;
 	private String myType;
+	private Priorite priorite;
 	
 	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type )
 	{
@@ -17,6 +18,12 @@ public class Goal implements Serializable{
 		this.goalPath=goal;
 		this.myCapacity=capacity;
 		this.myType=type;
+		priorite = Priorite.NORMAL;
+	}
+	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type, Priorite prio)
+	{
+		this(name,goal,capacity,type);
+		this.priorite = prio;
 	}
 	
 	public String getNameAgt() {
@@ -62,6 +69,15 @@ public class Goal implements Serializable{
 
 	public void setMyType(String myType) {
 		this.myType = myType;
+	}
+	public Priorite getPriorite() {
+		return priorite;
+	}
+	public void setPriorite(Priorite priorite) {
+		this.priorite = priorite;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	
