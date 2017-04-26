@@ -255,6 +255,7 @@ public class ManageBlock {
 							ArrayList<Node>temp = new ArrayList<>();
 							temp.add(mygoal);
 							managerExplo.setVisited(temp);
+							managerExplo.setType(ag2goal.getType());
 							//on fait un nouveau chemin pour ag2
 							goalAgents.set(0, new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight())));
 
@@ -277,6 +278,7 @@ public class ManageBlock {
 							ArrayList<Node>temp = new ArrayList<>();
 							temp.add(mygoal);
 							managerExplo.setVisited(temp);
+							managerExplo.setType(ag2goal.getType());
 							//on fait un nouveau chemin pour ag2
 							goalAgents.set(0, new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight())));
 						}else{
@@ -295,6 +297,7 @@ public class ManageBlock {
 					ArrayList<Node>temp = new ArrayList<>();
 					temp.add(mygoal);
 					managerExplo.setVisited(temp);
+					managerExplo.setType(ag2goal.getType());
 					//on fait un nouveau chemin pour ag2
 					goalAgents.set(0, new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight())));
 				}
@@ -321,6 +324,7 @@ public class ManageBlock {
 				temp.add(mygoal);
 				System.out.println("le but a eviter est :"+ temp);
 				managerExplo.setVisited(temp);
+				managerExplo.setType(ag2goal.getType());
 				//on fait un nouveau chemin pour ag2
 				ArrayList<Node> newPath = managerExplo.solveProblemByDepth(goalAgents.get(0).getRight().get(0),listCapcityAgents.get(0).getRight());
 				
