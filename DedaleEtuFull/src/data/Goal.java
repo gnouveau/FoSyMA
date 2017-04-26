@@ -9,12 +9,14 @@ public class Goal implements Serializable{
 	private String nameAgt;
 	private ArrayList<Node> goalPath;
 	private Integer myCapacity;
+	private String myType;
 	
-	public Goal(String name, ArrayList<Node> goal, Integer capacity )
+	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type )
 	{
 		this.nameAgt=name;
 		this.goalPath=goal;
 		this.myCapacity=capacity;
+		this.myType=type;
 	}
 	
 	public String getNameAgt() {
@@ -52,6 +54,14 @@ public class Goal implements Serializable{
 		str += "\n";
 		str += "****************************************"+"\n";
 		return str;
+	}
+
+	public String getMyType() {
+		return myType;
+	}
+
+	public void setMyType(String myType) {
+		this.myType = myType;
 	}
 
 	

@@ -11,6 +11,7 @@ public class ManageBlock {
 
 	private ArrayList<Couple<String,ArrayList<Node>>> goalAgents = new ArrayList<>();
 	private ArrayList<Node> myGoal = new ArrayList<>();
+	private Goal myObjectGoal;
 
 	private ArrayList<Couple<String,ArrayList<Node>>> conflictNode = new ArrayList<>();
 	private ArrayList<Couple<String,Integer>> listIndiceConflits = new ArrayList<>();
@@ -21,9 +22,10 @@ public class ManageBlock {
 	private Integer mycapacity;
 	private ArrayList<Couple<String,Integer>> listCapcityAgents = new ArrayList<>();
 
-	public ManageBlock(ArrayList<Node> listgoal,Integer capacity,Goal goal)
+	public ManageBlock(ArrayList<Node> listgoal,Integer capacity,Goal goal, Goal mygoalinit)
 	{
-		myGoal = listgoal;
+		myObjectGoal = mygoalinit;
+		myGoal = myObjectGoal.getGoalPath();
 		mycapacity = capacity;
 
 		Couple<String, ArrayList<Node>> c = new Couple<String, ArrayList<Node>>(goal.getNameAgt(), goal.getGoalPath());
@@ -46,7 +48,7 @@ public class ManageBlock {
 	{
 		
 		
-		managerExplo = new ManageExplo();
+		managerExplo = new ManageExplo(myObjectGoal.getMyType());
 		String s="/!\\ /!\\ /!\\ /!\\ /!\\ SYSOUT SOLVE BLOCK /!\\ /!\\ /!\\ /!\\ /!\\ \n Mon but est : ";
 		for(Node n : myGoal)
 		{
@@ -143,16 +145,25 @@ public class ManageBlock {
 	// ne marche que pour 2 agents
 	private void dodgeOrNotDodge()
 	{
-		managerExplo = new ManageExplo();
+		managerExplo = new ManageExplo(myObjectGoal.getMyType());
 		ArrayList<Node> pathGoalag1 = this.myGoal;
 		ArrayList<Node> pathGoalag2 = goalAgents.get(0).getRight();
 
 		Node conflict = conflictNode.get(0).getRight().get(0);
-		int indiceConflict = listIndiceConflits.get(0).getRight();
+		int indiceConflict =0;
+		
+		for(Couple<String, Integer> c : listIndiceConflits)
+		{
+			if(c.getLeft().equals(conflictNode.get(0).getLeft()))
+			{
+				indiceConflict = Math.max(indiceConflict, c.getRight());
+			}
+		}
 
-		ArrayList<Node> pathAg1DodgeAg2 = managerExplo.solveProblemByDepth(pathGoalag1.get(0), pathGoalag1.get(pathGoalag1.size()-1), conflict);
+		ArrayList<Node> pathAg1DodgeAg2 = managerExplo.solveProblemByDepth(pathGoalag1.get(0), pathGoalag1.get(pathGoalag1.size()-1), conflictNode.get(0).getRight());
 
-		ArrayList<Node> pathAg2DodgeAg1 = managerExplo.solveProblemByDepth(pathGoalag2.get(0), pathGoalag2.get(pathGoalag2.size()-1), conflict);
+		ArrayList<Node> pathAg2DodgeAg1 = managerExplo.solveProblemByDepth(pathGoalag2.get(0), pathGoalag2.get(pathGoalag2.size()-1), conflictNode.get(0).getRight());
+		
 		int sizePathDodgeAg1=9999999;
 		int sizePathDodgeAg2=9999999;
 

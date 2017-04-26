@@ -8,33 +8,11 @@ public class ManageExplo {
 
 
 	public  ArrayList<Node> visited;
-	public ArrayList<Node> getVisited() {
-		return visited;
-	}
-
-	public void setVisited(ArrayList<Node> visited) {
-		this.visited = visited;
-	}
-
-	public boolean isFind() {
-		return find;
-	}
-
-	public void setFind(boolean find) {
-		this.find = find;
-	}
-
-	public ArrayList<Node> getExplo() {
-		return explo;
-	}
-
-	public void setExplo(ArrayList<Node> explo) {
-		this.explo = explo;
-	}
 	private boolean find = true;
 	private ArrayList<Node> explo;
+	private String type;
 
-	public ManageExplo(){ }
+	public ManageExplo(String type){this.type = type; }
 
 	private  void closeByWidth(ArrayList<Node> listNode, ArrayList<Node> path,Integer value) throws StopParcoursException
 	{
@@ -74,46 +52,27 @@ public class ManageExplo {
 
 	private  void closeByDepth(Node n,ArrayList<Node> path, Integer value) throws StopParcoursException
 	{
-		//System.out.println("je suis le Node : "+n);
-		//System.out.println("JE VIENS DE  :"+path);
-		//		if((n.getValue() <= value && n.getValue()>0) || n.getValue() ==-1)
-		//		{
-		//			if(n.getValue() ==-1 && find)
-		//			{
-		//				find = false;
-		//				explo = (ArrayList<Node>) path.clone();
-		//				explo.add(n);
-		//			}else{
-		//				//System.out.println("SOLUTION TROUVEE 1");
-		//				path.add(n);
-		//				throw new StopParcourException(path);
-		//			}
-		//		}
+	
 		for (Node fils : n.getFils())
 		{
 			boolean check = false;	
 			if(fils.getId() != n.getId())
 			{
-
 				//	System.out.println("OK");
-
 				for(Node alreadyVisited : visited)
 				{
-
 					if(fils.getId() == alreadyVisited.getId())
 					{	
 						//System.out.println("Noeud deja traite");
 						check = true;
 						break;
 					}
-
 				}
 			}
 			if(!check)
 			{
-				if((fils.getValue() <= value && fils.getValue()>0) || fils.getValue() ==-1)
+				if((fils.getType().equals(this.type) && fils.getValue() <= value && fils.getValue()>0) || fils.getValue() ==-1)
 				{
-
 					if(fils.getValue() ==-1 && find)
 					{
 						find = false;
@@ -137,21 +96,7 @@ public class ManageExplo {
 
 	private  void closeByDepth(Node n,ArrayList<Node> path, Node goal) throws StopParcoursException
 	{
-		//System.out.println("je suis le Node : "+n);
-		//System.out.println("JE VIENS DE  :"+path);
-		//		if((n.getValue() <= value && n.getValue()>0) || n.getValue() ==-1)
-		//		{
-		//			if(n.getValue() ==-1 && find)
-		//			{
-		//				find = false;
-		//				explo = (ArrayList<Node>) path.clone();
-		//				explo.add(n);
-		//			}else{
-		//				//System.out.println("SOLUTION TROUVEE 1");
-		//				path.add(n);
-		//				throw new StopParcourException(path);
-		//			}
-		//		}
+
 		for (Node fils : n.getFils())
 		{
 			boolean check = false;	
@@ -192,21 +137,7 @@ public class ManageExplo {
 	}
 	private  void closeByDepth(Node n,ArrayList<Node> path) throws StopParcoursException
 	{
-		//System.out.println("je suis le Node : "+n);
-		//System.out.println("JE VIENS DE  :"+path);
-		//		if((n.getValue() <= value && n.getValue()>0) || n.getValue() ==-1)
-		//		{
-		//			if(n.getValue() ==-1 && find)
-		//			{
-		//				find = false;
-		//				explo = (ArrayList<Node>) path.clone();
-		//				explo.add(n);
-		//			}else{
-		//				//System.out.println("SOLUTION TROUVEE 1");
-		//				path.add(n);
-		//				throw new StopParcourException(path);
-		//			}
-		//		}
+
 		for (Node fils : n.getFils())
 		{
 			boolean check = false;	
@@ -266,9 +197,9 @@ public class ManageExplo {
 	{
 		if(visited ==  null )
 		{
-			
-			
-		
+
+
+
 			visited = new ArrayList<>();	
 		}
 		explo = new ArrayList<Node>();
@@ -285,7 +216,7 @@ public class ManageExplo {
 			{
 
 				System.out.println("je n'ai plus rien a explorer ou aucun tresor trouvé");
-
+				path.add(n);
 				return path;
 			}else{
 				return explo;
@@ -295,17 +226,18 @@ public class ManageExplo {
 		}
 	}
 	// meme qu'avant avec ajout de noeud conflit et on cherche un noeud but à la place d'une valeur
-	public  ArrayList<Node> solveProblemByDepth(Node n, Node Goal,Node conflit)
+	// ESQUIVE
+	public  ArrayList<Node> solveProblemByDepth(Node n, Node Goal,ArrayList<Node> conflits)
 	{
 		if(visited ==  null )
 		{
-			
-			
-		
+
+
+
 			visited = new ArrayList<>();	
 		}
 		explo = new ArrayList<Node>();
-		visited.add(conflit);
+		visited= conflits;
 		ArrayList<Node> path = new ArrayList<>();
 		//		long t= System.currentTimeMillis();
 		try {
@@ -321,13 +253,14 @@ public class ManageExplo {
 		}
 	}
 	//renvoie le premier noeud qui n'est pas un noeud de conflit
+	// LIBERER LE CHEMIN
 	public  ArrayList<Node> solveProblemByDepth(Node n,ArrayList<Node> conflit)
 	{
 		if(visited ==  null )
 		{
-			
-			
-		
+
+
+
 			visited = new ArrayList<>();	
 		}
 		explo = new ArrayList<Node>();
@@ -438,7 +371,7 @@ public class ManageExplo {
 	 * @param maxDepth
 	 * @return
 	 */
-	public ArrayList<Node> breadthResearch(Node paramNode, ManageMap myKnowledge, int myCapacity, int maxDepth){
+	public ArrayList<Node> breadthResearch(Node paramNode, ManageMap myKnowledge, int myCapacity, int maxDepth,String monType){
 		System.out.println("DEBUG : breadthResearch : ma capacite : "+ myCapacity);
 		ArrayList<Node> path = new ArrayList<Node>();
 
@@ -555,10 +488,11 @@ public class ManageExplo {
 			finalNode = leafFound;
 		}else if(maxDepthNode != null){
 			System.out.println("DEBUG : breadthResearch : profondeur max atteinte ! "+ maxDepthNode.getId() +" "+ depthDict.get(maxDepthNode));
-			ManageExplo managerExplo = new ManageExplo();
+			ManageExplo managerExplo = new ManageExplo(monType);
 			return managerExplo.solveProblemByDepth(paramNode, myCapacity);
 		}else{
 			System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
+			path.add(paramNode);
 			return path; // Je n'ai pas trouve de tresor ni de feuille et j'ai regarde tous les noeuds
 		}
 
@@ -582,4 +516,29 @@ public class ManageExplo {
 		path.remove(0); // On enleve le noeud racine qui est le noeud actuel ou se trouve l'agent
 		return path;
 	}
+
+
+	public ArrayList<Node> getVisited() {
+		return visited;
+	}
+
+	public void setVisited(ArrayList<Node> visited) {
+		this.visited = visited;
+	}
+
+	public boolean isFind() {
+		return find;
+	}
+
+	public void setFind(boolean find) {
+		this.find = find;
+	}
+
+	public ArrayList<Node> getExplo() {
+		return explo;
+	}
+
+	public void setExplo(ArrayList<Node> explo) {
+		this.explo = explo;
+	}	
 }

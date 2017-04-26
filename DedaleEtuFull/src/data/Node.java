@@ -92,6 +92,12 @@ public class Node implements Serializable{
 			return false;
 		return true;
 	}
-
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+ 
 
 }

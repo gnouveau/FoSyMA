@@ -36,13 +36,13 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 						break;
 					}
 				}
-				// Explo Gilles
-//				int maxDepth = 5;
-//				myFosymaAgent.setMyPath(managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth));
+				// Explo Gilles et mathias wombo combo
+				int maxDepth = 5;
+				myFosymaAgent.setMyPath(managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth));
 
 				// Explo Mathias
-				ArrayList<Node> goalPath = managerExplo.solveProblemByDepth(node,myFosymaAgent.getMyCapacity());
-				myFosymaAgent.setMyPath(goalPath);
+//				ArrayList<Node> goalPath = managerExplo.solveProblemByDepth(node,myFosymaAgent.getMyCapacity());
+//				myFosymaAgent.setMyPath(goalPath);
 
 				/**
 				 * TODO : fusion des 2 explos 
@@ -50,7 +50,7 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 				
 				/**
 				 * Cas pseudo terminal : je n'ai plus d'objectif
-				 * cad que j'ai exploré toute la carte (plus de noeud feuille a visiter)
+				 * cad que j'ai explorï¿½ toute la carte (plus de noeud feuille a visiter)
 				 * et plus de tresors, inferieur a ma capacite, a ramasser
 				 */
 				if (myFosymaAgent.getMyPath().isEmpty()){
