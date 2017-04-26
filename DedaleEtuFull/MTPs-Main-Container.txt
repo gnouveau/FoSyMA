@@ -1,1 +1,1 @@
-http://air-de-eleden:7778/acc
+http://client-eduroam76.canalip.upmc.fr:7778/acc

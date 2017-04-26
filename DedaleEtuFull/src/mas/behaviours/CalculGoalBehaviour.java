@@ -9,11 +9,12 @@ import java.util.Random;
 import mas.agents.FosymaAgent;
 import data.ManageExplo;
 import data.Node;
+import env.Attribute;
 
 public class CalculGoalBehaviour extends SimpleBehaviour {
 	private static final long serialVersionUID = -5357674075048934805L;
 	private FosymaAgent myFosymaAgent;
-	private ManageExplo managerExplo = new ManageExplo();
+	private ManageExplo managerExplo = new ManageExplo(Attribute.TREASURE.getName());
 
 	public CalculGoalBehaviour(final FosymaAgent agent) {
 		super(agent);
