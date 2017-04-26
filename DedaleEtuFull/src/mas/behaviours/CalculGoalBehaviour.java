@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 import mas.agents.FosymaAgent;
+import data.Goal;
 import data.ManageExplo;
 import data.Node;
 import env.Attribute;
@@ -14,7 +15,7 @@ import env.Attribute;
 public class CalculGoalBehaviour extends SimpleBehaviour {
 	private static final long serialVersionUID = -5357674075048934805L;
 	private FosymaAgent myFosymaAgent;
-	private ManageExplo managerExplo = new ManageExplo(myFosymaAgent.getMyTreasureType());
+	private ManageExplo managerExplo;
 
 	public CalculGoalBehaviour(final FosymaAgent agent) {
 		super(agent);
@@ -23,6 +24,7 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 
 	@Override
 	public void action() {
+		managerExplo = new ManageExplo(myFosymaAgent.getMyTreasureType());
 		String myPosition = ((mas.abstractAgent) this.myAgent).getCurrentPosition();
 
 		if(myPosition != ""){
@@ -41,11 +43,15 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 				int maxDepth = 5;
 				if(myFosymaAgent.getBackPackFreeSpace() != 0)
 				{
-					myFosymaAgent.setMyPath(managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth));
+					Goal g = new Goal(myFosymaAgent.getName(), null, myFosymaAgent.getMyCapacity(), myFosymaAgent.getMyTreasureType());
+					g.setGoalPath(managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth));
+					myFosymaAgent.setMyGoal(g);
 				}else{
 					ArrayList<Node> tmp = new ArrayList<Node>();
 					tmp.add(node);
-					myFosymaAgent.setMyPath(tmp);
+					Goal g = myFosymaAgent.getMyGoal();
+					g.setGoalPath(tmp);
+					myFosymaAgent.setMyGoal(g);
 				}
 
 				// Explo Mathias
