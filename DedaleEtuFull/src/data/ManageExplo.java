@@ -273,7 +273,6 @@ public class ManageExplo {
 		try {
 			closeByDepth(n, path);
 		} catch (StopParcoursException e) { path=e.getFin();}
-
 		//System.out.println("temps de traitement en ms : "+Double.toString(System.currentTimeMillis()-t));
 		if(path.isEmpty())
 		{
