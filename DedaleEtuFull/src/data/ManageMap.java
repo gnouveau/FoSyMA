@@ -107,13 +107,13 @@ public class ManageMap {
 				//si des pere sont aussi des fils qui existe on modifie leurs fils pour que l'objet Node pere soit le meme et un pere
 				if (existPere != null)
 				{
-					//					System.out.println("J'ai un pere et un fils !");
-					//					System.out.println("le fils est : "+nodefils);
-					//					System.out.println("le pere est : "+existPere);
+					//					//System.out.println("J'ai un pere et un fils !");
+					//					//System.out.println("le fils est : "+nodefils);
+					//					//System.out.println("le pere est : "+existPere);
 					ArrayList<Node> listPere = mergedMap.getPere(nodefils);
 					for(Node p : listPere)
 					{
-						//						System.out.println(p);
+						//						//System.out.println(p);
 						p.switchSonToFather(existPere);
 					}
 					needToBreak=true;
@@ -122,10 +122,10 @@ public class ManageMap {
 
 
 			}
-			//			System.out.println("DEBUT VERIF FILS");
+			//			//System.out.println("DEBUT VERIF FILS");
 			//			ArrayList<Node> listf = new ArrayList<>(mergedMap.getDicoFils().values());
 			//			for (Node node : listf) {
-			//				System.out.println(node);
+			//				//System.out.println(node);
 			//				
 			//			}
 			if(needToBreak)
@@ -135,7 +135,7 @@ public class ManageMap {
 				break;
 			}
 		}
-		//		System.out.println("ICI");
+		//		//System.out.println("ICI");
 
 		listKnownMap.remove(0);
 		listKnownMap.add(0, mergedMap);
@@ -164,10 +164,12 @@ public class ManageMap {
 				switch (a) {
 				
 				case TREASURE:
+				
 					value=(int) a.getValue();
 					type = a.getName();
 					break;
 				case DIAMONDS:
+					
 					value=(int) a.getValue();
 					type = a.getName();
 					break;
@@ -175,6 +177,7 @@ public class ManageMap {
 					break;
 				}
 			}
+			//System.out.println("YOOSSSHHH "+type);
 			Node f = new Node(id,value,type);
 			if(father)
 			{
@@ -182,6 +185,7 @@ public class ManageMap {
 				if(listKnownMap.get(0).getDicoPere().containsKey(f.getId()))
 				{
 					listKnownMap.get(0).getDicoPere().get(f.getId()).setValue(value);
+					listKnownMap.get(0).getDicoPere().get(f.getId()).setType(type);
 					return;
 				}else{
 					Node exist = listKnownMap.get(0).getDicoFils().get(id);
@@ -191,6 +195,7 @@ public class ManageMap {
 					}else{
 						pere = exist;
 						pere.setValue(value);
+						pere.setType(type);
 					}
 					father = false;
 				}

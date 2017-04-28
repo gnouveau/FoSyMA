@@ -28,23 +28,28 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 		String myPosition = ((mas.abstractAgent) this.myAgent).getCurrentPosition();
 
 		if(myPosition != ""){
-			if (myFosymaAgent.getMyPath().isEmpty()) {
-				Node node = null;
-				HashMap<String, Node> dicoPere = myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoPere();
-				ArrayList<Node> fatherNodeList = new ArrayList<Node>(dicoPere.values());
-
-				for (Node n : fatherNodeList) {
-					if (n.getId().equals(myPosition)) {
-						node = n;
-						break;
-					}
-				}
+			if (myFosymaAgent.getMyPath().isEmpty()	) {
+				Node node = myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoPere().get(myPosition);
+//				ArrayList<Node> fatherNodeList = new ArrayList<Node>(dicoPere.values());
+//
+//				for (Node n : fatherNodeList) {
+//					if (n.getId().equals(myPosition)) {
+//						node = n;
+//						break;
+//					}
+//				}
 				// Explo Gilles et mathias wombo combo
 				int maxDepth = 5;
-				if(myFosymaAgent.getBackPackFreeSpace() != 0)
+				if(myFosymaAgent.getBackPackFreeSpace() != 0 && this.myFosymaAgent.getMyCapacity()<100)
 				{
 					Goal g = new Goal(myFosymaAgent.getName(), null, myFosymaAgent.getMyCapacity(), myFosymaAgent.getMyTreasureType());
-					g.setGoalPath(managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth));
+					ArrayList<Node> tmp =managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth);
+					if(tmp.get(0).getId().equals(node.getId()))
+					{
+						Random rand = new Random();
+						myFosymaAgent.setMyCapacity(myFosymaAgent.getMyCapacity() + rand.nextInt(6) + 1);
+					}
+					g.setGoalPath(tmp);
 					myFosymaAgent.setMyGoal(g);
 				}else{
 					ArrayList<Node> tmp = new ArrayList<Node>();
@@ -52,35 +57,40 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 					Goal g = myFosymaAgent.getMyGoal();
 					g.setGoalPath(tmp);
 					myFosymaAgent.setMyGoal(g);
+					System.out.println("\n\n ###############JAI FINIT TA SOEUR ################\n\n");
 				}
 
 				// Explo Mathias
-//				ArrayList<Node> goalPath = managerExplo.solveProblemByDepth(node,myFosymaAgent.getMyCapacity());
-//				myFosymaAgent.setMyPath(goalPath);
+				//				ArrayList<Node> goalPath = managerExplo.solveProblemByDepth(node,myFosymaAgent.getMyCapacity());
+				//				myFosymaAgent.setMyPath(goalPath);
 
-				/**
-				 * TODO : fusion des 2 explos 
-				 */
-				
+
+
 				/**
 				 * Cas pseudo terminal : je n'ai plus d'objectif
 				 * cad que j'ai explor� toute la carte (plus de noeud feuille a visiter)
 				 * et plus de tresors, inferieur a ma capacite, a ramasser
 				 */
-				if (myFosymaAgent.getMyPath().isEmpty()){
-					System.out.println(myAgent.getName() + ": I have explored all the map");
-					/**
-					 *  TODO
-					 *  Dorenavant je vais maintenant aussi ramasser les tresors qui sont plus gros que ma capacite,
-					 *  TODO
-					 *  Que faire si mon sac est plein ? Je m'arrete (?)
-					 */
-
-					if(myFosymaAgent.getBackPackFreeSpace() != 0){
-						Random rand = new Random();
-						myFosymaAgent.setMyCapacity(myFosymaAgent.getMyCapacity() + rand.nextInt(6) + 1);
-					}
-				}
+//				if (myFosymaAgent.getMyPath().isEmpty()){
+//					System.out.println(myAgent.getName() + ": I have explored all the map");
+//
+//					if(myFosymaAgent.getBackPackFreeSpace() != 0){
+//						
+//						if(myFosymaAgent.getMyCapacity()<100)
+//						{
+//							myFosymaAgent.setMyCapacity(myFosymaAgent.getMyCapacity() + rand.nextInt(6) + 1);
+//							Goal g = new Goal(myFosymaAgent.getName(), null, myFosymaAgent.getMyCapacity(), myFosymaAgent.getMyTreasureType());
+//							g.setGoalPath(managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth));
+//							myFosymaAgent.setMyGoal(g);
+//						}else{
+//							ArrayList<Node> tmp = new ArrayList<Node>();
+//							tmp.add(node);
+//							Goal g = myFosymaAgent.getMyGoal();
+//							g.setGoalPath(tmp);
+//							myFosymaAgent.setMyGoal(g);
+//						}
+//					}
+//				}
 			}
 		}
 	}

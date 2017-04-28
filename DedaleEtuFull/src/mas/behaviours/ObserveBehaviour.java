@@ -10,11 +10,11 @@ import env.Attribute;
 import env.Couple;
 
 public class ObserveBehaviour extends SimpleBehaviour{
-	
+
 	private static final long serialVersionUID = 2124328421405412686L;
 	private FosymaAgent myFosymaAgent;
 	private boolean initStart;
-	
+
 	public ObserveBehaviour(final FosymaAgent agent){
 		super(agent);
 		myFosymaAgent = agent;
@@ -23,7 +23,7 @@ public class ObserveBehaviour extends SimpleBehaviour{
 
 	@Override
 	public void action() {
-		
+
 		if(initStart){
 			// Little pause to allow you to follow what is going on
 			try {
@@ -39,23 +39,45 @@ public class ObserveBehaviour extends SimpleBehaviour{
 			}
 			initStart = false;
 		}
-		
+
 		String myPosition=((mas.abstractAgent)this.myAgent).getCurrentPosition();
-		
+
 		if (myPosition!=""){
 			//List of observable from the agent's current position
 			List<Couple<String,List<Attribute>>> lobs=((mas.abstractAgent)this.myAgent).observe();
 			System.out.println("ObserveBehaviour : "+ this.myAgent.getName()+" -- list of observables: "+lobs);
-			
-			if(!myFosymaAgent.getMyPath().isEmpty()){		
+			System.out.println("jai un capacite de reele de : "
+					+this.myFosymaAgent.getBackPackFreeSpace()
+					+"et une capacité estimée de "
+					+this.myFosymaAgent.getMyCapacity()
+					+" je peux prendre : "
+					+this.myFosymaAgent.getMyTreasureType());
+			if(!myFosymaAgent.getMyPath().isEmpty()){
+				if(!lobs.get(0).getRight().isEmpty())
+				{
+//					System.out.println(myFosymaAgent.getMyPath().get(myFosymaAgent.getMyPath().size()-1).getId().equals(lobs.get(0).getLeft()));
+//					System.out.println(lobs.get(0).getRight().get(0).getName()+" et "+myFosymaAgent.getMyTreasureType());
+//					System.out.println((int)lobs.get(0).getRight().get(0).getValue() <= myFosymaAgent.getMyCapacity());
+				}
 				if(!lobs.get(0).getRight().isEmpty() 
 						&& myFosymaAgent.getMyPath().get(myFosymaAgent.getMyPath().size()-1).getId().equals(lobs.get(0).getLeft()) 
-						&& lobs.get(0).getRight().get(0).equals(myFosymaAgent.getMyTreasureType())
+						&& lobs.get(0).getRight().get(0).getName().equals(myFosymaAgent.getMyTreasureType())
 						&& (int)lobs.get(0).getRight().get(0).getValue() <= myFosymaAgent.getMyCapacity())
-				{
-					myFosymaAgent.pick();
-					myFosymaAgent.setMyCapacity(myFosymaAgent.getBackPackFreeSpace());
-					lobs=((mas.abstractAgent)this.myAgent).observe();
+				{	System.out.println("Je suis l'agent "
+						+this.myFosymaAgent.getName()
+						+" Je prend un tresors de type :"
+						+lobs.get(0).getRight().get(0).name()
+						+"avec une capacite reelle actuelle de :"
+						+this.myFosymaAgent.getBackPackFreeSpace());
+
+				myFosymaAgent.pick();
+				myFosymaAgent.setMyCapacity(myFosymaAgent.getBackPackFreeSpace());
+				lobs=((mas.abstractAgent)this.myAgent).observe();
+				System.out.println("je suis l'agent : "
+						+this.myFosymaAgent.getName()
+						+"j'ai apres pick une capacité réelle de "
+						+this.myFosymaAgent.getBackPackFreeSpace());
+				System.out.println("ObserveBehaviour : "+ this.myAgent.getName()+" -- list of observables: "+lobs);
 				}
 				myFosymaAgent.getMyPath().remove(0);
 			}
@@ -68,7 +90,7 @@ public class ObserveBehaviour extends SimpleBehaviour{
 	public boolean done() {
 		return true;
 	}
-	
+
 	public int onEnd(){
 		return 1;
 	}
