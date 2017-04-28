@@ -29,7 +29,8 @@ public class ObserveBehaviour extends SimpleBehaviour{
 			try {
 				System.out.println(this.myAgent.getName()
 						+ ": INITIALISATION");
-				System.out.println("Press a key to allow the agent "
+				System.out.println("Press a key to allow the agent with type "
+						+ this.myFosymaAgent.getMyTreasureType()
 						+ this.myAgent.getName()
 						+ " to execute its next move");
 				System.in.read();

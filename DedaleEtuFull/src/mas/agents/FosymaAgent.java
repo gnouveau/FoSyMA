@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import mas.abstractAgent;
 import mas.behaviours.MultiBehaviour;
+import data.Goal;
 import data.ManageMap;
 import data.Node;
 import env.Couple;
@@ -25,7 +26,7 @@ public class FosymaAgent extends abstractAgent {
 	private ArrayList<MessageTemplate> filterMapList;
 	private ArrayList<MessageTemplate> filterGoalList;
 	private Integer myCapacity;
-
+	private Goal myGoal;	
 	protected void setup() {
 
 		super.setup();
@@ -132,6 +133,19 @@ public class FosymaAgent extends abstractAgent {
 
 	public Integer getMyCapacity() {
 		return myCapacity;
+	}
+
+	public Goal getMyGoal() {
+		return myGoal;
+	}
+
+	public void setMyGoal(Goal myGoal) {
+		this.myGoal = myGoal;
+		this.setMyPath(this.myGoal.getGoalPath());
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	public void setMyKnowledge(ManageMap myKnowledge) {

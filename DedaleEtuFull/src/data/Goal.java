@@ -3,6 +3,8 @@ package data;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import env.Couple;
+
 public class Goal implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -19,6 +21,7 @@ public class Goal implements Serializable{
 		this.myCapacity=capacity;
 		this.myType=type;
 		priorite = Priorite.NORMAL;
+		Couple<Integer, Integer> c = new Couple<Integer,Integer>(4,4);
 	}
 	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type, Priorite prio)
 	{

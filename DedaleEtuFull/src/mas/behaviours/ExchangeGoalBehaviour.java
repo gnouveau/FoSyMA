@@ -43,7 +43,7 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		
 		// Creation de son propre but qu'il veut transmettre
 		ArrayList<Node> goalPath = myFosymaAgent.getMyPath();
-		Goal myGoal = new Goal(myAgent.getName(), goalPath, myFosymaAgent.getBackPackFreeSpace(),myFosymaAgent.getMyTreasureType());
+		Goal myGoal = myFosymaAgent.getMyGoal();
 		
 		/**
 		 * I didn't sent my goal => I have to send my goal
@@ -114,8 +114,9 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 			for(Goal g : othersGoalList){
 				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : MON BUT : "+ myFosymaAgent.getMyPath());
 				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : RESOLUTION CONFLITS avec : "+ g.getNameAgt()+" qui a pour but : "+ g.getGoalPath());
+				
 				ManageBlock managerBlock = new ManageBlock(myFosymaAgent.getMyPath(), myFosymaAgent.getBackPackFreeSpace(), g,myGoal);
-				myFosymaAgent.setMyPath(managerBlock.solveBlock());				
+				myFosymaAgent.setMyGoal(managerBlock.solveBlock());				
 			}
 			finish = true;
 		}

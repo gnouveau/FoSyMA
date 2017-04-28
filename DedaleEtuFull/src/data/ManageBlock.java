@@ -21,6 +21,7 @@ public class ManageBlock {
 
 
 	private Priorite priorite;
+	private Priorite finalPriorite;
 	private ArrayList<Couple<String,Goal>> listGoalAgents = new ArrayList<>();
 
 	private Integer mycapacity;
@@ -52,7 +53,7 @@ public class ManageBlock {
 		listCapcityAgents.add(c1);
 	}
 
-	public ArrayList<Node> solveBlock()
+	public Goal solveBlock()
 	{
 
 
@@ -102,7 +103,8 @@ public class ManageBlock {
 		}
 		System.out.println("Mon but est final est  : "+ s);
 		System.out.println("/!\\ /!\\ /!\\ /!\\ /!\\ SYSOUT SOLVE BLOCK /!\\ /!\\ /!\\ /!\\ /!\\");
-		return finalGoal;
+		Goal g = new Goal(myObjectGoal.getNameAgt(), finalGoal, mycapacity, myObjectGoal.getMyType(),finalPriorite);
+		return g;
 	}
 
 	private void detectConflictNode()

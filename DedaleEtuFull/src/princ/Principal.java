@@ -231,6 +231,7 @@ public class Principal {
 			AgentController	ag=c.createNewAgent(agentName,FosymaAgent.class.getName(),objtab);
 			agentList.add(ag);
 			System.out.println(agentName+" launched");
+			
 		} catch (StaleProxyException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
