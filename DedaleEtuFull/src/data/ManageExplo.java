@@ -58,12 +58,12 @@ public class ManageExplo {
 			boolean check = false;	
 			if(fils.getId() != n.getId())
 			{
-				//	System.out.println("OK");
+				//	////System.out.println("OK");
 				for(Node alreadyVisited : visited)
 				{
 					if(fils.getId() == alreadyVisited.getId())
 					{	
-						//System.out.println("Noeud deja traite");
+						//////System.out.println("Noeud deja traite");
 						check = true;
 						break;
 					}
@@ -79,8 +79,8 @@ public class ManageExplo {
 						explo = (ArrayList<Node>) path.clone();
 						explo.add(fils);
 					}else{
-						//System.out.println("SOLUTION TROUVEE 2");
-						//System.out.println("Je suis le Node FINAL :"+fils);
+						//////System.out.println("SOLUTION TROUVEE 2");
+						//////System.out.println("Je suis le Node FINAL :"+fils);
 						path.add(fils);
 						throw new StopParcoursException(path);	
 					}
@@ -103,14 +103,14 @@ public class ManageExplo {
 			if(fils.getId() != n.getId())
 			{
 
-				//	System.out.println("OK");
+				//	////System.out.println("OK");
 
 				for(Node alreadyVisited : visited)
 				{
 
 					if(fils.getId() == alreadyVisited.getId())
 					{	
-						//System.out.println("Noeud deja traite");
+						//////System.out.println("Noeud deja traite");
 						check = true;
 						break;
 					}
@@ -123,8 +123,8 @@ public class ManageExplo {
 				{
 
 
-					//System.out.println("SOLUTION TROUVEE 1");
-					//System.out.println("Je suis le Node FINAL :"+fils);
+					//////System.out.println("SOLUTION TROUVEE 1");
+					//////System.out.println("Je suis le Node FINAL :"+fils);
 					path.add(fils);
 					throw new StopParcoursException(path);	
 				}
@@ -144,14 +144,14 @@ public class ManageExplo {
 			if(fils.getId() != n.getId())
 			{
 
-				//	System.out.println("OK");
+				//	////System.out.println("OK");
 
 				for(Node alreadyVisited : visited)
 				{
 
 					if(fils.getId() == alreadyVisited.getId())
 					{	
-						//System.out.println("Noeud deja traite");
+						//////System.out.println("Noeud deja traite");
 						check = true;
 						break;
 					}
@@ -160,8 +160,8 @@ public class ManageExplo {
 			}
 			if(!check)
 			{
-				//System.out.println("SOLUTION TROUVEE 1");
-				//System.out.println("Je suis le Node FINAL :"+fils);
+				//////System.out.println("SOLUTION TROUVEE 1");
+				//////System.out.println("Je suis le Node FINAL :"+fils);
 				path.add(fils);
 				throw new StopParcoursException(path);	
 
@@ -182,13 +182,13 @@ public class ManageExplo {
 		ArrayList<Node> path = new ArrayList<>();
 		ArrayList<Node> node = new ArrayList<>();
 		node.add(n);
-		//		long t= System.currentTimeMillis();
+		//		long t= ////System.currentTimeMillis();
 
 		try {
 			closeByWidth(node, path,value);
 		} catch (StopParcoursException e) { path=e.getFin();}
 
-		//System.out.println("temps de traitement en ms : "+Double.toString(System.currentTimeMillis()-t));
+		//////System.out.println("temps de traitement en ms : "+Double.toString(////System.currentTimeMillis()-t));
 		return path;
 	}
 	// renvoie un chemin menant a un node de valeur inferieure ou egale a value et sup stric a 0
@@ -197,25 +197,24 @@ public class ManageExplo {
 	{
 		if(visited ==  null )
 		{
-
-
-
 			visited = new ArrayList<>();	
+		}else{
+			System.out.println(visited);
 		}
 		explo = new ArrayList<Node>();
 		ArrayList<Node> path = new ArrayList<>();
-		//		long t= System.currentTimeMillis();
+		//		long t= ////System.currentTimeMillis();
 		try {
 			closeByDepth(n, path,value);
 		} catch (StopParcoursException e) { path=e.getFin();}
 
-		//System.out.println("temps de traitement en ms : "+Double.toString(System.currentTimeMillis()-t));
+		//////System.out.println("temps de traitement en ms : "+Double.toString(////System.currentTimeMillis()-t));
 		if(path.isEmpty())
 		{
 			if (explo.isEmpty()) 
 			{
 
-				System.out.println("je n'ai plus rien a explorer ou aucun tresor trouvé");
+				System.out.println("je n'ai plus rien a explorer ou aucun tresor trouvé de capacité inférieure ou égale à "+value+" avec un type de : "+this.type);
 				path.add(n);
 				return path;
 			}else{
@@ -239,12 +238,12 @@ public class ManageExplo {
 		explo = new ArrayList<Node>();
 		visited= conflits;
 		ArrayList<Node> path = new ArrayList<>();
-		//		long t= System.currentTimeMillis();
+		//		long t= ////System.currentTimeMillis();
 		try {
 			closeByDepth(n, path,Goal);
 		} catch (StopParcoursException e) { path=e.getFin();}
 
-		//System.out.println("temps de traitement en ms : "+Double.toString(System.currentTimeMillis()-t));
+		//////System.out.println("temps de traitement en ms : "+Double.toString(////System.currentTimeMillis()-t));
 		if(path.isEmpty())
 		{
 			return explo;
@@ -269,11 +268,11 @@ public class ManageExplo {
 			visited.add(nc);
 		}
 		ArrayList<Node> path = new ArrayList<>();
-		//		long t= System.currentTimeMillis();
+		//		long t= ////System.currentTimeMillis();
 		try {
 			closeByDepth(n, path);
 		} catch (StopParcoursException e) { path=e.getFin();}
-		//System.out.println("temps de traitement en ms : "+Double.toString(System.currentTimeMillis()-t));
+		//////System.out.println("temps de traitement en ms : "+Double.toString(////System.currentTimeMillis()-t));
 		if(path.isEmpty())
 		{
 			return explo;
@@ -314,7 +313,7 @@ public class ManageExplo {
 		while(loop){
 			// Ne dois jamais arriver
 			if(nodeListToExplore.isEmpty()){
-				System.out.println("nodeListToExplore empty!");
+				////System.out.println("nodeListToExplore empty!");
 				return path;
 			}
 
@@ -322,12 +321,12 @@ public class ManageExplo {
 			explored.add(node);
 
 			for (Node n : node.getFils()) {
-				//				System.out.println("fils : "+ n.getId());
+				//				////System.out.println("fils : "+ n.getId());
 				/*
 				 * Si on ne trouve pas le noeud que l'on etudie dans la liste des noeuds peres,
 				 * alors cas terminal : on a trouve une feuille, objectif atteint, on arrete la recherche 
 				 */
-				//				System.out.println("cmp : " + dicoPere.get(n.getId()));
+				//				////System.out.println("cmp : " + dicoPere.get(n.getId()));
 				if (dicoPere.get(n.getId()) == null) {
 					whoIsYourDaddy.put(n.getId(),node);
 					leafFound = n;
@@ -371,7 +370,7 @@ public class ManageExplo {
 	 * @return
 	 */
 	public ArrayList<Node> breadthResearch(Node paramNode, ManageMap myKnowledge, int myCapacity, int maxDepth){
-		System.out.println("DEBUG : breadthResearch : ma capacite : "+ myCapacity);
+		////System.out.println("DEBUG : breadthResearch : ma capacite : "+ myCapacity);
 		ArrayList<Node> path = new ArrayList<Node>();
 
 		// TODO : ameliorer. S'il il n'y a plus de feuilles, chercher des tresors.
@@ -414,7 +413,7 @@ public class ManageExplo {
 			 * et je n'ai pas trouve de tresor => je break
 			 */
 			if(nodeListToExplore.isEmpty()){
-				System.out.println("DEBUG : breadthResearch : tous les noeuds observe et pas de tresor interessant");
+				////System.out.println("DEBUG : breadthResearch : tous les noeuds observe et pas de tresor interessant");
 				break;				
 			}
 
@@ -426,9 +425,9 @@ public class ManageExplo {
 				 * Profondeur maximale atteinte
 				 */
 				if(depthDict.get(node.getId()) == maxDepth){
-					System.out.println("DEBUG : breadthResearch : profondeur maximale atteinte");
-					System.out.println("DEBUG : breadthResearch : affichage depthDict :");
-					System.out.println(depthDict);
+					////System.out.println("DEBUG : breadthResearch : profondeur maximale atteinte");
+					////System.out.println("DEBUG : breadthResearch : affichage depthDict :");
+					////System.out.println(depthDict);
 					whoIsYourDaddy.put(n.getId(),node);
 					maxDepthNode = node;
 					loop = false;
@@ -438,8 +437,13 @@ public class ManageExplo {
 				/*
 				 * J'ai trouve un tresor qui m'interesse
 				 */
-				if(n.getType().equals(type) && 0 < n.getValue() && n.getValue() <= myCapacity && treasureFound == null){
-					System.out.println("DEBUG : breadthResearch : j'ai trouve un tresor interessant");
+				//System.out.println("je suis le noeud : "+n.getId());
+				//System.out.println(n.getType()+" et "+this.type);
+				//System.out.println(0 < n.getValue());
+				//System.out.println(n.getValue() <= myCapacity);
+				//System.out.println(treasureFound == null);
+				if(n.getType().equals(this.type) && 0 < n.getValue() && n.getValue() <= myCapacity && treasureFound == null){
+					////System.out.println("DEBUG : breadthResearch : j'ai trouve un tresor interessant");
 					whoIsYourDaddy.put(n.getId(),node);
 					treasureFound = n;
 					loop = false;
@@ -453,7 +457,7 @@ public class ManageExplo {
 				 * qui nous interesse 
 				 */
 				if (dicoPere.get(n.getId()) == null && leafFound == null) {
-					System.out.println("DEBUG : breadthResearch : j'ai trouve une feuille ("+n.getId()+")ou potentiellement aller");
+					////System.out.println("DEBUG : breadthResearch : j'ai trouve une feuille ("+n.getId()+")ou potentiellement aller");
 					whoIsYourDaddy.put(n.getId(),node);
 					if(!depthDict.containsKey(n)){
 						depthDict.put(n.getId(), depthDict.get(node.getId()) + 1);
@@ -511,7 +515,7 @@ public class ManageExplo {
 		for(Node n : path){
 			str += n.getId()+" ";
 		}
-		System.out.println("DEBUG : breadthResearch : chemin final : "+str);
+		////System.out.println("DEBUG : breadthResearch : chemin final : "+str);
 		path.remove(0); // On enleve le noeud racine qui est le noeud actuel ou se trouve l'agent
 		return path;
 	}
