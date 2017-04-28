@@ -42,7 +42,7 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 				int maxDepth = 5;
 				if(myFosymaAgent.getBackPackFreeSpace() != 0 && this.myFosymaAgent.getMyCapacity()<100)
 				{
-					Goal g = new Goal(myFosymaAgent.getName(), null, myFosymaAgent.getMyCapacity(), myFosymaAgent.getMyTreasureType());
+					Goal g = new Goal(myFosymaAgent.getName(), null, myFosymaAgent.getMyCapacity(), myFosymaAgent.getMyTreasureType(),node);
 					ArrayList<Node> tmp =managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth);
 					if(tmp.get(0).getId().equals(node.getId()))
 					{

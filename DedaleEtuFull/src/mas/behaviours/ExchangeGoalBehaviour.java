@@ -115,7 +115,7 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : MON BUT : "+ myFosymaAgent.getMyPath());
 				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : RESOLUTION CONFLITS avec : "+ g.getNameAgt()+" qui a pour but : "+ g.getGoalPath());
 				
-				ManageBlock managerBlock = new ManageBlock(myFosymaAgent.getMyPath(), myFosymaAgent.getBackPackFreeSpace(), g,myGoal);
+				ManageBlock managerBlock = new ManageBlock(myGoal,g);
 				myFosymaAgent.setMyGoal(managerBlock.solveBlock());				
 			}
 			finish = true;

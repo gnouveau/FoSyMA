@@ -13,19 +13,20 @@ public class Goal implements Serializable{
 	private Integer myCapacity;
 	private String myType;
 	private Priorite priorite;
+	private Node currentPos;
 	
-	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type )
+	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type,Node pos )
 	{
 		this.nameAgt=name;
 		this.goalPath=goal;
 		this.myCapacity=capacity;
 		this.myType=type;
 		priorite = Priorite.NORMAL;
-		Couple<Integer, Integer> c = new Couple<Integer,Integer>(4,4);
+		this.currentPos = pos;
 	}
-	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type, Priorite prio)
+	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type,Node pos, Priorite prio)
 	{
-		this(name,goal,capacity,type);
+		this(name,goal,capacity,type,pos);
 		this.priorite = prio;
 	}
 	
@@ -72,6 +73,12 @@ public class Goal implements Serializable{
 
 	public void setMyType(String myType) {
 		this.myType = myType;
+	}
+	public Node getCurrentPos() {
+		return currentPos;
+	}
+	public void setCurrentPos(Node currentPos) {
+		this.currentPos = currentPos;
 	}
 	public Priorite getPriorite() {
 		return priorite;
