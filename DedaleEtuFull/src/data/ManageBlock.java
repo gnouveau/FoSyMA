@@ -180,9 +180,9 @@ public class ManageBlock {
 				indiceConflict = Math.max(indiceConflict, c.getRight());
 			}
 		}
-
+		System.out.println("on cherche à dodge");
 		ArrayList<Node> pathAg1DodgeAg2 = managerExplo.solveProblemByDepth(this.myCurrentPos, pathGoalag1.get(pathGoalag1.size()-1), conflictNode.get(0).getRight());
-
+		managerExplo.setType(otherObjectGoal.getMyType());
 		ArrayList<Node> pathAg2DodgeAg1 = managerExplo.solveProblemByDepth(this.otherObjectGoal.getCurrentPos(), pathGoalag2.get(pathGoalag2.size()-1), conflictNode.get(0).getRight());
 
 		int sizePathDodgeAg1=9999999;
@@ -196,7 +196,8 @@ public class ManageBlock {
 		{
 			sizePathDodgeAg2=pathAg2DodgeAg1.size();
 		}
-
+		System.out.println("sizePathDodgeAg1 : "+sizePathDodgeAg1);
+		System.out.println("sizePathDodgeAg2 : "+sizePathDodgeAg2);
 		//si les deux ne peuvent pas s'esquiver celui avec le chemin le plus court laisse la place a celui qui a le chemin le plus long
 		// car celui avec le chemin le plus long veut partir de la zone de conflit
 		if (sizePathDodgeAg1 ==  9999999 && sizePathDodgeAg2 == 9999999)

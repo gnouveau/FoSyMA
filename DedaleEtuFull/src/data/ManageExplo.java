@@ -52,7 +52,7 @@ public class ManageExplo {
 
 	private  void closeByDepth(Node n,ArrayList<Node> path, Integer value) throws StopParcoursException
 	{
-	
+
 		for (Node fils : n.getFils())
 		{
 			boolean check = false;	
@@ -425,9 +425,11 @@ public class ManageExplo {
 				 * Profondeur maximale atteinte
 				 */
 				if(depthDict.get(node.getId()) == maxDepth){
-					////System.out.println("DEBUG : breadthResearch : profondeur maximale atteinte");
-					////System.out.println("DEBUG : breadthResearch : affichage depthDict :");
-					////System.out.println(depthDict);
+					System.out.println("#########################################################");
+					System.out.println("DEBUG : breadthResearch : profondeur maximale atteinte");
+					System.out.println("DEBUG : breadthResearch : affichage depthDict :");
+					System.out.println(depthDict);
+					System.out.println("#########################################################");
 					whoIsYourDaddy.put(n.getId(),node);
 					maxDepthNode = node;
 					loop = false;
@@ -494,9 +496,17 @@ public class ManageExplo {
 			ManageExplo managerExplo = new ManageExplo(type);
 			return managerExplo.solveProblemByDepth(paramNode, myCapacity);
 		}else{
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
-			path.add(paramNode);
-			return path; // Je n'ai pas trouve de tresor ni de feuille et j'ai regarde tous les noeuds
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			//			path.add(paramNode);
+			//			return path;
+			// Je n'ai pas trouve de tresor ni de feuille et j'ai regarde tous les noeuds
+
+			ManageExplo managerExplo = new ManageExplo(type);
+			return managerExplo.solveProblemByDepth(paramNode, myCapacity);
 		}
 
 		/*
