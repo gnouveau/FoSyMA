@@ -31,11 +31,11 @@ public class MultiBehaviour extends FSMBehaviour{
 		
 		this.registerTransition("exchangeMap", "calculGoal",4);
 		
-		//this.registerTransition("calculGoal", "exchangeGoal",5);
-		this.registerTransition("calculGoal", "explore",5);
+		this.registerTransition("calculGoal", "exchangeGoal",5);
+		
 		this.registerTransition("calculGoal", "explore",6);
 		
-		//this.registerTransition("exchangeGoal", "explore", 7);
+		this.registerTransition("exchangeGoal", "explore", 7);
 		
 		this.registerTransition("explore", "observation",-1);
 //		this.registerTransition("explore", "theEnd",1000000);

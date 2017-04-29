@@ -24,11 +24,11 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 
 	@Override
 	public void action() {
-		managerExplo = new ManageExplo(myFosymaAgent.getMyTreasureType());
+		managerExplo = new ManageExplo(myFosymaAgent.getMyTreasureType(),myFosymaAgent);
 		String myPosition = ((mas.abstractAgent) this.myAgent).getCurrentPosition();
-		System.out.println("je suis l'agent : "+this.myFosymaAgent.getName());
-		System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
-		System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils());
+//		System.out.println("je suis l'agent : "+this.myFosymaAgent.getName());
+//		System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoPere().size());
+//		System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils());
 		
 		
 		if(myPosition != ""){
@@ -106,7 +106,7 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 //					}
 //				}
 			}
-			System.out.println(this.myFosymaAgent+" comme chemin objectif "+this.myFosymaAgent.getMyPath());
+//			System.out.println(this.myFosymaAgent+" comme chemin objectif "+this.myFosymaAgent.getMyPath());
 		}
 	}
 

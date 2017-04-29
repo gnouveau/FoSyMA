@@ -51,17 +51,20 @@ public class Node implements Serializable{
 		String id = p.getId();
 		for (int i = 0;i<fils.size();i++)
 		{
-			if(fils.get(i).getId() == id)
+			if(fils.get(i).getId().equals(id))
 			{
-				fils.remove(i);
-				this.addFils(p);
+				//System.out.println("je change de fils "+fils.get(i)+" pour : "+p);
+				fils.set(i, p);
+			
+				
+		
 			}
 		}
 		
 	}
 	public String toString()
 	{
-		String s="Pere id : "+id+" value : "+value+"\n Fils : ";
+		String s=super.toString()+" Pere id : "+id+" value : "+value+"\n Fils : ";
 		for(Node f : fils)
 		{
 			s+=""+f.getId()+", ";
