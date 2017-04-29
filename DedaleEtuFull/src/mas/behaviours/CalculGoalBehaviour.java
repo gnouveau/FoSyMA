@@ -46,7 +46,7 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 
 			
 
-				int maxDepth = 6;
+				int maxDepth = 16;
 
 				if(myFosymaAgent.getBackPackFreeSpace() != 0 && this.myFosymaAgent.getMyCapacity()<100)
 				{

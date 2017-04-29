@@ -57,7 +57,7 @@ public class ManageExplo {
 		closeByWidth(stockFils, path,value);
 	}
 
-	private  void closeByDepth(Node n,ArrayList<Node> path, Integer value) throws StopParcoursException
+	private  void closeByDepth(Node n,ArrayList<Node> path, Integer value, int prof) throws StopParcoursException
 	{
 
 		for (Node fils : n.getFils())
@@ -79,11 +79,11 @@ public class ManageExplo {
 			}
 			if(!check)
 			{
-				System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
+				//System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
 				if((fils.getType().equals(this.type) && fils.getValue() <= value && fils.getValue()>0) || fils.getValue() ==-1 && fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()))
 				{
 					
-					if(fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) )
+					if(fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) && prof < 15)
 					{
 						find = false;
 						explo = (ArrayList<Node>) path.clone();
@@ -96,17 +96,17 @@ public class ManageExplo {
 					}
 				}
 				visited.add(fils);
-				ArrayList<Node> temp = (ArrayList<Node>) path.clone();
+				ArrayList<Node> temp = path;
 				temp.add(fils);
-				closeByDepth(fils, temp, value);
+				closeByDepth(fils, temp, value,prof++);
 			}
 		}
 	}
 
 
-	private  void closeByDepth(Node n,ArrayList<Node> path, Node goal) throws StopParcoursException
+	private  void closeByDepth(Node n,ArrayList<Node> path, Node goal,int prof) throws StopParcoursException
 	{
-
+		
 		for (Node fils : n.getFils())
 		{
 			boolean check = false;	
@@ -129,7 +129,9 @@ public class ManageExplo {
 			}
 			if(!check)
 			{
-				if(fils.getId().equals(goal.getId()))
+//				System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
+				System.out.println("je suis en profodeur : "+prof);
+				if(fils.getId().equals(goal.getId()) | prof>5)
 				{
 
 
@@ -140,9 +142,9 @@ public class ManageExplo {
 				}
 			}
 			visited.add(fils);
-			ArrayList<Node> temp = (ArrayList<Node>) path.clone();
+			ArrayList<Node> temp = path;
 			temp.add(fils);
-			closeByDepth(fils, temp, goal);
+			closeByDepth(fils, temp, goal,prof++);
 		}
 	}
 	private  void closeByDepth(Node n,ArrayList<Node> path) throws StopParcoursException
@@ -216,7 +218,7 @@ public class ManageExplo {
 		ArrayList<Node> path = new ArrayList<>();
 		//		long t= //////System.currentTimeMillis();
 		try {
-			closeByDepth(n, path,value);
+			closeByDepth(n, path,value,0);
 		} catch (StopParcoursException e) { path=e.getFin();}
 
 		////////System.out.println("temps de traitement en ms : "+Double.toString(//////System.currentTimeMillis()-t));
@@ -238,13 +240,11 @@ public class ManageExplo {
 	}
 	// meme qu'avant avec ajout de noeud conflit et on cherche un noeud but à la place d'une valeur
 	// ESQUIVE
-	public  ArrayList<Node> solveProblemByDepth(Node n, Node Goal,ArrayList<Node> conflits)
+	public  ArrayList<Node> solveProblemByDepth(Node n, Node goal,ArrayList<Node> conflits)
 	{
+		System.out.println("on cherche un autre chemin pour  : "+goal);
 		if(visited ==  null )
 		{
-
-
-
 			visited = new ArrayList<>();	
 		}
 		explo = new ArrayList<Node>();
@@ -252,16 +252,11 @@ public class ManageExplo {
 		ArrayList<Node> path = new ArrayList<>();
 		//		long t= //////System.currentTimeMillis();
 		try {
-			closeByDepth(n, path,Goal);
+			closeByDepth(n, path,goal,0);
 		} catch (StopParcoursException e) { path=e.getFin();}
 
 		////////System.out.println("temps de traitement en ms : "+Double.toString(//////System.currentTimeMillis()-t));
-		if(path.isEmpty())
-		{
-			return explo;
-		}else{
-			return path;
-		}
+		return path;
 	}
 	//renvoie le premier noeud qui n'est pas un noeud de conflit
 	// LIBERER LE CHEMIN

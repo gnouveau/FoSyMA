@@ -73,7 +73,7 @@ public class Principal {
 		containerList.putAll(createContainers(rt));
 
 		// 3) create monitoring agents : rma agent, used to debug and monitor the platform; sniffer agent, to monitor communications; 
-//		createMonitoringAgents(mainContainerRef);
+		createMonitoringAgents(mainContainerRef);
 
 		System.out.println("Plaform ok");
 		return rt;

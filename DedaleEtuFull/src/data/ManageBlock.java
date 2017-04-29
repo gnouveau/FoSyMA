@@ -98,6 +98,7 @@ public class ManageBlock {
 			s += n.getId()+" ";
 		}
 		System.out.println("Mon but est final est  : "+ s);
+		System.out.println(finalGoal);
 		System.out.println("/!\\ /!\\ /!\\ /!\\ /!\\ SYSOUT SOLVE BLOCK /!\\ /!\\ /!\\ /!\\ /!\\");
 		Goal g = new Goal(myObjectGoal.getNameAgt(), finalGoal, myCapacity, myObjectGoal.getMyType(),myObjectGoal.getCurrentPos(),finalPriorite);
 		return g;
