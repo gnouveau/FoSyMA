@@ -83,7 +83,7 @@ public class ManageExplo {
 				//System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
 				if((fils.getType().equals(this.type) && fils.getValue() <= value && fils.getValue()>0) || fils.getValue() ==-1 && fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()))
 				{
-					
+
 					if(fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) && prof < 15)
 					{
 						find = false;
@@ -107,7 +107,7 @@ public class ManageExplo {
 
 	private  void closeByDepth(Node n,ArrayList<Node> path, Node goal,int prof) throws StopParcoursException
 	{
-		
+
 		for (Node fils : n.getFils())
 		{
 			boolean check = false;	
@@ -259,14 +259,15 @@ public class ManageExplo {
 			} catch (StopParcoursException e) {
 				path=e.getFin();
 			}
-		return path;
+			return path;
 		}else{
-		return breadthResearch(n, goal, myFosymaAgent.getMyKnowledge(), 20, visited);
+			System.out.println("je lance le prof");
+			return breadthResearch(n, goal, myFosymaAgent.getMyKnowledge(), 20, visited);
 		}
-		
+
 
 		////////System.out.println("temps de traitement en ms : "+Double.toString(//////System.currentTimeMillis()-t));
-		
+
 	}
 	//renvoie le premier noeud qui n'est pas un noeud de conflit
 	// LIBERER LE CHEMIN
@@ -436,11 +437,11 @@ public class ManageExplo {
 			ManageExplo managerExplo = new ManageExplo(type,this.myFosymaAgent);
 			return managerExplo.solveProblemByDepth(paramNode, myCapacity);
 		}else{
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			//			//System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			//			path.add(paramNode);
 			//			return path;
 			// Je n'ai pas trouve de tresor ni de feuille et j'ai regarde tous les noeuds
@@ -469,8 +470,8 @@ public class ManageExplo {
 		path.remove(0); // On enleve le noeud racine qui est le noeud actuel ou se trouve l'agent
 		return path;
 	}
-	
-	
+
+
 	public ArrayList<Node> breadthResearch(Node paramNode,Node goal, ManageMap myKnowledge, int maxDepth, ArrayList<Node> visited){
 		//System.out.println("DEBUT ALGO LARGEUR");
 		//System.out.println(myKnowledge.getListKnownMap().get(0));
@@ -485,7 +486,7 @@ public class ManageExplo {
 		{
 			explored.add(visi);
 		}
-		
+
 		/*
 		 * whoIsYourDaddy :
 		 * cle : ID du noeud
@@ -604,7 +605,7 @@ public class ManageExplo {
 			//System.out.println("DEBUG : breadthResearch : profondeur max atteinte ! "+ maxDepthNode.getId() +" "+ depthDict.get(maxDepthNode));
 			other = true;
 			ManageExplo managerExplo = new ManageExplo(type,this.myFosymaAgent);
-			
+
 			return managerExplo.solveProblemByDepth(paramNode, goal,visited);
 		}else{
 			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
