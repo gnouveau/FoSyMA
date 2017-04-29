@@ -39,7 +39,7 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 //					}
 //				}
 				// Explo Gilles et mathias wombo combo
-				int maxDepth = 5;
+				int maxDepth = 6;
 				if(myFosymaAgent.getBackPackFreeSpace() != 0 && this.myFosymaAgent.getMyCapacity()<100)
 				{
 					Goal g = new Goal(myFosymaAgent.getName(), null, myFosymaAgent.getMyCapacity(), myFosymaAgent.getMyTreasureType(),node);
