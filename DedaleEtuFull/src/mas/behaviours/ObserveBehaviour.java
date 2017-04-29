@@ -84,7 +84,7 @@ public class ObserveBehaviour extends SimpleBehaviour{
 				boolean test = true;
 				for(Couple<String, List<Attribute>> c : lobs)
 				{
-					System.out.println(c.getLeft());
+			
 					if(myFosymaAgent.getMyPath().get(0).getId().equals(c.getLeft()))
 					{
 						test=false;
@@ -94,7 +94,11 @@ public class ObserveBehaviour extends SimpleBehaviour{
 				if(test)
 				{
 					System.out.println("je veux aller dans un voisinage qui n'existe pas");
+					System.out.println("avec ce but : ");
+					System.out.println(myFosymaAgent.getMyPath());
+					System.out.println("et cette connaissance :");
 					System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
+					
 					System.exit(0);
 				}
 				//				System.out.println("je sort du test");

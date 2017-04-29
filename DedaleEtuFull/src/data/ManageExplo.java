@@ -80,6 +80,11 @@ public class ManageExplo {
 			}
 			if(!check)
 			{
+				if(!myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) && fils.getValue() ==-1)
+				{
+					System.out.println("SA FUCK UP");
+					System.exit(0);
+				}
 				//System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
 				if((fils.getType().equals(this.type) && fils.getValue() <= value && fils.getValue()>0) || fils.getValue() ==-1 && fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()))
 				{
@@ -255,6 +260,7 @@ public class ManageExplo {
 		if(other)
 		{
 			try {
+				System.out.println("je lance le large");
 				closeByDepth(n, path, goal, 5);
 			} catch (StopParcoursException e) {
 				path=e.getFin();
