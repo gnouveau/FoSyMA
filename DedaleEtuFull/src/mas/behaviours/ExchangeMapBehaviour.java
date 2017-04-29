@@ -97,7 +97,7 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 						// Maj de la liste d'id conversation specifique pour l'echange de goal
 						myFosymaAgent.getList_IdConvGoal().add(couple);
 						
-						// Maj du filtre pour continuer a n'écouter que ceux dont j'ai recu la carte
+						// Maj du filtre pour continuer a n'?couter que ceux dont j'ai recu la carte
 						String otherAgentTickTime = ackMessage.getConversationId().split("_MAP")[0];
 						MessageTemplate goalPathReceptionFilter = MessageTemplate.MatchPerformative(ACLMessage.INFORM)
 								.MatchSender(ackMessage.getSender())

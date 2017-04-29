@@ -98,7 +98,7 @@ public class ManageBlock {
 			s += n.getId()+" ";
 		}
 		System.out.println("Mon but est final est  : "+ s);
-		System.out.println(finalGoal);
+		System.out.println(finalGoal.get(0)+""+finalGoal.get(0));
 		System.out.println("/!\\ /!\\ /!\\ /!\\ /!\\ SYSOUT SOLVE BLOCK /!\\ /!\\ /!\\ /!\\ /!\\");
 		Goal g = new Goal(myObjectGoal.getNameAgt(), finalGoal, myCapacity, myObjectGoal.getMyType(),myObjectGoal.getCurrentPos(),finalPriorite);
 		return g;
@@ -184,9 +184,9 @@ public class ManageBlock {
 			}
 		}
 		System.out.println("on cherche à dodge");
-		ArrayList<Node> pathAg1DodgeAg2 = managerExplo.solveProblemByDepth(this.myCurrentPos, pathGoalag1.get(pathGoalag1.size()-1), conflictNode.get(0).getRight());
+		ArrayList<Node> pathAg1DodgeAg2 = managerExplo.solveProblemByDepth(this.myCurrentPos, pathGoalag1.get(indiceConflict +1), conflictNode.get(0).getRight());
 		managerExplo.setType(otherObjectGoal.getMyType());
-		ArrayList<Node> pathAg2DodgeAg1 = managerExplo.solveProblemByDepth(this.otherObjectGoal.getCurrentPos(), pathGoalag2.get(pathGoalag2.size()-1), conflictNode.get(0).getRight());
+		ArrayList<Node> pathAg2DodgeAg1 = managerExplo.solveProblemByDepth(this.otherObjectGoal.getCurrentPos(), pathGoalag2.get(indiceConflict +1), conflictNode.get(0).getRight());
 
 		int sizePathDodgeAg1=9999999;
 		int sizePathDodgeAg2=9999999;
