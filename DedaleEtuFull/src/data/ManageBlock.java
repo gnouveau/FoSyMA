@@ -3,6 +3,7 @@ package data;
 import java.util.ArrayList;
 
 import env.Couple;
+import mas.agents.FosymaAgent;
 
 public class ManageBlock {
 
@@ -26,10 +27,11 @@ public class ManageBlock {
 
 	private Integer myCapacity;
 	private ArrayList<Couple<String,Integer>> listCapcityAgents = new ArrayList<>();
+	private FosymaAgent myFosymaAgent;
 
-
-	public ManageBlock(Goal myg,Goal otherGoal)
+	public ManageBlock(Goal myg,Goal otherGoal,FosymaAgent myFosymaAgent)
 	{
+		this.myFosymaAgent = myFosymaAgent;
 		myObjectGoal = myg;
 		myGoal = myg.getGoalPath();
 		myCapacity = myg.getMyCapacity();
@@ -51,7 +53,7 @@ public class ManageBlock {
 	{
 
 
-		managerExplo = new ManageExplo(myObjectGoal.getMyType());
+		managerExplo = new ManageExplo(myObjectGoal.getMyType(),myFosymaAgent);
 		String s="/!\\ /!\\ /!\\ /!\\ /!\\ SYSOUT SOLVE BLOCK /!\\ /!\\ /!\\ /!\\ /!\\ \n Mon but est : ";
 		for(Node n : myGoal)
 		{
@@ -96,6 +98,7 @@ public class ManageBlock {
 			s += n.getId()+" ";
 		}
 		System.out.println("Mon but est final est  : "+ s);
+		System.out.println(finalGoal);
 		System.out.println("/!\\ /!\\ /!\\ /!\\ /!\\ SYSOUT SOLVE BLOCK /!\\ /!\\ /!\\ /!\\ /!\\");
 		Goal g = new Goal(myObjectGoal.getNameAgt(), finalGoal, myCapacity, myObjectGoal.getMyType(),myObjectGoal.getCurrentPos(),finalPriorite);
 		return g;
@@ -163,7 +166,7 @@ public class ManageBlock {
 	// ne marche que pour 2 agents
 	private void dodgeOrNotDodge()
 	{
-		managerExplo = new ManageExplo(myObjectGoal.getMyType());
+		managerExplo = new ManageExplo(myObjectGoal.getMyType(),myFosymaAgent);
 		ArrayList<Node> pathGoalag1 = this.myGoal;
 		ArrayList<Node> pathGoalag2 = goalAgents.get(0).getRight();
 

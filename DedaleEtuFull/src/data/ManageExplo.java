@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import mas.agents.FosymaAgent;
+
 public class ManageExplo {
 
 
@@ -11,8 +13,13 @@ public class ManageExplo {
 	private boolean find = true;
 	private ArrayList<Node> explo;
 	private String type;
+	private FosymaAgent myFosymaAgent;
 
-	public ManageExplo(String type){this.type = type; }
+	public ManageExplo(String type,FosymaAgent myFosymaAgent){
+		this.type = type;
+		this.myFosymaAgent =myFosymaAgent ;
+
+	}
 
 	private  void closeByWidth(ArrayList<Node> listNode, ArrayList<Node> path,Integer value) throws StopParcoursException
 	{
@@ -50,21 +57,21 @@ public class ManageExplo {
 		closeByWidth(stockFils, path,value);
 	}
 
-	private  void closeByDepth(Node n,ArrayList<Node> path, Integer value) throws StopParcoursException
+	private  void closeByDepth(Node n,ArrayList<Node> path, Integer value, int prof) throws StopParcoursException
 	{
 
 		for (Node fils : n.getFils())
 		{
-		
+
 			boolean check = false;	
 			if(fils.getId() != n.getId())
 			{
-				//	////System.out.println("OK");
+				//	//////System.out.println("OK");
 				for(Node alreadyVisited : visited)
 				{
 					if(fils.getId() == alreadyVisited.getId())
 					{	
-						//////System.out.println("Noeud deja traite");
+						////////System.out.println("Noeud deja traite");
 						check = true;
 						break;
 					}
@@ -72,47 +79,48 @@ public class ManageExplo {
 			}
 			if(!check)
 			{
-				System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
-				if((fils.getType().equals(this.type) && fils.getValue() <= value && fils.getValue()>0) || fils.getValue() ==-1)
+				//System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
+				if((fils.getType().equals(this.type) && fils.getValue() <= value && fils.getValue()>0) || fils.getValue() ==-1 && fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()))
 				{
-					if(fils.getValue() ==-1 && find)
+					
+					if(fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) && prof < 15)
 					{
 						find = false;
 						explo = (ArrayList<Node>) path.clone();
 						explo.add(fils);
 					}else{
-						System.out.println("SOLUTION TROUVEE 2");
-						System.out.println("Je suis le Node FINAL :"+fils);
+						//System.out.println("SOLUTION TROUVEE 2");
+						//System.out.println("Je suis le Node FINAL :"+fils);
 						path.add(fils);
 						throw new StopParcoursException(path);	
 					}
 				}
 				visited.add(fils);
-				ArrayList<Node> temp = (ArrayList<Node>) path.clone();
+				ArrayList<Node> temp = path;
 				temp.add(fils);
-				closeByDepth(fils, temp, value);
+				closeByDepth(fils, temp, value,prof++);
 			}
 		}
 	}
 
 
-	private  void closeByDepth(Node n,ArrayList<Node> path, Node goal) throws StopParcoursException
+	private  void closeByDepth(Node n,ArrayList<Node> path, Node goal,int prof) throws StopParcoursException
 	{
-
+		
 		for (Node fils : n.getFils())
 		{
 			boolean check = false;	
 			if(fils.getId() != n.getId())
 			{
 
-				//	////System.out.println("OK");
+				//	//////System.out.println("OK");
 
 				for(Node alreadyVisited : visited)
 				{
 
 					if(fils.getId() == alreadyVisited.getId())
 					{	
-						//////System.out.println("Noeud deja traite");
+						////////System.out.println("Noeud deja traite");
 						check = true;
 						break;
 					}
@@ -121,20 +129,22 @@ public class ManageExplo {
 			}
 			if(!check)
 			{
-				if(fils.getId().equals(goal.getId()))
+//				System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
+				System.out.println("je suis en profodeur : "+prof);
+				if(fils.getId().equals(goal.getId()) | prof>5)
 				{
 
 
-					//////System.out.println("SOLUTION TROUVEE 1");
-					//////System.out.println("Je suis le Node FINAL :"+fils);
+					////////System.out.println("SOLUTION TROUVEE 1");
+					////////System.out.println("Je suis le Node FINAL :"+fils);
 					path.add(fils);
 					throw new StopParcoursException(path);	
 				}
 			}
 			visited.add(fils);
-			ArrayList<Node> temp = (ArrayList<Node>) path.clone();
+			ArrayList<Node> temp = path;
 			temp.add(fils);
-			closeByDepth(fils, temp, goal);
+			closeByDepth(fils, temp, goal,prof++);
 		}
 	}
 	private  void closeByDepth(Node n,ArrayList<Node> path) throws StopParcoursException
@@ -146,14 +156,14 @@ public class ManageExplo {
 			if(fils.getId() != n.getId())
 			{
 
-				//	////System.out.println("OK");
+				//	//////System.out.println("OK");
 
 				for(Node alreadyVisited : visited)
 				{
 
 					if(fils.getId() == alreadyVisited.getId())
 					{	
-						//////System.out.println("Noeud deja traite");
+						////////System.out.println("Noeud deja traite");
 						check = true;
 						break;
 					}
@@ -162,8 +172,8 @@ public class ManageExplo {
 			}
 			if(!check)
 			{
-				//////System.out.println("SOLUTION TROUVEE 1");
-				//////System.out.println("Je suis le Node FINAL :"+fils);
+				////////System.out.println("SOLUTION TROUVEE 1");
+				////////System.out.println("Je suis le Node FINAL :"+fils);
 				path.add(fils);
 				throw new StopParcoursException(path);	
 
@@ -184,44 +194,44 @@ public class ManageExplo {
 		ArrayList<Node> path = new ArrayList<>();
 		ArrayList<Node> node = new ArrayList<>();
 		node.add(n);
-		//		long t= ////System.currentTimeMillis();
+		//		long t= //////System.currentTimeMillis();
 
 		try {
 			closeByWidth(node, path,value);
 		} catch (StopParcoursException e) { path=e.getFin();}
 
-		//////System.out.println("temps de traitement en ms : "+Double.toString(////System.currentTimeMillis()-t));
+		////////System.out.println("temps de traitement en ms : "+Double.toString(//////System.currentTimeMillis()-t));
 		return path;
 	}
 	// renvoie un chemin menant a un node de valeur inferieure ou egale a value et sup stric a 0
 	// par exploration en profondeur
 	public  ArrayList<Node> solveProblemByDepth(Node n, Integer value)
 	{
-		
+
 		if(visited ==  null )
 		{
 			visited = new ArrayList<>();	
 		}else{
-			System.out.println(visited);
+			//System.out.println(visited);
 		}
 		explo = new ArrayList<Node>();
 		ArrayList<Node> path = new ArrayList<>();
-		//		long t= ////System.currentTimeMillis();
+		//		long t= //////System.currentTimeMillis();
 		try {
-			closeByDepth(n, path,value);
+			closeByDepth(n, path,value,0);
 		} catch (StopParcoursException e) { path=e.getFin();}
 
-		//////System.out.println("temps de traitement en ms : "+Double.toString(////System.currentTimeMillis()-t));
+		////////System.out.println("temps de traitement en ms : "+Double.toString(//////System.currentTimeMillis()-t));
 		if(path.isEmpty())
 		{
 			if (explo.isEmpty()) 
 			{
 
-				System.out.println("je n'ai plus rien a explorer ou aucun tresor trouvé de capacité inférieure ou égale à "+value+" avec un type de : "+this.type);
+				//System.out.println("je n'ai plus rien a explorer ou aucun tresor trouvé de capacité inférieure ou égale à "+value+" avec un type de : "+this.type);
 				path.add(n);
 				return path;
 			}else{
-				System.out.println("je rend la feuille : "+explo.get(explo.size()-1));
+				//System.out.println("je rend la feuille : "+explo.get(explo.size()-1));
 				return explo;
 			}
 		}else{
@@ -230,30 +240,23 @@ public class ManageExplo {
 	}
 	// meme qu'avant avec ajout de noeud conflit et on cherche un noeud but à la place d'une valeur
 	// ESQUIVE
-	public  ArrayList<Node> solveProblemByDepth(Node n, Node Goal,ArrayList<Node> conflits)
+	public  ArrayList<Node> solveProblemByDepth(Node n, Node goal,ArrayList<Node> conflits)
 	{
+		System.out.println("on cherche un autre chemin pour  : "+goal);
 		if(visited ==  null )
 		{
-
-
-
 			visited = new ArrayList<>();	
 		}
 		explo = new ArrayList<Node>();
 		visited= conflits;
 		ArrayList<Node> path = new ArrayList<>();
-		//		long t= ////System.currentTimeMillis();
+		//		long t= //////System.currentTimeMillis();
 		try {
-			closeByDepth(n, path,Goal);
+			closeByDepth(n, path,goal,0);
 		} catch (StopParcoursException e) { path=e.getFin();}
 
-		//////System.out.println("temps de traitement en ms : "+Double.toString(////System.currentTimeMillis()-t));
-		if(path.isEmpty())
-		{
-			return explo;
-		}else{
-			return path;
-		}
+		////////System.out.println("temps de traitement en ms : "+Double.toString(//////System.currentTimeMillis()-t));
+		return path;
 	}
 	//renvoie le premier noeud qui n'est pas un noeud de conflit
 	// LIBERER LE CHEMIN
@@ -272,11 +275,11 @@ public class ManageExplo {
 			visited.add(nc);
 		}
 		ArrayList<Node> path = new ArrayList<>();
-		//		long t= ////System.currentTimeMillis();
+		//		long t= //////System.currentTimeMillis();
 		try {
 			closeByDepth(n, path);
 		} catch (StopParcoursException e) { path=e.getFin();}
-		//////System.out.println("temps de traitement en ms : "+Double.toString(////System.currentTimeMillis()-t));
+		////////System.out.println("temps de traitement en ms : "+Double.toString(//////System.currentTimeMillis()-t));
 		if(path.isEmpty())
 		{
 			return explo;
@@ -295,10 +298,10 @@ public class ManageExplo {
 	 * @return
 	 */
 	public ArrayList<Node> breadthResearch(Node paramNode, ManageMap myKnowledge, int myCapacity, int maxDepth){
-		System.out.println("DEBUT ALGO LARGEUR");
-		System.out.println(myKnowledge.getListKnownMap().get(0));
-		System.out.println(myKnowledge.getListKnownMap().get(0).getDicoFils());
-		////System.out.println("DEBUG : breadthResearch : ma capacite : "+ myCapacity);
+		//System.out.println("DEBUT ALGO LARGEUR");
+		//System.out.println(myKnowledge.getListKnownMap().get(0));
+		//System.out.println(myKnowledge.getListKnownMap().get(0).getDicoFils());
+		//////System.out.println("DEBUG : breadthResearch : ma capacite : "+ myCapacity);
 		ArrayList<Node> path = new ArrayList<Node>();
 
 		HashMap<String, Node> dicoPere = myKnowledge.getListKnownMap().get(0).getDicoPere();
@@ -340,7 +343,7 @@ public class ManageExplo {
 			 * A EXPLORER DONC EMPECHE D'ATTEINDRE LA PROFONDEUR MAX QUI EST AUSSI UN CAS D'ARRET
 			 */
 			if(nodeListToExplore.isEmpty()){
-//				System.out.println("DEBUG : breadthResearch : tous les noeuds observe et pas de tresor interessant");
+				//				//System.out.println("DEBUG : breadthResearch : tous les noeuds observe et pas de tresor interessant");
 				break;				
 			}
 
@@ -352,11 +355,11 @@ public class ManageExplo {
 				 * Profondeur maximale atteinte
 				 */
 				if(depthDict.get(node.getId()) == maxDepth){
-					System.out.println("#########################################################");
-					System.out.println("DEBUG : breadthResearch : profondeur maximale atteinte");
-					System.out.println("DEBUG : breadthResearch : affichage depthDict :");
-					System.out.println(depthDict);
-					System.out.println("#########################################################");
+					//System.out.println("#########################################################");
+					//System.out.println("DEBUG : breadthResearch : profondeur maximale atteinte");
+					//System.out.println("DEBUG : breadthResearch : affichage depthDict :");
+					//System.out.println(depthDict);
+					//System.out.println("#########################################################");
 					whoIsYourDaddy.put(n.getId(),node);
 					maxDepthNode = node;
 					loop = false;
@@ -366,13 +369,13 @@ public class ManageExplo {
 				/*
 				 * J'ai trouve un tresor qui m'interesse
 				 */
-				//System.out.println("je suis le noeud : "+n.getId());
-				//System.out.println(n.getType()+" et "+this.type);
-				//System.out.println(0 < n.getValue());
-				//System.out.println(n.getValue() <= myCapacity);
-				//System.out.println(treasureFound == null);
-				if(n.getType().equals(this.type) && 0 < n.getValue() && n.getValue() <= myCapacity && treasureFound == null){
-					////System.out.println("DEBUG : breadthResearch : j'ai trouve un tresor interessant");
+				////System.out.println("je suis le noeud : "+n.getId());
+				////System.out.println(n.getType()+" et "+this.type);
+				////System.out.println(0 < n.getValue());
+				////System.out.println(n.getValue() <= myCapacity);
+				////System.out.println(treasureFound == null);
+				if(0 < n.getValue() && n.getValue() <= myCapacity && treasureFound == null && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(n.getId()) && n.getType().equals(this.type) ){
+					//////System.out.println("DEBUG : breadthResearch : j'ai trouve un tresor interessant");
 					whoIsYourDaddy.put(n.getId(),node);
 					treasureFound = n;
 					loop = false;
@@ -386,7 +389,7 @@ public class ManageExplo {
 				 * qui nous interesse 
 				 */
 				if (dicoPere.get(n.getId()) == null && leafFound == null) {
-					////System.out.println("DEBUG : breadthResearch : j'ai trouve une feuille ("+n.getId()+")ou potentiellement aller");
+					//////System.out.println("DEBUG : breadthResearch : j'ai trouve une feuille ("+n.getId()+")ou potentiellement aller");
 					whoIsYourDaddy.put(n.getId(),node);
 					if(!depthDict.containsKey(n)){
 						depthDict.put(n.getId(), depthDict.get(node.getId()) + 1);
@@ -413,26 +416,26 @@ public class ManageExplo {
 
 		Node finalNode = null;
 		if(treasureFound != null){
-			System.out.println("DEBUG : breadthResearch : tresor ! "+ treasureFound.getId() +" "+ treasureFound.getValue());
+			//System.out.println("DEBUG : breadthResearch : tresor ! "+ treasureFound.getId() +" "+ treasureFound.getValue());
 			finalNode = treasureFound;
 		}else if(leafFound != null){
-			System.out.println("DEBUG : breadthResearch : feuille ! "+ leafFound.getId());
+			//System.out.println("DEBUG : breadthResearch : feuille ! "+ leafFound.getId());
 			finalNode = leafFound;
 		}else if(maxDepthNode != null){
-			System.out.println("DEBUG : breadthResearch : profondeur max atteinte ! "+ maxDepthNode.getId() +" "+ depthDict.get(maxDepthNode));
-			ManageExplo managerExplo = new ManageExplo(type);
+			//System.out.println("DEBUG : breadthResearch : profondeur max atteinte ! "+ maxDepthNode.getId() +" "+ depthDict.get(maxDepthNode));
+			ManageExplo managerExplo = new ManageExplo(type,this.myFosymaAgent);
 			return managerExplo.solveProblemByDepth(paramNode, myCapacity);
 		}else{
-//			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-//			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-//			System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
-//			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-//			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			//			//System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
+			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			//			path.add(paramNode);
 			//			return path;
 			// Je n'ai pas trouve de tresor ni de feuille et j'ai regarde tous les noeuds
 
-			ManageExplo managerExplo = new ManageExplo(type);
+			ManageExplo managerExplo = new ManageExplo(type,this.myFosymaAgent);
 			return managerExplo.solveProblemByDepth(paramNode, myCapacity);
 		}
 
@@ -452,89 +455,89 @@ public class ManageExplo {
 		for(Node n : path){
 			str += n.getId()+" ";
 		}
-		////System.out.println("DEBUG : breadthResearch : chemin final : "+str);
+		//////System.out.println("DEBUG : breadthResearch : chemin final : "+str);
 		path.remove(0); // On enleve le noeud racine qui est le noeud actuel ou se trouve l'agent
 		return path;
 	}
-	
-//	public ArrayList<Node> findBestPathToClosestLeaf(Node paramNode,ManageMap myKnowledge){
-//	ArrayList<Node> path = new ArrayList<Node>();
-//	/*
-//	 * On regarde si il existe encore des feuilles dans le graphe a explorer pour l'agent.
-//	 * Si il n'y en n'a plus, on renvoit un chemin vide
-//	 * 
-//	 */
-//	HashMap<String, Node> dicoFils = myKnowledge.getListKnownMap().get(0).getDicoFils();
-//	if(dicoFils.isEmpty()){
-//		return path;
-//	}
-//
-//	HashMap<String, Node> dicoPere = myKnowledge.getListKnownMap().get(0).getDicoPere();
-//	ArrayList<Node> nodeListToExplore = new ArrayList<Node>();
-//	HashSet<Node> explored = new HashSet<Node>();
-//	/*
-//	 * whoIsYourDaddy :
-//	 * cle : ID du noeud
-//	 * valeur : ID de son pere
-//	 * But : permet de recreer le chemin que l'agent va parcourir pour arriver
-//	 * au nouveau noeud a explorer
-//	 */
-//	HashMap<String, Node> whoIsYourDaddy = new HashMap<String, Node>();
-//
-//	nodeListToExplore.add(paramNode);
-//	whoIsYourDaddy.put(paramNode.getId(), null);
-//	Node leafFound = null;
-//
-//	boolean loop = true;
-//	while(loop){
-//		// Ne dois jamais arriver
-//		if(nodeListToExplore.isEmpty()){
-//			////System.out.println("nodeListToExplore empty!");
-//			return path;
-//		}
-//
-//		Node node = nodeListToExplore.remove(0);
-//		explored.add(node);
-//
-//		for (Node n : node.getFils()) {
-//			//				////System.out.println("fils : "+ n.getId());
-//			/*
-//			 * Si on ne trouve pas le noeud que l'on etudie dans la liste des noeuds peres,
-//			 * alors cas terminal : on a trouve une feuille, objectif atteint, on arrete la recherche 
-//			 */
-//			//				////System.out.println("cmp : " + dicoPere.get(n.getId()));
-//			if (dicoPere.get(n.getId()) == null) {
-//				whoIsYourDaddy.put(n.getId(),node);
-//				leafFound = n;
-//				loop = false;
-//				break;
-//			}
-//
-//			/*
-//			 * Le noeud actuel n'est pas une feuille, donc si ce noeud n'est pas deja dans
-//			 * la liste des noeuds deja explore et qu'il n'est pas dans la liste des noeuds a explorer,
-//			 * alors on l'ajoute a la liste des noeuds a explorer
-//			 */
-//			if (!explored.contains(n) && !nodeListToExplore.contains(n)) {
-//				nodeListToExplore.add(n);
-//				whoIsYourDaddy.put(n.getId(),node);
-//			}
-//		}
-//	}
-//
-//	/*
-//	 * Reconstruction du chemin a partir du dico whoIsYourDaddy
-//	 */
-//	path.add(leafFound);
-//	Node nodeFather = whoIsYourDaddy.get(leafFound.getId());
-//
-//	while(nodeFather != null){
-//		path.add(0, nodeFather);
-//		nodeFather = whoIsYourDaddy.get(nodeFather.getId());
-//	}
-//	path.remove(0); // On enleve le noeud racine qui est le noeud actuel ou se trouve l'agent
-//	return path;
-//}
+
+	//	public ArrayList<Node> findBestPathToClosestLeaf(Node paramNode,ManageMap myKnowledge){
+	//	ArrayList<Node> path = new ArrayList<Node>();
+	//	/*
+	//	 * On regarde si il existe encore des feuilles dans le graphe a explorer pour l'agent.
+	//	 * Si il n'y en n'a plus, on renvoit un chemin vide
+	//	 * 
+	//	 */
+	//	HashMap<String, Node> dicoFils = myKnowledge.getListKnownMap().get(0).getDicoFils();
+	//	if(dicoFils.isEmpty()){
+	//		return path;
+	//	}
+	//
+	//	HashMap<String, Node> dicoPere = myKnowledge.getListKnownMap().get(0).getDicoPere();
+	//	ArrayList<Node> nodeListToExplore = new ArrayList<Node>();
+	//	HashSet<Node> explored = new HashSet<Node>();
+	//	/*
+	//	 * whoIsYourDaddy :
+	//	 * cle : ID du noeud
+	//	 * valeur : ID de son pere
+	//	 * But : permet de recreer le chemin que l'agent va parcourir pour arriver
+	//	 * au nouveau noeud a explorer
+	//	 */
+	//	HashMap<String, Node> whoIsYourDaddy = new HashMap<String, Node>();
+	//
+	//	nodeListToExplore.add(paramNode);
+	//	whoIsYourDaddy.put(paramNode.getId(), null);
+	//	Node leafFound = null;
+	//
+	//	boolean loop = true;
+	//	while(loop){
+	//		// Ne dois jamais arriver
+	//		if(nodeListToExplore.isEmpty()){
+	//			//////System.out.println("nodeListToExplore empty!");
+	//			return path;
+	//		}
+	//
+	//		Node node = nodeListToExplore.remove(0);
+	//		explored.add(node);
+	//
+	//		for (Node n : node.getFils()) {
+	//			//				//////System.out.println("fils : "+ n.getId());
+	//			/*
+	//			 * Si on ne trouve pas le noeud que l'on etudie dans la liste des noeuds peres,
+	//			 * alors cas terminal : on a trouve une feuille, objectif atteint, on arrete la recherche 
+	//			 */
+	//			//				//////System.out.println("cmp : " + dicoPere.get(n.getId()));
+	//			if (dicoPere.get(n.getId()) == null) {
+	//				whoIsYourDaddy.put(n.getId(),node);
+	//				leafFound = n;
+	//				loop = false;
+	//				break;
+	//			}
+	//
+	//			/*
+	//			 * Le noeud actuel n'est pas une feuille, donc si ce noeud n'est pas deja dans
+	//			 * la liste des noeuds deja explore et qu'il n'est pas dans la liste des noeuds a explorer,
+	//			 * alors on l'ajoute a la liste des noeuds a explorer
+	//			 */
+	//			if (!explored.contains(n) && !nodeListToExplore.contains(n)) {
+	//				nodeListToExplore.add(n);
+	//				whoIsYourDaddy.put(n.getId(),node);
+	//			}
+	//		}
+	//	}
+	//
+	//	/*
+	//	 * Reconstruction du chemin a partir du dico whoIsYourDaddy
+	//	 */
+	//	path.add(leafFound);
+	//	Node nodeFather = whoIsYourDaddy.get(leafFound.getId());
+	//
+	//	while(nodeFather != null){
+	//		path.add(0, nodeFather);
+	//		nodeFather = whoIsYourDaddy.get(nodeFather.getId());
+	//	}
+	//	path.remove(0); // On enleve le noeud racine qui est le noeud actuel ou se trouve l'agent
+	//	return path;
+	//}
 
 	public ArrayList<Node> getVisited() {
 		return visited;

@@ -6,9 +6,8 @@ treasure:66:46
 treasure:112:10
 treasure:14:24
 treasure:19:41
-wumpus:Golem:98:200:0
-agent:Agent1:77:70:0
-agent:Agent2:83:18:0
-agent:Agent3:5:51:0
-agent:Agent4:122:41:0
-agent:Agent5:38:50:0
+agent:Explo1:77:70:0
+agent:Explo2:83:18:0
+agent:Explo3:5:51:0
+agent:Explo4:122:41:0
+agent:Explo5:38:50:0
