@@ -362,6 +362,7 @@ public class ManageBlock {
 				managerExplo.setVisited(temp);
 				managerExplo.setType(ag2goal.getType());
 				//on fait un nouveau chemin pour ag2
+				System.out.println("pos current agent 2 : "+ otherObjectGoal.getCurrentPos());
 				ArrayList<Node> newPath = managerExplo.solveProblemByDepth(otherObjectGoal.getCurrentPos(),listCapcityAgents.get(0).getRight());
 
 				String s="";
@@ -379,6 +380,7 @@ public class ManageBlock {
 				ArrayList<Node>temp = new ArrayList<>();
 				temp.add(mygoal);
 				managerExplo.setVisited(temp);
+				System.out.println("pos current agent 2 : "+ this.myCurrentPos);
 				myGoal = managerExplo.solveProblemByDepth(this.myCurrentPos, myCapacity);
 			}
 		}

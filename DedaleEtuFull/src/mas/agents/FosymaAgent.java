@@ -25,9 +25,9 @@ public class FosymaAgent extends abstractAgent {
 	private ManageMap myKnowledge;
 	private ArrayList<Node> myPath;
 	private ArrayList<Couple<String,Couple<String,String>>> list_IdConversation;
+	private ArrayList<Couple<String,Couple<String,String>>> list_IdConvGoal;
 	private ArrayList<MessageTemplate> filterMapList;
 	private ArrayList<MessageTemplate> filterGoalList;
-	private ArrayList<MessageTemplate> filterAckList;
 	private Integer myCapacity;
 	private Goal myGoal;	
 	protected void setup() {
@@ -41,6 +41,7 @@ public class FosymaAgent extends abstractAgent {
 			myKnowledge = new ManageMap(this.getName());
 			myPath = new ArrayList<Node>();
 			list_IdConversation = new ArrayList<>();
+			list_IdConvGoal = new ArrayList<>();
 			filterMapList = new ArrayList<MessageTemplate>();
 			filterGoalList = new ArrayList<MessageTemplate>();
 			
@@ -160,12 +161,13 @@ public class FosymaAgent extends abstractAgent {
 		this.myCapacity = myCapacity;
 	}
 
-	public ArrayList<MessageTemplate> getFilterAckList() {
-		return filterAckList;
+	public ArrayList<Couple<String, Couple<String, String>>> getList_IdConvGoal() {
+		return list_IdConvGoal;
 	}
 
-	public void setFilterAckList(ArrayList<MessageTemplate> filterAckList) {
-		this.filterAckList = filterAckList;
+	public void setList_IdConvGoal(
+			ArrayList<Couple<String, Couple<String, String>>> list_IdConvGoal) {
+		this.list_IdConvGoal = list_IdConvGoal;
 	}
 
 }
