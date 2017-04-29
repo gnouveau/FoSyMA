@@ -1,9 +1,7 @@
 package mas.behaviours;
 
-import jade.core.AID;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
-import jade.lang.acl.MessageTemplate;
 import jade.lang.acl.UnreadableException;
 
 import java.io.IOException;
@@ -58,7 +56,7 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 
 			mapSent = true;
 			t = System.currentTimeMillis();
-		}		
+		}
 		
 		ACLMessage knownMapReceptionMsg = null;
 		int index = -1;
@@ -71,58 +69,19 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 		}		
 		
 		/**
-		 * CASE 1: I receive an acknowledge
+		 * CASE 1: An agent sent his map to me
 		 */
-		if(this.myAgent.receive(MessageTemplate.MatchPerformative(ACLMessage.CONFIRM))!= null){
-			for (Couple<String, Couple<String, String>> couple : myFosymaAgent.getList_IdConversation()){
-				if(couple.getLeft().equals()){
-					// TOTO DERNIER TRUC ECRIT AVANT MERGE
-					/*
-					 * Maj du filtre pour continuer a n'écouter que ceux dont j'ai recu la carte
-					 */
-					String otherAgentTickTime = knownMapReceptionMsg.getConversationId().split("_MAP")[0];
-					MessageTemplate goalPathReceptionFilter = MessageTemplate.MatchPerformative(ACLMessage.INFORM)
-							.MatchSender(knownMapReceptionMsg.getSender())
-							.MatchConversationId(otherAgentTickTime+"_GOAL");
-					myFosymaAgent.getFilterGoalList().add(goalPathReceptionFilter);
-					break;
-					
-				}
-			}
-		}
-			
-		/**
-		 * CASE 2: An agent sent his map to me
-		 * AND I answer to him, to confirm the reception!!
-		 */
-		else if (knownMapReceptionMsg != null) {
+		if (knownMapReceptionMsg != null) {
 			myFosymaAgent.getFilterMapList().remove(index);
-			
 			try {
 				myFosymaAgent.getMyKnowledge().mergeMap((KnownMap) knownMapReceptionMsg.getContentObject());
 			} catch (UnreadableException e) {
 				e.printStackTrace();
 			}
-			
-			/*
-			 * Envoi de la confirmation
-			 */
-			ACLMessage msg = new ACLMessage(ACLMessage.CONFIRM);
-			msg.setSender(myFosymaAgent.getAID());
-			msg.addReceiver(knownMapReceptionMsg.getSender());
-			
-			for (Couple<String, Couple<String, String>> couple : myFosymaAgent.getList_IdConversation()){
-				if(myFosymaAgent.getAIDFromName(couple.getLeft()).equals(knownMapReceptionMsg.getSender())){
-					msg.setConversationId(couple.getRight().getLeft());
-					break;
-				}
-			}
-			
-			((mas.abstractAgent) this.myAgent).sendMessage(msg);
 		}
 		
 		/**
-		 * CASE 3: Got no message, but still waiting for receiving some maps
+		 * CASE 2: Got no message, but still waiting for receiving some maps
 		 */
 		else if(myFosymaAgent.getFilterMapList().size() > 0){
 			if (mapSent && System.currentTimeMillis() - t < maxWaitingTime) {
@@ -133,7 +92,7 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 		}
 		
 		/**
-		 * CASE 4: Terminal case: the agent sent his map and received all the maps he was waiting for
+		 * CASE 3: Terminal case: the agent sent his map and received all the maps he was waiting for
 		 */
 		else if(myFosymaAgent.getFilterMapList().size() == 0 && mapSent){
 			finish = true;
@@ -148,7 +107,6 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 	public int onEnd() {
 		mapSent = false;
 		finish = false;
-		myFosymaAgent.setFilterMapList(new ArrayList<>());
 		myFosymaAgent.setMyPath(new ArrayList<>());
 		return 4;
 	}

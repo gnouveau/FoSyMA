@@ -79,11 +79,32 @@ public class ObserveBehaviour extends SimpleBehaviour{
 						+this.myFosymaAgent.getBackPackFreeSpace());
 				System.out.println("ObserveBehaviour : "+ this.myAgent.getName()+" -- list of observables: "+lobs);
 				}
-				if(myPosition.equals(myFosymaAgent.getMyPath().get(0)))
+
+
+
+				if(myPosition.equals(myFosymaAgent.getMyPath().get(0).getId()))
 				{
+					//					System.out.println("TOTO"); 
 					myFosymaAgent.getMyPath().remove(0);
-					myFosymaAgent.getMyGoal().getGoalPath().remove(0);
+					//					System.out.println("TATATA");
+					myFosymaAgent.getMyGoal().setGoalPath(myFosymaAgent.getMyPath());
+
 				}
+				boolean test = false;
+				for(Couple<String, List<Attribute>> c : lobs)
+				{
+					if(myFosymaAgent.getMyPath().get(0).getId().equals(c.getLeft()))
+					{
+						test=true;
+						break;
+					}
+				}
+				if(test)
+				{
+					System.out.println("je veux aller dans un voisinage qui n'existe pas");
+					System.out.println(this.myFosymaAgent.getMyKnowledge());
+				}
+				//				System.out.println("je sort du test");
 
 			}
 			// The agent updates his knowledges
