@@ -28,6 +28,7 @@ public class ExplorationBehaviour extends SimpleBehaviour{
 		 * Reset his letter box and all the id of previous conversations 
 		 */
 		myFosymaAgent.setList_IdConversation(new ArrayList<>());
+		myFosymaAgent.setList_IdConvGoal(new ArrayList<>());
 		
 		// L'agent vide sa boite aux lettres
 		while(myAgent.receive() != null){}

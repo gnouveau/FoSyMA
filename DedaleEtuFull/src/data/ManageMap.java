@@ -37,19 +37,21 @@ public class ManageMap {
 	{
 		//on choisi la bonne map a envoyer
 		int indmap = listAgentShare.indexOf(ag);
+		System.out.println("DEBUG SEND MAP : "+ indmap);
 		if (indmap == -1)
 		{
 			indmap = 0;
 			listAgentShare.add(ag);
 			listKnownMap.add(new KnownMap());
 		}
+		System.out.println("DEBUG SEND MAP 2: "+ listKnownMap);
 		return listKnownMap.get(indmap);
 
 	}
 
 	public void AckMap(String ag)
 	{
-		//on choisi la bonne map a envoyer
+		//on choisi la bonne map a supprimer
 		int indmap = listAgentShare.indexOf(ag);
 		if (indmap != -1)
 		{
