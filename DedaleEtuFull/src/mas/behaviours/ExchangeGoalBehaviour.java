@@ -131,6 +131,7 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		goalSent = false;
 		finish = false;
 		t = 0;
+		myFosymaAgent.setFilterGoalList(new ArrayList<>());
 		othersGoalList = new ArrayList<Goal>();
 		return 7;
 	}

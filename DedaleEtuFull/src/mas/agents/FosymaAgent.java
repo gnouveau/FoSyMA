@@ -8,6 +8,8 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.lang.acl.MessageTemplate;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import mas.abstractAgent;
 import mas.behaviours.MultiBehaviour;
@@ -25,6 +27,7 @@ public class FosymaAgent extends abstractAgent {
 	private ArrayList<Couple<String,Couple<String,String>>> list_IdConversation;
 	private ArrayList<MessageTemplate> filterMapList;
 	private ArrayList<MessageTemplate> filterGoalList;
+	private ArrayList<MessageTemplate> filterAckList;
 	private Integer myCapacity;
 	private Goal myGoal;	
 	protected void setup() {
@@ -40,6 +43,7 @@ public class FosymaAgent extends abstractAgent {
 			list_IdConversation = new ArrayList<>();
 			filterMapList = new ArrayList<MessageTemplate>();
 			filterGoalList = new ArrayList<MessageTemplate>();
+			
 			
 			// Register the service in the yellow pages
 			DFAgentDescription dfd = new DFAgentDescription();
@@ -70,6 +74,22 @@ public class FosymaAgent extends abstractAgent {
 		System.out.println("the agent " + this.getName() + " is started");
 	}
 
+	public ArrayList<MessageTemplate> getFilterMapList() {
+		return filterMapList;
+	}
+
+	public void setFilterMapList(ArrayList<MessageTemplate> filterMapList) {
+		this.filterMapList = filterMapList;
+	}
+
+	public ArrayList<MessageTemplate> getFilterGoalList() {
+		return filterGoalList;
+	}
+
+	public void setFilterGoalList(ArrayList<MessageTemplate> filterGoalList) {
+		this.filterGoalList = filterGoalList;
+	}
+
 	protected void takeDown() {
 
 	}
@@ -94,14 +114,6 @@ public class FosymaAgent extends abstractAgent {
 			ArrayList<Couple<String, Couple<String, String>>> list_IdConversation) {
 		this.list_IdConversation = list_IdConversation;
 	}
-
-	public ArrayList<MessageTemplate> getFilterMapList() {
-		return filterMapList;
-	}
-
-	public void setFilterMapList(ArrayList<MessageTemplate> filterList) {
-		this.filterMapList = filterList;
-	}
 	
 	public AID getAIDFromName(String name) {
 		DFAgentDescription template = new DFAgentDescription();
@@ -121,14 +133,6 @@ public class FosymaAgent extends abstractAgent {
 			fe.printStackTrace();
 		}
 		return null; // NE DOIS PAS ARRIVER
-	}
-
-	public ArrayList<MessageTemplate> getFilterGoalList() {
-		return filterGoalList;
-	}
-
-	public void setFilterGoalList(ArrayList<MessageTemplate> filterGoalList) {
-		this.filterGoalList = filterGoalList;
 	}
 
 	public Integer getMyCapacity() {
@@ -154,6 +158,14 @@ public class FosymaAgent extends abstractAgent {
 
 	public void setMyCapacity(Integer myCapacity) {
 		this.myCapacity = myCapacity;
+	}
+
+	public ArrayList<MessageTemplate> getFilterAckList() {
+		return filterAckList;
+	}
+
+	public void setFilterAckList(ArrayList<MessageTemplate> filterAckList) {
+		this.filterAckList = filterAckList;
 	}
 
 }

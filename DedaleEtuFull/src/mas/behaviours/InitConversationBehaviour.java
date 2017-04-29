@@ -109,10 +109,15 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 			for (Couple<String, Couple<String, String>> couple : myFosymaAgent.getList_IdConversation()) {
 				String name = couple.getLeft();
 				String id = couple.getRight().getRight();
-				MessageTemplate knownMapReceptionFilter = MessageTemplate.MatchPerformative(ACLMessage.INFORM).MatchSender(myFosymaAgent.getAIDFromName(name)).MatchConversationId(id+"_MAP");
-				MessageTemplate goalPathReceptionFilter = MessageTemplate.MatchPerformative(ACLMessage.INFORM).MatchSender(myFosymaAgent.getAIDFromName(name)).MatchConversationId(id+"_GOAL");
+				MessageTemplate knownMapReceptionFilter = MessageTemplate
+						.MatchPerformative(ACLMessage.INFORM)
+						.MatchSender(myFosymaAgent.getAIDFromName(name))
+						.MatchConversationId(id+"_MAP");
+				
 				myFosymaAgent.getFilterMapList().add(knownMapReceptionFilter);
-				myFosymaAgent.getFilterGoalList().add(goalPathReceptionFilter);
+				
+//				MessageTemplate goalPathReceptionFilter = MessageTemplate.MatchPerformative(ACLMessage.INFORM).MatchSender(myFosymaAgent.getAIDFromName(name)).MatchConversationId(id+"_GOAL");
+//				myFosymaAgent.getFilterGoalList().add(goalPathReceptionFilter);
 			}
 			 return 2; 
 		 }else{

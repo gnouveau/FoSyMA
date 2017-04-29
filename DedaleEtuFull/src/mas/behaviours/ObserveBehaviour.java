@@ -55,9 +55,9 @@ public class ObserveBehaviour extends SimpleBehaviour{
 			if(!myFosymaAgent.getMyPath().isEmpty()){
 				if(!lobs.get(0).getRight().isEmpty())
 				{
-//					System.out.println(myFosymaAgent.getMyPath().get(myFosymaAgent.getMyPath().size()-1).getId().equals(lobs.get(0).getLeft()));
-//					System.out.println(lobs.get(0).getRight().get(0).getName()+" et "+myFosymaAgent.getMyTreasureType());
-//					System.out.println((int)lobs.get(0).getRight().get(0).getValue() <= myFosymaAgent.getMyCapacity());
+					//					System.out.println(myFosymaAgent.getMyPath().get(myFosymaAgent.getMyPath().size()-1).getId().equals(lobs.get(0).getLeft()));
+					//					System.out.println(lobs.get(0).getRight().get(0).getName()+" et "+myFosymaAgent.getMyTreasureType());
+					//					System.out.println((int)lobs.get(0).getRight().get(0).getValue() <= myFosymaAgent.getMyCapacity());
 				}
 				if(!lobs.get(0).getRight().isEmpty() 
 						&& myFosymaAgent.getMyPath().get(myFosymaAgent.getMyPath().size()-1).getId().equals(lobs.get(0).getLeft()) 
@@ -79,7 +79,12 @@ public class ObserveBehaviour extends SimpleBehaviour{
 						+this.myFosymaAgent.getBackPackFreeSpace());
 				System.out.println("ObserveBehaviour : "+ this.myAgent.getName()+" -- list of observables: "+lobs);
 				}
-				myFosymaAgent.getMyPath().remove(0);
+				if(myPosition.equals(myFosymaAgent.getMyPath().get(0)))
+				{
+					myFosymaAgent.getMyPath().remove(0);
+					myFosymaAgent.getMyGoal().getGoalPath().remove(0);
+				}
+
 			}
 			// The agent updates his knowledges
 			myFosymaAgent.getMyKnowledge().majMap(lobs);
