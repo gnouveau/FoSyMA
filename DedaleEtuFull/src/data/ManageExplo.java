@@ -281,6 +281,85 @@ public class ManageExplo {
 		}
 	}
 
+	public ArrayList<Node> findBestPathToClosestLeaf(Node paramNode,ManageMap myKnowledge){
+		ArrayList<Node> path = new ArrayList<Node>();
+		/*
+		 * On regarde si il existe encore des feuilles dans le graphe a explorer pour l'agent.
+		 * Si il n'y en n'a plus, on renvoit un chemin vide
+		 * 
+		 */
+		HashMap<String, Node> dicoFils = myKnowledge.getListKnownMap().get(0).getDicoFils();
+		if(dicoFils.isEmpty()){
+			return path;
+		}
+
+		HashMap<String, Node> dicoPere = myKnowledge.getListKnownMap().get(0).getDicoPere();
+		ArrayList<Node> nodeListToExplore = new ArrayList<Node>();
+		HashSet<Node> explored = new HashSet<Node>();
+		/*
+		 * whoIsYourDaddy :
+		 * cle : ID du noeud
+		 * valeur : ID de son pere
+		 * But : permet de recreer le chemin que l'agent va parcourir pour arriver
+		 * au nouveau noeud a explorer
+		 */
+		HashMap<String, Node> whoIsYourDaddy = new HashMap<String, Node>();
+
+		nodeListToExplore.add(paramNode);
+		whoIsYourDaddy.put(paramNode.getId(), null);
+		Node leafFound = null;
+
+		boolean loop = true;
+		while(loop){
+			// Ne dois jamais arriver
+			if(nodeListToExplore.isEmpty()){
+				////System.out.println("nodeListToExplore empty!");
+				return path;
+			}
+
+			Node node = nodeListToExplore.remove(0);
+			explored.add(node);
+
+			for (Node n : node.getFils()) {
+				//				////System.out.println("fils : "+ n.getId());
+				/*
+				 * Si on ne trouve pas le noeud que l'on etudie dans la liste des noeuds peres,
+				 * alors cas terminal : on a trouve une feuille, objectif atteint, on arrete la recherche 
+				 */
+				//				////System.out.println("cmp : " + dicoPere.get(n.getId()));
+				if (dicoPere.get(n.getId()) == null) {
+					whoIsYourDaddy.put(n.getId(),node);
+					leafFound = n;
+					loop = false;
+					break;
+				}
+
+				/*
+				 * Le noeud actuel n'est pas une feuille, donc si ce noeud n'est pas deja dans
+				 * la liste des noeuds deja explore et qu'il n'est pas dans la liste des noeuds a explorer,
+				 * alors on l'ajoute a la liste des noeuds a explorer
+				 */
+				if (!explored.contains(n) && !nodeListToExplore.contains(n)) {
+					nodeListToExplore.add(n);
+					whoIsYourDaddy.put(n.getId(),node);
+				}
+			}
+		}
+
+		/*
+		 * Reconstruction du chemin a partir du dico whoIsYourDaddy
+		 */
+		path.add(leafFound);
+		Node nodeFather = whoIsYourDaddy.get(leafFound.getId());
+
+		while(nodeFather != null){
+			path.add(0, nodeFather);
+			nodeFather = whoIsYourDaddy.get(nodeFather.getId());
+		}
+		path.remove(0); // On enleve le noeud racine qui est le noeud actuel ou se trouve l'agent
+		return path;
+	}
+
 	/**
 	 * recherche en largeur. retourne le chemin vers le tresor le plus proche
 	 * d'une valeur inferieure a la capacite du sac de l'agent.
@@ -293,6 +372,12 @@ public class ManageExplo {
 	public ArrayList<Node> breadthResearch(Node paramNode, ManageMap myKnowledge, int myCapacity, int maxDepth){
 		////System.out.println("DEBUG : breadthResearch : ma capacite : "+ myCapacity);
 		ArrayList<Node> path = new ArrayList<Node>();
+
+		// TODO : ameliorer. S'il il n'y a plus de feuilles, chercher des tresors.
+		//		HashMap<String, Node> dicoFils = myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils();
+		//		if(dicoFils.isEmpty()){
+		//			return path;
+		//		}
 
 		HashMap<String, Node> dicoPere = myKnowledge.getListKnownMap().get(0).getDicoPere();
 		ArrayList<Node> nodeListToExplore = new ArrayList<Node>();
@@ -326,14 +411,9 @@ public class ManageExplo {
 			/*
 			 * J'ai regarde tous les noeuds que je connais
 			 * et je n'ai pas trouve de tresor => je break
-			 * 
-			 * WARNING : CONDITION NON TOTALEMENT VALIDE. ON PEUT RENTRER DANS CETTE CONDITION SI LE GRAPHE
-			 * CONTIENT UN CYCLE AVEC QUE DES PERES, DONC DES NOEUDS QUI NE M'INTERESSE PAS,
-			 * A CAUSE DU CYCLE, LES FILS DU NOEUD QUE JE REGARDE ONT DEJA ETE INTEGRES DANS LA LISTE DE NOEUDS
-			 * A EXPLORER DONC EMPECHE D'ATTEINDRE LA PROFONDEUR MAX QUI EST AUSSI UN CAS D'ARRET
 			 */
 			if(nodeListToExplore.isEmpty()){
-//				System.out.println("DEBUG : breadthResearch : tous les noeuds observe et pas de tresor interessant");
+				////System.out.println("DEBUG : breadthResearch : tous les noeuds observe et pas de tresor interessant");
 				break;				
 			}
 
@@ -449,85 +529,7 @@ public class ManageExplo {
 		path.remove(0); // On enleve le noeud racine qui est le noeud actuel ou se trouve l'agent
 		return path;
 	}
-	
-//	public ArrayList<Node> findBestPathToClosestLeaf(Node paramNode,ManageMap myKnowledge){
-//	ArrayList<Node> path = new ArrayList<Node>();
-//	/*
-//	 * On regarde si il existe encore des feuilles dans le graphe a explorer pour l'agent.
-//	 * Si il n'y en n'a plus, on renvoit un chemin vide
-//	 * 
-//	 */
-//	HashMap<String, Node> dicoFils = myKnowledge.getListKnownMap().get(0).getDicoFils();
-//	if(dicoFils.isEmpty()){
-//		return path;
-//	}
-//
-//	HashMap<String, Node> dicoPere = myKnowledge.getListKnownMap().get(0).getDicoPere();
-//	ArrayList<Node> nodeListToExplore = new ArrayList<Node>();
-//	HashSet<Node> explored = new HashSet<Node>();
-//	/*
-//	 * whoIsYourDaddy :
-//	 * cle : ID du noeud
-//	 * valeur : ID de son pere
-//	 * But : permet de recreer le chemin que l'agent va parcourir pour arriver
-//	 * au nouveau noeud a explorer
-//	 */
-//	HashMap<String, Node> whoIsYourDaddy = new HashMap<String, Node>();
-//
-//	nodeListToExplore.add(paramNode);
-//	whoIsYourDaddy.put(paramNode.getId(), null);
-//	Node leafFound = null;
-//
-//	boolean loop = true;
-//	while(loop){
-//		// Ne dois jamais arriver
-//		if(nodeListToExplore.isEmpty()){
-//			////System.out.println("nodeListToExplore empty!");
-//			return path;
-//		}
-//
-//		Node node = nodeListToExplore.remove(0);
-//		explored.add(node);
-//
-//		for (Node n : node.getFils()) {
-//			//				////System.out.println("fils : "+ n.getId());
-//			/*
-//			 * Si on ne trouve pas le noeud que l'on etudie dans la liste des noeuds peres,
-//			 * alors cas terminal : on a trouve une feuille, objectif atteint, on arrete la recherche 
-//			 */
-//			//				////System.out.println("cmp : " + dicoPere.get(n.getId()));
-//			if (dicoPere.get(n.getId()) == null) {
-//				whoIsYourDaddy.put(n.getId(),node);
-//				leafFound = n;
-//				loop = false;
-//				break;
-//			}
-//
-//			/*
-//			 * Le noeud actuel n'est pas une feuille, donc si ce noeud n'est pas deja dans
-//			 * la liste des noeuds deja explore et qu'il n'est pas dans la liste des noeuds a explorer,
-//			 * alors on l'ajoute a la liste des noeuds a explorer
-//			 */
-//			if (!explored.contains(n) && !nodeListToExplore.contains(n)) {
-//				nodeListToExplore.add(n);
-//				whoIsYourDaddy.put(n.getId(),node);
-//			}
-//		}
-//	}
-//
-//	/*
-//	 * Reconstruction du chemin a partir du dico whoIsYourDaddy
-//	 */
-//	path.add(leafFound);
-//	Node nodeFather = whoIsYourDaddy.get(leafFound.getId());
-//
-//	while(nodeFather != null){
-//		path.add(0, nodeFather);
-//		nodeFather = whoIsYourDaddy.get(nodeFather.getId());
-//	}
-//	path.remove(0); // On enleve le noeud racine qui est le noeud actuel ou se trouve l'agent
-//	return path;
-//}
+
 
 	public ArrayList<Node> getVisited() {
 		return visited;

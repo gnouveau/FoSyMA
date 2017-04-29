@@ -1,1 +1,1 @@
-http://pc-Gilles:7778/acc
+http://canalip963.canalip.upmc.fr:7778/acc
