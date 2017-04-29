@@ -37,13 +37,13 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 		// Waiting part
 		Random rand = new Random();
 		myFosymaAgent.doWait(rand.nextInt(500)+499);
-		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : debut de ExchangeMapBehaviour");
+//		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : debut de ExchangeMapBehaviour");
 		
 		/**
 		 * I didn't sent my map => I have to send my map
 		 */
 		if(!mapSent){
-			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : j'envois ma carte a tout le monde");
+//			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : j'envois ma carte a tout le monde");
 			for (Couple<String, Couple<String, String>> couple : myFosymaAgent.getList_IdConversation()) {
 
 				ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
@@ -60,8 +60,6 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 				nbAckWanted++;
 				((mas.abstractAgent) this.myAgent).sendMessage(msg);
 			}
-
-			System.out.println(myFosymaAgent.getName()+" init :::: "+nbAckWanted);
 			mapSent = true;
 			t = System.currentTimeMillis();
 		}		
@@ -86,14 +84,12 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 		 * WARNING: CASE 1a and CASE 1b can append together, they are independent
 		 */
 		if(ackMessage != null){
-			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() 
-					+" : je recois un acknowledge de : "+ackMessage.getSender().getName());
+//			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() 
+//					+" : je recois un acknowledge de : "+ackMessage.getSender().getName());
 			for (Couple<String, Couple<String, String>> couple : myFosymaAgent.getList_IdConversation()){
 				if(couple.getLeft().equals(ackMessage.getSender().getName())
 						&& couple.getRight().getRight().equals(ackMessage.getConversationId())){
-						
 					
-						System.out.println(myFosymaAgent.getName() +"#############ACKMSG RECU################");
 						// Maj de la liste d'id conversation specifique pour l'echange de goal
 						myFosymaAgent.getList_IdConvGoal().add(couple);
 						
@@ -108,10 +104,10 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 						myFosymaAgent.getMyKnowledge().AckMap(couple.getLeft());
 						
 						nbAckWanted--;
+						
 						break;
 				}
 			}
-			System.out.println(myFosymaAgent.getName()+" ackMsg :::: "+nbAckWanted);
 		}
 		
 		/**
@@ -121,9 +117,9 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 		 * WARNING: CASE 1a and CASE 1b can append together, they are independent
 		 */
 		if (knownMapReceptionMsg != null) {
-			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() 
-					+" : j'ai recu une carte de "+ knownMapReceptionMsg.getSender().getName() 
-					+" je lui envois un acknowledge");
+//			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() 
+//					+" : j'ai recu une carte de "+ knownMapReceptionMsg.getSender().getName() 
+//					+" je lui envois un acknowledge");
 			myFosymaAgent.getFilterMapList().remove(index);
 			
 			try {
@@ -153,8 +149,8 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 		 * CASE 2: Got no messages, but still waiting for receiving some maps
 		 */
 		if(knownMapReceptionMsg == null && ackMessage == null && myFosymaAgent.getFilterMapList().size() > 0){
-			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() 
-					+" : j'attends des messages");
+//			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() 
+//					+" : j'attends des messages");
 			if (mapSent && System.currentTimeMillis() - t < maxWaitingTime) {
 				block();
 			} else {
@@ -168,8 +164,8 @@ public class ExchangeMapBehaviour extends SimpleBehaviour {
 		 * CASE 3: Terminal case: the agent sent his map and received all the maps AND acknowledge he was waiting for
 		 */
 		else if(myFosymaAgent.getFilterMapList().size() == 0 && nbAckWanted == 0 && mapSent){
-			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName()
-					+" : j'ai tout recu je passe a la suite !");
+//			System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName()
+//					+" : j'ai tout recu je passe a la suite !");
 			finish = true;
 		}
 	}

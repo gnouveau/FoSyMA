@@ -94,6 +94,9 @@ public class ObserveBehaviour extends SimpleBehaviour{
 				if(test)
 				{
 					System.out.println("je veux aller dans un voisinage qui n'existe pas");
+					System.out.println("avec ce but : ");
+					System.out.println(this.myFosymaAgent.getMyPath());
+					System.out.println(" et avec cette connaissance : ");
 					System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
 					System.exit(0);
 				}

@@ -115,9 +115,6 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 						.MatchConversationId(id+"_MAP");
 				
 				myFosymaAgent.getFilterMapList().add(knownMapReceptionFilter);
-				
-				MessageTemplate goalPathReceptionFilter = MessageTemplate.MatchPerformative(ACLMessage.INFORM).MatchSender(myFosymaAgent.getAIDFromName(name)).MatchConversationId(id+"_GOAL");
-				myFosymaAgent.getFilterGoalList().add(goalPathReceptionFilter);
 			}
 			 return 2; 
 		 }else{
