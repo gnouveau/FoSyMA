@@ -26,7 +26,11 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 	public void action() {
 		managerExplo = new ManageExplo(myFosymaAgent.getMyTreasureType());
 		String myPosition = ((mas.abstractAgent) this.myAgent).getCurrentPosition();
-
+		System.out.println("je suis l'agent : "+this.myFosymaAgent.getName());
+		System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
+		System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils());
+		
+		
 		if(myPosition != ""){
 			if (myFosymaAgent.getMyPath().isEmpty()	) {
 				Node node = myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoPere().get(myPosition);
@@ -39,7 +43,11 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 //					}
 //				}
 				// Explo Gilles et mathias wombo combo
-				int maxDepth = 5;
+
+			
+
+				int maxDepth = 6;
+
 				if(myFosymaAgent.getBackPackFreeSpace() != 0 && this.myFosymaAgent.getMyCapacity()<100)
 				{
 					Goal g = new Goal(myFosymaAgent.getName(), null, myFosymaAgent.getMyCapacity(), myFosymaAgent.getMyTreasureType(),node);
@@ -57,7 +65,13 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 					Goal g = myFosymaAgent.getMyGoal();
 					g.setGoalPath(tmp);
 					myFosymaAgent.setMyGoal(g);
-					System.out.println("\n\n ###############JAI FINIT TA SOEUR ################\n\n");
+					System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
+					System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
+					System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
+					System.out.println("je suis l'agent : "+this.myFosymaAgent.getName());
+					System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
+					System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
+					System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
 				}
 
 				// Explo Mathias
@@ -92,6 +106,7 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 //					}
 //				}
 			}
+			System.out.println(this.myFosymaAgent+" comme chemin objectif "+this.myFosymaAgent.getMyPath());
 		}
 	}
 
