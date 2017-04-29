@@ -81,7 +81,23 @@ public class ObserveBehaviour extends SimpleBehaviour{
 				}
 
 
-
+				boolean test = true;
+				for(Couple<String, List<Attribute>> c : lobs)
+				{
+					System.out.println(c.getLeft());
+					if(myFosymaAgent.getMyPath().get(0).getId().equals(c.getLeft()))
+					{
+						test=false;
+						break;
+					}
+				}
+				if(test)
+				{
+					System.out.println("je veux aller dans un voisinage qui n'existe pas");
+					System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
+					System.exit(0);
+				}
+				//				System.out.println("je sort du test");
 				if(myPosition.equals(myFosymaAgent.getMyPath().get(0).getId()))
 				{
 					//					System.out.println("TOTO"); 
@@ -90,22 +106,6 @@ public class ObserveBehaviour extends SimpleBehaviour{
 					myFosymaAgent.getMyGoal().setGoalPath(myFosymaAgent.getMyPath());
 
 				}
-				boolean test = false;
-				for(Couple<String, List<Attribute>> c : lobs)
-				{
-					if(myFosymaAgent.getMyPath().get(0).getId().equals(c.getLeft()))
-					{
-						test=true;
-						break;
-					}
-				}
-				if(test)
-				{
-					System.out.println("je veux aller dans un voisinage qui n'existe pas");
-					System.out.println(this.myFosymaAgent.getMyKnowledge());
-				}
-				//				System.out.println("je sort du test");
-
 			}
 			// The agent updates his knowledges
 			myFosymaAgent.getMyKnowledge().majMap(lobs);
