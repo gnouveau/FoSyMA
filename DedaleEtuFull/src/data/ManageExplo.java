@@ -70,7 +70,7 @@ public class ManageExplo {
 				//	//////System.out.println("OK");
 				for(Node alreadyVisited : visited)
 				{
-					if(fils.getId() == alreadyVisited.getId())
+					if(fils.getId().equals(alreadyVisited.getId()))
 					{	
 						////////System.out.println("Noeud deja traite");
 						check = true;
@@ -83,7 +83,7 @@ public class ManageExplo {
 				if(!myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) && fils.getValue() ==-1)
 				{
 					System.out.println("SA FUCK UP");
-					System.exit(0);
+					//System.exit(0);
 				}
 				//System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
 				if((fils.getType().equals(this.type) && fils.getValue() <= value && fils.getValue()>0) || fils.getValue() ==-1 && fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()))
@@ -124,7 +124,7 @@ public class ManageExplo {
 				for(Node alreadyVisited : visited)
 				{
 
-					if(fils.getId() == alreadyVisited.getId())
+					if(fils.getId().equals(alreadyVisited.getId()))
 					{	
 						////////System.out.println("Noeud deja traite");
 						check = true;
@@ -137,7 +137,7 @@ public class ManageExplo {
 			{
 				System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
 				System.out.println("je suis en profodeur : "+prof);
-				if(fils.getId().equals(goal.getId()) | prof>1)
+				if(fils.getId().equals(goal.getId()) | prof>5)
 				{
 
 
@@ -150,7 +150,11 @@ public class ManageExplo {
 			visited.add(fils);
 			ArrayList<Node> temp = path;
 			temp.add(fils);
-			closeByDepth(fils, temp, goal,prof++);
+			if(!myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()))
+			{
+				closeByDepth(fils, temp, goal,prof++);
+			}
+
 		}
 	}
 	private  void closeByDepth(Node n,ArrayList<Node> path) throws StopParcoursException
@@ -167,7 +171,7 @@ public class ManageExplo {
 				for(Node alreadyVisited : visited)
 				{
 
-					if(fils.getId() == alreadyVisited.getId())
+					if(fils.getId().equals(alreadyVisited.getId()))
 					{	
 						////////System.out.println("Noeud deja traite");
 						check = true;
@@ -218,7 +222,7 @@ public class ManageExplo {
 		{
 			visited = new ArrayList<>();	
 		}else{
-			//System.out.println(visited);
+			System.out.println(visited);
 		}
 		explo = new ArrayList<Node>();
 		ArrayList<Node> path = new ArrayList<>();
