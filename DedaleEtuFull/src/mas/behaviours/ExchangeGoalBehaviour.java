@@ -38,9 +38,9 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		Random rand = new Random();
 		myFosymaAgent.doWait(rand.nextInt(500)+499);
 		
-		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : debut de ExchangeGoalBehaviour");
-		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : mon list_IdConversation() : "+ myFosymaAgent.getList_IdConversation());
-		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : "+ myFosymaAgent.getList_IdConvGoal());
+		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : debut de ExchangeGoalBehaviour taille getFilterGoalList : "+myFosymaAgent.getFilterGoalList().size());
+//		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : mon list_IdConversation() : "+ myFosymaAgent.getList_IdConversation());
+//		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : "+ myFosymaAgent.getList_IdConvGoal());
 		
 		// Creation de son propre but qu'il veut transmettre
 		ArrayList<Node> goalPath = myFosymaAgent.getMyPath();
@@ -111,8 +111,6 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		 * CASE 3: Terminal case: the agent sent his goal and received all the goals he was waiting for
 		 */
 		else if(myFosymaAgent.getFilterGoalList().isEmpty() && goalSent){
-			// Resolution des conflits entre son propre chemin objectif et celui des autres agents
-			
 			finish = true;
 		}
 	}
@@ -123,11 +121,13 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 	}
 	
 	public int onEnd() {
+		// Resolution des conflits entre son propre chemin objectif et celui des autres agents
+		Goal myGoal = myFosymaAgent.getMyGoal();
 		for(Goal g : othersGoalList){
-			System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() );
-			System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : RESOLUTION CONFLITS avec : "+ g.getNameAgt());
+			System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : MON BUT : "+ myFosymaAgent.getMyPath());
+			System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : RESOLUTION CONFLITS avec : "+ g.getNameAgt()+" qui a pour but : "+ g.getGoalPath());
 			
-			ManageBlock managerBlock = new ManageBlock(myFosymaAgent.getMyGoal(),g,myFosymaAgent);
+			ManageBlock managerBlock = new ManageBlock(myGoal,g,myFosymaAgent);
 			myFosymaAgent.setMyGoal(managerBlock.solveBlock());				
 		}
 		goalSent = false;
