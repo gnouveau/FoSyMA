@@ -112,8 +112,8 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		else if(myFosymaAgent.getFilterGoalList().isEmpty() && goalSent){
 			// Resolution des conflits entre son propre chemin objectif et celui des autres agents
 			for(Goal g : othersGoalList){
-				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : MON BUT : "+ myFosymaAgent.getMyPath());
-				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : RESOLUTION CONFLITS avec : "+ g.getNameAgt()+" qui a pour but : "+ g.getGoalPath());
+				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() );
+				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : RESOLUTION CONFLITS avec : "+ g.getNameAgt());
 				
 				ManageBlock managerBlock = new ManageBlock(myGoal,g,myFosymaAgent);
 				myFosymaAgent.setMyGoal(managerBlock.solveBlock());				

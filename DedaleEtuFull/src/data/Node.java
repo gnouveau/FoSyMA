@@ -53,15 +53,15 @@ public class Node implements Serializable{
 		{
 			if(fils.get(i).getId().equals(id))
 			{
-				System.out.println("je change de fils "+fils.get(i)+" pour : "+p);
+				//System.out.println("je change de fils "+fils.get(i)+" pour : "+p);
 				fils.set(i, p);
 			
 				
 		
 			}
 		}
-		System.out.println("j'affiche mes nouveaux fils apres le switch");
-		System.out.println(this.getFils());
+		//System.out.println("j'affiche mes nouveaux fils apres le switch");
+		//System.out.println(this.getFils());
 		
 	}
 	public String toString()

@@ -3,6 +3,7 @@ package mas.behaviours;
 import jade.core.behaviours.SimpleBehaviour;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import mas.agents.FosymaAgent;
@@ -93,16 +94,16 @@ public class ObserveBehaviour extends SimpleBehaviour{
 				}
 				if(test)
 				{
-					System.out.println("je veux aller dans un voisinage qui n'existe pas");
-					System.out.println("avec ce but : ");
-					System.out.println(myFosymaAgent.getMyPath());
-					System.out.println("et cette connaissance :");
-					System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
+//					System.out.println("je veux aller dans un voisinage qui n'existe pas");
+//					System.out.println("avec ce but : ");
+//					System.out.println(myFosymaAgent.getMyPath());
+//					System.out.println("et cette connaissance :");
+//					System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
 					
-					System.exit(0);
+					myFosymaAgent.setMyPath(new ArrayList<>());
 				}
 				//				System.out.println("je sort du test");
-				if(myPosition.equals(myFosymaAgent.getMyPath().get(0).getId()))
+				if(!myFosymaAgent.getMyPath().isEmpty() && myPosition.equals(myFosymaAgent.getMyPath().get(0).getId()))
 				{
 					//					System.out.println("TOTO"); 
 					myFosymaAgent.getMyPath().remove(0);

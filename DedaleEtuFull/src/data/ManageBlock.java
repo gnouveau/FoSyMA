@@ -106,29 +106,64 @@ public class ManageBlock {
 
 	private void detectConflictNode()
 	{
+		
 		boolean sortie = false;
 		for(Couple<String, ArrayList<Node>> c : goalAgents)
 		{
-			int i;
+			ArrayList<Node> tmpag1 = (ArrayList<Node>) myGoal.clone();
+			ArrayList<Node> tmpag2 = (ArrayList<Node>) c.getRight().clone();
+			tmpag1.add(0, myCurrentPos);
+			tmpag2.add(0,otherObjectGoal.getCurrentPos());
+			System.out.println("detection conflit");
+			int i=0;
 			ArrayList<Node> conflict = new ArrayList<>();
 
-			Node nodeG1 = this.myCurrentPos;
-			Node nodeG2 = c.getRight().get(0);
+			Node nodeG1 = tmpag1.get(0);
+			Node nodeG2 = tmpag2.get(0);
 
 			String name1 = nodeG1.getId();
 			String name2 = nodeG2.getId();
+			//g2 n'est pas le noeud courant de ag1
+			//g1 n'est pas le noeud courant de 
+			
 
-
-			for(i = 0; i < myGoal.size() - 1 && i< c.getRight().size() - 1; i++ )
+//			System.out.println("noeud courant ag1 "+myObjectGoal.getCurrentPos());
+//			System.out.println("1er noeud ag2"+nodeG2);
+//			if(myObjectGoal.getCurrentPos().getId().equals(name2))
+//			{
+//				System.out.println("noeud courant ag1 "+myObjectGoal.getCurrentPos());
+//				System.out.println("1er noeud ag2"+nodeG2);
+//				conflict.add(nodeG1);
+//				sortie = true;
+//			
+//			}
+//			System.out.println("noeud courant ag2 "+otherObjectGoal.getCurrentPos());
+//			System.out.println("1er noeud ag1"+nodeG1);
+//			if(otherObjectGoal.getCurrentPos().getId().equals(name1))
+//			{
+//				System.out.println("noeud courant ag2 "+otherObjectGoal.getCurrentPos());
+//				System.out.println("1er noeud ag1"+nodeG1);
+//				conflict.add(nodeG2);
+//				sortie = true;
+//				
+//			}
+			
+			if(name1.equals(name2))
+			{
+				System.out.println("conflit premier noeud");
+				conflict.add(nodeG2);
+				sortie = true;
+			}
+			for(i = 0; i < tmpag1.size() - 1 && i< tmpag2.size() - 1; i++ )
 			{				
-				nodeG1 = myGoal.get(i);
-				nodeG2 = c.getRight().get(i);
+				nodeG1 = tmpag1.get(i);
+				nodeG2 = tmpag2.get(i);
 
 				name1 = nodeG1.getId();
 				name2 = nodeG2.getId();
 
-				Node nodeG11 = myGoal.get(i+1);
-				Node nodeG22 = c.getRight().get(i+1);
+				Node nodeG11 = tmpag1.get(i+1);
+				Node nodeG22 = tmpag2.get(i+1);
 
 				String name11 = nodeG11.getId();
 				String name22 = nodeG22.getId();
@@ -160,6 +195,7 @@ public class ManageBlock {
 				System.out.println("#######################################################");
 				conflictNode.add(new Couple<String, ArrayList<Node>>(c.getLeft(), conflict));
 				listIndiceConflits.add( new Couple<String, Integer>(c.getLeft(), i));
+				break;
 			}
 		}
 	}
@@ -193,9 +229,14 @@ public class ManageBlock {
 		}
 		System.out.println("on cherche à dodge");
 		ArrayList<Node> pathAg1DodgeAg2 = managerExplo.solveProblemByDepth(this.myCurrentPos,pathGoalag1.get(i), conflictNode.get(0).getRight());
-		managerExplo.setType(otherObjectGoal.getMyType());
+		System.out.println("pathAg1DodgeAg2 :"+pathAg1DodgeAg2);
+		managerExplo = new ManageExplo(otherObjectGoal.getMyType(), myFosymaAgent);
+		
 		ArrayList<Node> pathAg2DodgeAg1 = managerExplo.solveProblemByDepth(this.otherObjectGoal.getCurrentPos(), pathGoalag2.get(j), conflictNode.get(0).getRight());
 
+		
+		
+		System.out.println("pathAg2DodgeAg1 :"+pathAg2DodgeAg1);
 		int sizePathDodgeAg1=9999999;
 		int sizePathDodgeAg2=9999999;
 
@@ -283,6 +324,8 @@ public class ManageBlock {
 			Integer valueTresor = mygoal.getValue();
 			// si ag1 a la capacité parfaite
 			System.out.println("On a le meme but \n On test si ag1 a la capacité parfaite");
+			System.out.println(valueTresor +" pour capa ag1 : "+myCapacity );
+			System.out.println(valueTresor +" pour capa ag2 : "+listCapcityAgents.get(0).getRight() );
 			if(valueTresor == myCapacity)
 			{
 				//si ag2 aussi
