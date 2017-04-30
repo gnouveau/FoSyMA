@@ -101,6 +101,7 @@ public class ManageBlock {
 		}
 		System.out.println("Mon but est final est  : "+ s);
 		System.out.println(finalGoal.get(0)+""+finalGoal.get(0));
+		System.out.println("je suis de priorité : "+this.finalPriorite);
 		System.out.println("/!\\ /!\\ /!\\ /!\\ /!\\ SYSOUT SOLVE BLOCK /!\\ /!\\ /!\\ /!\\ /!\\");
 		Goal g = new Goal(myObjectGoal.getNameAgt(), finalGoal, myCapacity, myObjectGoal.getMyType(),myObjectGoal.getCurrentPos(),finalPriorite);
 		return g;
