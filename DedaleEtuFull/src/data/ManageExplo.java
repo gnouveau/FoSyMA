@@ -623,11 +623,25 @@ public class ManageExplo {
 
 			return managerExplo.solveProblemByDepth(paramNode, goal,visited);
 		}else{
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			//			//System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("ma position courante : ");
+			System.out.println(paramNode);
+			System.out.println("ma liste de noeud pere : ");
+			System.out.println(myKnowledge.getListKnownMap().get(0).getDicoPere());
+			System.out.println("liste noeuds a explorer : ");
+			System.out.println(nodeListToExplore);
+			System.out.println("noeuds deja explores : ");
+			System.out.println(explored);
+			System.out.println("who's your daddy");
+			System.out.println(whoIsYourDaddy);
+			System.out.println("profondeur des noeuds");
+			System.out.println(depthDict);
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			//			path.add(paramNode);
 			//			return path;
 			// Je n'ai pas trouve de tresor ni de feuille et j'ai regarde tous les noeuds
