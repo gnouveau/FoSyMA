@@ -55,7 +55,7 @@ public class ManageMap {
 		int indmap = listAgentShare.indexOf(ag);
 		if (indmap != -1)
 		{
-			listKnownMap.remove(indmap);
+			listKnownMap.set(indmap, new KnownMap());
 		}
 
 

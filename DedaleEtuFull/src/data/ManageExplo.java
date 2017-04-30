@@ -213,7 +213,7 @@ public class ManageExplo {
 		{
 			visited = new ArrayList<>();	
 		}else{
-			//System.out.println(visited);
+			System.out.println(visited);
 		}
 		explo = new ArrayList<Node>();
 		ArrayList<Node> path = new ArrayList<>();

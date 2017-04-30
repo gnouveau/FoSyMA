@@ -33,8 +33,8 @@ public class Principal {
 
 		//0) Create the real environment and the observed one
 //		env= new Environment(ENVtype.GRID_T,4,null);
-		env= new Environment(ENVtype.DOROGOVTSEV_T,15,null);
-//		env=new Environment("map2016-2","map2016-2-config");
+//		env= new Environment(ENVtype.DOROGOVTSEV_T,15,null);
+		env=new Environment("map2016-2","map2016-2-config");
 //		env = new Environment("ressources/MP", "ressources/MP-config");
 		//1), create the platform (Main container (DF+AMS) + containers + monitoring agents : RMA and SNIFFER)
 		rt=emptyPlatform(containerList);
