@@ -60,10 +60,18 @@ public class ManageExplo {
 
 	private  void closeByDepth(Node n,ArrayList<Node> path, Integer value, int prof) throws StopParcoursException
 	{
-
+		System.out.println("je suis "+n+" j ai pour fils : "+n.getFils());
+		String s="";
+		for(Node test : path)
+		{
+			s += test.getId()+" ";
+		}
+		System.out.println("et je viens de : "+s);
 		for (Node fils : n.getFils())
 		{
-
+			
+			fils  = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(fils.getId());
+			System.out.println("je pars sur le fils : "+fils);
 			boolean check = false;	
 			if(fils.getId() != n.getId())
 			{
@@ -98,7 +106,7 @@ public class ManageExplo {
 					if(fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) && prof < 15)
 					{
 						find = false;
-						explo = (ArrayList<Node>) path.clone();
+						explo = path;
 						explo.add(fils);
 					}else{
 						//System.out.println("SOLUTION TROUVEE 2");
@@ -108,9 +116,8 @@ public class ManageExplo {
 					}
 				}
 				visited.add(fils);
-				ArrayList<Node> temp = path;
-				temp.add(fils);
-				closeByDepth(fils, temp, value,prof++);
+				path.add(fils);
+				closeByDepth(fils, path, value,prof++);
 			}
 		}
 	}
@@ -121,6 +128,7 @@ public class ManageExplo {
 
 		for (Node fils : n.getFils())
 		{
+			fils  = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(fils.getId());
 			boolean check = false;	
 			if(fils.getId() != n.getId())
 			{
@@ -168,6 +176,7 @@ public class ManageExplo {
 
 		for (Node fils : n.getFils())
 		{
+			fils  = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(fils.getId());
 			boolean check = false;	
 			if(fils.getId() != n.getId())
 			{
@@ -206,9 +215,10 @@ public class ManageExplo {
 		{
 			visited = new ArrayList<>();	
 		}
-
+		visited.add(n);
 		ArrayList<Node> path = new ArrayList<>();
 		ArrayList<Node> node = new ArrayList<>();
+		n = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(n.getId());
 		node.add(n);
 		//		long t= //////System.currentTimeMillis();
 
@@ -232,6 +242,8 @@ public class ManageExplo {
 		}
 		explo = new ArrayList<Node>();
 		ArrayList<Node> path = new ArrayList<>();
+		n = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(n.getId());
+		visited.add(n);
 		//		long t= //////System.currentTimeMillis();
 		try {
 			closeByDepth(n, path,value,0);
@@ -265,6 +277,8 @@ public class ManageExplo {
 		}
 		explo = new ArrayList<Node>();
 		visited= conflits;
+		n = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(n.getId());
+		visited.add(n);
 		ArrayList<Node> path = new ArrayList<>();
 		//		long t= //////System.currentTimeMillis();
 		if(other)
