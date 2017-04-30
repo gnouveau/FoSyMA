@@ -37,14 +37,16 @@ public class ManageMap {
 	{
 		//on choisi la bonne map a envoyer
 		int indmap = listAgentShare.indexOf(ag);
-		System.out.println("DEBUG SEND MAP : "+ indmap);
+//		System.out.println("DEBUG SEND MAP : "+ indmap);
 		if (indmap == -1)
 		{
+//			System.out.println("DEBUG SEND MAP INIT : "+ listKnownMap);
 			indmap = 0;
 			listAgentShare.add(ag);
 			listKnownMap.add(new KnownMap());
 		}
-		System.out.println("DEBUG SEND MAP 2: "+ listKnownMap);
+//		System.out.println("DEBUG SEND MAP 2: "+ listKnownMap);
+//		System.out.println("DEBUG SEND MAP 2 taille: "+ listKnownMap.size());
 		return listKnownMap.get(indmap);
 
 	}

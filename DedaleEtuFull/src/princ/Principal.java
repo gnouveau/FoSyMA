@@ -40,7 +40,8 @@ public class Principal {
 		rt=emptyPlatform(containerList);
 
 		//2) create agents and add them to the platform.
-		agentList=createAgents(containerList,2);
+		int nbAgents = 5;
+		agentList=createAgents(containerList,nbAgents);
 
 		//3) launch agents
 		startAgents(agentList);
