@@ -10,8 +10,8 @@ public class KnownMap implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private HashMap<String, Node> dicoPere = new HashMap<>();
 	private HashMap<String, Node> dicoFils = new HashMap<>();
-	
-	
+
+
 	public KnownMap(){
 
 	}
@@ -19,7 +19,7 @@ public class KnownMap implements Serializable{
 	{
 		dicoPere.put(n.getId(), n);
 		dicoFils.remove(n.getId());
-		
+
 		for (Node f : n.getFils())
 		{
 			if(!dicoPere.containsKey(f.getId())){
@@ -47,11 +47,25 @@ public class KnownMap implements Serializable{
 				if(f.getId() == fils.getId())
 					list.add(n);
 			}
-			
+
 		}
 		return list;
 	}
-	
+
+	//return le noeud present dans la carte
+	public Node getNodeInMap(String id)
+	{
+		Node np = this.dicoPere.get(id);
+		if(np == null)
+		{
+			Node nf = this.dicoFils.get(id);
+			if(nf != null)
+			{
+				np = nf;
+			}
+		}
+		return np;
+	}
 	public String toString()
 	{
 		String s = "";
@@ -61,7 +75,7 @@ public class KnownMap implements Serializable{
 		}
 		return s;
 	}
-	
+
 	public HashMap<String, Node> getDicoPere() {
 		return dicoPere;
 	}

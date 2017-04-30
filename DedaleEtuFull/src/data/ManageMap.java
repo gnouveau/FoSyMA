@@ -65,10 +65,11 @@ public class ManageMap {
 		KnownMap mergedMap = new KnownMap();
 		mergedMap.setDicoPere(listKnownMap.get(0).getDicoPere());
 		//debug
-//		//System.out.println("j'ai comme pere :\n"+listKnownMap.get(0).getDicoPere());
-//		//System.out.println("j'ai comme fils : \n"+listKnownMap.get(0).getDicoFils());
-//		//System.out.println("je recoi pere :\n"+map.getDicoPere());
-//		//System.out.println("je recoi fils :\n"+map.getDicoFils());
+		//System.out.println("j'ai comme pere :\n"+listKnownMap.get(0).getDicoPere());
+		//System.out.println("j'ai comme fils : \n"+listKnownMap.get(0).getDicoFils());
+		
+		//System.out.println("je recoi pere :\n"+map.getDicoPere());
+		//System.out.println("je recoi fils :\n"+map.getDicoFils());
 		
 	
 		
@@ -165,7 +166,7 @@ public class ManageMap {
 
 			}
 		}
-		//System.out.println("ICI");
+		////System.out.println("ICI");
 
 		listKnownMap.remove(0);
 		listKnownMap.add(0, mergedMap);
@@ -208,7 +209,7 @@ public class ManageMap {
 					break;
 				}
 			}
-			////System.out.println("YOOSSSHHH "+type);
+			//////System.out.println("YOOSSSHHH "+type);
 			Node f = new Node(id,value,type);
 			if(father)
 			{

@@ -10,6 +10,7 @@ import mas.agents.FosymaAgent;
 import data.Goal;
 import data.ManageExplo;
 import data.Node;
+import data.Priorite;
 import env.Attribute;
 
 public class CalculGoalBehaviour extends SimpleBehaviour {
@@ -50,7 +51,7 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 
 				if(myFosymaAgent.getBackPackFreeSpace() != 0 && this.myFosymaAgent.getMyCapacity()<100)
 				{
-					Goal g = new Goal(myFosymaAgent.getName(), null, myFosymaAgent.getMyCapacity(), myFosymaAgent.getMyTreasureType(),node);
+					Goal g = new Goal(myFosymaAgent.getName(), null, myFosymaAgent.getMyCapacity(), myFosymaAgent.getMyTreasureType(),node,Priorite.PRIORITAIRE.NORMAL);
 					ArrayList<Node> tmp =managerExplo.breadthResearch(node, myFosymaAgent.getMyKnowledge(), myFosymaAgent.getMyCapacity(), maxDepth);
 					if(tmp.get(0).getId().equals(node.getId()))
 					{
@@ -63,6 +64,7 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 					ArrayList<Node> tmp = new ArrayList<Node>();
 					tmp.add(node);
 					Goal g = myFosymaAgent.getMyGoal();
+					g.setPriorite(Priorite.FAIBLE);
 					g.setGoalPath(tmp);
 					myFosymaAgent.setMyGoal(g);
 					System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");

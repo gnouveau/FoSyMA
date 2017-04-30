@@ -3,8 +3,10 @@ package mas.behaviours;
 import jade.core.behaviours.SimpleBehaviour;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
+import data.Priorite;
 import mas.agents.FosymaAgent;
 import env.Attribute;
 import env.Couple;
@@ -84,7 +86,7 @@ public class ObserveBehaviour extends SimpleBehaviour{
 				boolean test = true;
 				for(Couple<String, List<Attribute>> c : lobs)
 				{
-					System.out.println(c.getLeft());
+
 					if(myFosymaAgent.getMyPath().get(0).getId().equals(c.getLeft()))
 					{
 						test=false;
@@ -93,18 +95,35 @@ public class ObserveBehaviour extends SimpleBehaviour{
 				}
 				if(test)
 				{
-					System.out.println("je veux aller dans un voisinage qui n'existe pas");
-					System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
-					System.exit(0);
+					//					System.out.println("je veux aller dans un voisinage qui n'existe pas");
+					//					System.out.println("avec ce but : ");
+					//					System.out.println(myFosymaAgent.getMyPath());
+					//					System.out.println("et cette connaissance :");
+					//					System.out.println(this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
+
+					myFosymaAgent.setMyPath(new ArrayList<>());
+				}
+				if(myPosition.equals(myFosymaAgent.getOldpos()))
+				{
+					myFosymaAgent.setCpt(myFosymaAgent.getCpt()+1);
+					
 				}
 				//				System.out.println("je sort du test");
-				if(myPosition.equals(myFosymaAgent.getMyPath().get(0).getId()))
+				if(!myFosymaAgent.getMyPath().isEmpty() && myPosition.equals(myFosymaAgent.getMyPath().get(0).getId()))
 				{
+					myFosymaAgent.setOldpos(myPosition);
 					//					System.out.println("TOTO"); 
 					myFosymaAgent.getMyPath().remove(0);
 					//					System.out.println("TATATA");
 					myFosymaAgent.getMyGoal().setGoalPath(myFosymaAgent.getMyPath());
-
+					// si on est bloqué depuis lontemps on devient de priorité faible
+					if(myFosymaAgent.getMyGoal().getPriorite().value != 0 && myFosymaAgent.getCpt() > 5)
+					{
+						myFosymaAgent.getMyGoal().setPriorite(Priorite.FAIBLE);
+						myFosymaAgent.setCpt(0);
+						System.out.println(myFosymaAgent.getMyGoal().getGoalPath());
+						
+					}
 				}
 			}
 			// The agent updates his knowledges

@@ -15,7 +15,8 @@ public class Goal implements Serializable{
 	private Priorite priorite;
 	private Node currentPos;
 	
-	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type,Node pos )
+
+	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type,Node pos, Priorite prio)
 	{
 		this.nameAgt=name;
 		this.goalPath=goal;
@@ -23,10 +24,6 @@ public class Goal implements Serializable{
 		this.myType=type;
 		priorite = Priorite.NORMAL;
 		this.currentPos = pos;
-	}
-	public Goal(String name, ArrayList<Node> goal, Integer capacity, String type,Node pos, Priorite prio)
-	{
-		this(name,goal,capacity,type,pos);
 		this.priorite = prio;
 	}
 	

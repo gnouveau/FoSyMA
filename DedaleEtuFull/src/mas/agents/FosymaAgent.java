@@ -30,6 +30,10 @@ public class FosymaAgent extends abstractAgent {
 	private ArrayList<MessageTemplate> filterGoalList;
 	private Integer myCapacity;
 	private Goal myGoal;	
+	private int cpt = 0;
+	private String oldpos ="";
+	
+
 	protected void setup() {
 
 		super.setup();
@@ -169,5 +173,23 @@ public class FosymaAgent extends abstractAgent {
 			ArrayList<Couple<String, Couple<String, String>>> list_IdConvGoal) {
 		this.list_IdConvGoal = list_IdConvGoal;
 	}
+
+	public int getCpt() {
+		return cpt;
+	}
+
+	public void setCpt(int cpt) {
+		this.cpt = cpt;
+	}
+
+	public String getOldpos() {
+		return oldpos;
+	}
+
+	public void setOldpos(String oldpos) {
+		this.oldpos = oldpos;
+	}
+
+
 
 }
