@@ -45,6 +45,8 @@ public class ManageBlock {
 
 		Couple<String, Goal> c2 = new Couple<String, Goal>(otherGoal.getNameAgt(), otherGoal);
 		listGoalAgents.add(c2);
+		
+		finalPriorite = priorite;
 	}
 
 
@@ -238,9 +240,17 @@ public class ManageBlock {
 
 
 		System.out.println("pathAg2DodgeAg1 :"+pathAg2DodgeAg1);
+		
 		int sizePathDodgeAg1=9999999;
 		int sizePathDodgeAg2=9999999;
-
+		if(myObjectGoal.getPriorite().value < otherObjectGoal.getPriorite().value)
+		{
+			pathAg2DodgeAg1 = new ArrayList<>();
+		}
+		if(myObjectGoal.getPriorite().value > otherObjectGoal.getPriorite().value)
+		{
+			pathAg1DodgeAg2 = new ArrayList<>();
+		}
 		if(!pathAg1DodgeAg2.isEmpty())
 		{
 			sizePathDodgeAg1=pathAg1DodgeAg2.size();
@@ -261,8 +271,11 @@ public class ManageBlock {
 				if( Integer.valueOf(pathGoalag1.get(0).getId()) > Integer.valueOf(pathGoalag2.get(0).getId()))
 				{
 					this.finalGoal=pathGoalag1;
+					
+				
 				}else{
 					this.finalGoal=pathAg1DodgeAg2;
+					this.finalPriorite=Priorite.PRIORITAIRE;
 				}
 
 			}else{
@@ -284,6 +297,7 @@ public class ManageBlock {
 							finalGoal.add(wait);
 						}
 					}
+					this.finalPriorite=Priorite.ATTENTE;
 				}else{
 					finalGoal = pathGoalag1;
 				}
@@ -298,6 +312,7 @@ public class ManageBlock {
 				this.finalGoal=pathGoalag1;
 			}else{
 				this.finalGoal=pathAg1DodgeAg2;
+				this.finalPriorite=Priorite.PRIORITAIRE;
 			}
 		}else{
 
@@ -307,6 +322,7 @@ public class ManageBlock {
 				this.finalGoal=pathGoalag1;
 			}else{
 				this.finalGoal=pathAg1DodgeAg2;
+				this.finalPriorite=Priorite.PRIORITAIRE;
 			}
 		}
 	}
@@ -314,10 +330,47 @@ public class ManageBlock {
 	// ne marche que pour 2 agents
 	private void detectSameGoal()
 	{
-
+		
 		Node mygoal = myGoal.get(myGoal.size()-1);	
 		Node ag2goal = goalAgents.get(0).getRight().get(goalAgents.get(0).getRight().size()-1);
 
+		
+		if(myObjectGoal.getPriorite().value < otherObjectGoal.getPriorite().value)
+		{
+			//sinon c'est a l'agt1 de changer de but
+			System.out.println("c'est a l'agt1 de changer de but car non  prio");
+			ArrayList<Node>temp = new ArrayList<>();
+			temp.add(mygoal);
+			managerExplo.setVisited(temp);
+			myGoal = managerExplo.solveProblemByDepth(this.myCurrentPos, myCapacity);
+			return;
+		}
+		if(myObjectGoal.getPriorite().value > otherObjectGoal.getPriorite().value)
+		{
+			//c'est a l'agt2 de changer de but
+			// on ajoute le noeud goal on noeud conflits de manaExplo
+			System.out.println("c'est a l'agt2 de changer de but car non prio");
+			ArrayList<Node>temp = new ArrayList<>();
+			temp.add(mygoal);
+			System.out.println("le but a eviter est :"+ temp);
+			managerExplo.setVisited(temp);
+			managerExplo.setType(ag2goal.getType());
+			//on fait un nouveau chemin pour ag2
+			ArrayList<Node> newPath = managerExplo.solveProblemByDepth(otherObjectGoal.getCurrentPos(),listCapcityAgents.get(0).getRight());
+
+			String s="";
+			for(Node n : newPath)
+			{
+				s += n.getId()+" ";
+			}
+			System.out.println("le nouveau but est: "+s);
+			System.out.println("fin de sysout dans sameGoal");
+			Couple<String, ArrayList<Node>> c = new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), newPath);
+			goalAgents.set(0 , c);
+			return;
+		}
+		//prio égale donc on resout
+		
 		//si ils ont le meme but
 		System.out.println("On test si on a le meme but");
 		if (mygoal.getId().equals(ag2goal.getId()))

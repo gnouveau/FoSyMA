@@ -6,8 +6,8 @@ public enum Priorite {
 	PRIORITAIRE("PRIORITAIRE",2),
 	ATTENTE("ATTENTE",3);
 	
-	private String name ="INIT";
-	private int value =-1;
+	public String name ="INIT";
+	public int value =-1;
 	
 	Priorite(String name, int value)
 	{
