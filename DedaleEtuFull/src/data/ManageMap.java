@@ -63,14 +63,15 @@ public class ManageMap {
 		KnownMap mergedMap = new KnownMap();
 		mergedMap.setDicoPere(listKnownMap.get(0).getDicoPere());
 		//debug
-//		//System.out.println("j'ai comme pere :\n"+listKnownMap.get(0).getDicoPere());
-//		//System.out.println("j'ai comme fils : \n"+listKnownMap.get(0).getDicoFils());
-//		//System.out.println("je recoi pere :\n"+map.getDicoPere());
-//		//System.out.println("je recoi fils :\n"+map.getDicoFils());
+		System.out.println("j'ai comme pere :\n"+listKnownMap.get(0).getDicoPere());
+		System.out.println("j'ai comme fils : \n"+listKnownMap.get(0).getDicoFils());
+		
+		System.out.println("je recoi pere :\n"+map.getDicoPere());
+		System.out.println("je recoi fils :\n"+map.getDicoFils());
 		
 	
 		
-		//System.out.println("on ajoute a la nouvelleMap les noeuds differents");
+		System.out.println("on ajoute a la nouvelleMap les noeuds differents");
 		for(Map.Entry<String, Node> entry : map.getDicoPere().entrySet())
 		{
 			String id1 = entry.getKey();
@@ -82,7 +83,7 @@ public class ManageMap {
 
 
 		}
-		//System.out.println("on verifie si dans la liste de fils on n'as pas deux fils identiques");
+		System.out.println("on verifie si dans la liste de fils on n'as pas deux fils identiques");
 		for(Map.Entry<String, Node> entry : listKnownMap.get(0).getDicoFils().entrySet())
 		{
 			String id1 = entry.getKey();
@@ -91,7 +92,7 @@ public class ManageMap {
 			Node existFilsIdentique = map.getDicoFils().get(id1);
 			if (existFilsIdentique != null)
 			{
-				//System.out.println("si on a des fils identique on fait en sorte que leurs pere pointe sur le meme objet");
+				System.out.println("si on a des fils identique on fait en sorte que leurs pere pointe sur le meme objet");
 				ArrayList<Node> listPere = mergedMap.getPere(n1);
 				for(Node p : listPere)
 				{
@@ -111,7 +112,7 @@ public class ManageMap {
 
 
 
-		//System.out.println("on verifie si dans le dico de Fils si des Fils ne sont pas pere");
+		System.out.println("on verifie si dans le dico de Fils si des Fils ne sont pas pere");
 
 		boolean needToBreak;
 		while (true)
@@ -124,18 +125,18 @@ public class ManageMap {
 				idfils = entry.getKey();
 				nodefils = entry.getValue();
 				Node existPere = mergedMap.getDicoPere().get(idfils);
-				//System.out.println("si des pere sont aussi des fils qui existe on modifie leurs fils pour que l'objet Node pere soit le meme et un pere");
+				System.out.println("si des pere sont aussi des fils qui existe on modifie leurs fils pour que l'objet Node pere soit le meme et un pere");
 				if (existPere != null)
 				{
-					//System.out.println("J'ai un pere et un fils !");
-					//System.out.println("le fils est : "+nodefils);
-					//System.out.println("le pere est : "+existPere);
+					System.out.println("J'ai un pere et un fils !");
+					System.out.println("le fils est : "+nodefils);
+					System.out.println("le pere est : "+existPere);
 					ArrayList<Node> listPere = mergedMap.getPere(nodefils);
 					for(Node p : listPere)
 					{
-						//System.out.println(p);
+						System.out.println(p);
 						p.switchSonToFather(existPere);
-						//System.out.println(p.getFils());
+						System.out.println(p.getFils());
 					}
 					needToBreak=true;
 					break;
@@ -143,10 +144,10 @@ public class ManageMap {
 
 
 			}
-			//System.out.println("DEBUT VERIF FILS AVANT");
+			System.out.println("DEBUT VERIF FILS AVANT");
 			ArrayList<Node> listf = new ArrayList<>(mergedMap.getDicoFils().values());
 			for (Node node : listf) {
-				//System.out.println(node);
+				System.out.println(node);
 
 			}
 		
@@ -156,10 +157,10 @@ public class ManageMap {
 			}else{
 				break;
 			}
-			//System.out.println("DEBUT VERIF FILS APRES");
+			System.out.println("DEBUT VERIF FILS APRES");
 			listf = new ArrayList<>(mergedMap.getDicoFils().values());
 			for (Node node : listf) {
-				//System.out.println(node);
+				System.out.println(node);
 
 			}
 		}

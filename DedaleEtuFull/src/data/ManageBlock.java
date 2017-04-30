@@ -47,7 +47,7 @@ public class ManageBlock {
 		listGoalAgents.add(c2);
 	}
 
-	
+
 
 	public Goal solveBlock()
 	{
@@ -111,21 +111,21 @@ public class ManageBlock {
 		{
 			int i;
 			ArrayList<Node> conflict = new ArrayList<>();
-			
+
 			Node nodeG1 = this.myCurrentPos;
 			Node nodeG2 = c.getRight().get(0);
 
 			String name1 = nodeG1.getId();
 			String name2 = nodeG2.getId();
 
-		
+
 			for(i = 0; i < myGoal.size() - 1 && i< c.getRight().size() - 1; i++ )
 			{				
-				 nodeG1 = myGoal.get(i);
-				 nodeG2 = c.getRight().get(i);
+				nodeG1 = myGoal.get(i);
+				nodeG2 = c.getRight().get(i);
 
-				 name1 = nodeG1.getId();
-				 name2 = nodeG2.getId();
+				name1 = nodeG1.getId();
+				name2 = nodeG2.getId();
 
 				Node nodeG11 = myGoal.get(i+1);
 				Node nodeG22 = c.getRight().get(i+1);
@@ -183,10 +183,18 @@ public class ManageBlock {
 				indiceConflict = Math.max(indiceConflict, c.getRight());
 			}
 		}
+		int i=indiceConflict ;
+		for( i=indiceConflict; i<pathGoalag1.size() -1 && i<indiceConflict+4;i++)
+		{	
+		}
+		int j=indiceConflict ;
+		for(j=indiceConflict ; j<pathGoalag2.size()-1 && j<indiceConflict+4;j++)
+		{
+		}
 		System.out.println("on cherche à dodge");
-		ArrayList<Node> pathAg1DodgeAg2 = managerExplo.solveProblemByDepth(this.myCurrentPos, pathGoalag1.get(indiceConflict +1), conflictNode.get(0).getRight());
+		ArrayList<Node> pathAg1DodgeAg2 = managerExplo.solveProblemByDepth(this.myCurrentPos,pathGoalag1.get(i), conflictNode.get(0).getRight());
 		managerExplo.setType(otherObjectGoal.getMyType());
-		ArrayList<Node> pathAg2DodgeAg1 = managerExplo.solveProblemByDepth(this.otherObjectGoal.getCurrentPos(), pathGoalag2.get(indiceConflict +1), conflictNode.get(0).getRight());
+		ArrayList<Node> pathAg2DodgeAg1 = managerExplo.solveProblemByDepth(this.otherObjectGoal.getCurrentPos(), pathGoalag2.get(j), conflictNode.get(0).getRight());
 
 		int sizePathDodgeAg1=9999999;
 		int sizePathDodgeAg2=9999999;
@@ -220,7 +228,7 @@ public class ManageBlock {
 				{
 					//on recupere les noeuds allant de la position de début de l'agent au chemin le plus long jusqu'au noeud conflit
 					ArrayList<Node> forbid = new ArrayList<>();
-					for(int i=0; i<indiceConflict;i++)
+					for( i=0; i<indiceConflict;i++)
 					{
 						forbid.add(pathGoalag2.get(i));
 					}
@@ -229,7 +237,7 @@ public class ManageBlock {
 					if(finalGoal.size() < indiceConflict)
 					{
 						Node wait = finalGoal.get(finalGoal.size()-1);
-						for(int i = (finalGoal.size()-1); i < indiceConflict + 1 ; i ++)
+						for( i = (finalGoal.size()-1); i < indiceConflict + 1 ; i ++)
 						{
 							finalGoal.add(wait);
 						}

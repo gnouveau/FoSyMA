@@ -62,16 +62,35 @@ public class ManageExplo {
 	{
 		System.out.println("je suis "+n+" j ai pour fils : "+n.getFils());
 		String s="";
+		ArrayList<Node> tmp = new ArrayList<>();
 		for(Node test : path)
 		{
 			s += test.getId()+" ";
+			tmp.add(test);
 		}
+		
 		System.out.println("et je viens de : "+s);
 		for (Node fils : n.getFils())
 		{
-			
+
 			fils  = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(fils.getId());
 			System.out.println("je pars sur le fils : "+fils);
+			tmp= new ArrayList<>();
+			s="";
+			for(Node test : path)
+			{
+				s += test.getId()+" ";
+				tmp.add(test);
+			}
+			
+			System.out.println("et aft je viens de : "+s);
+			s="";
+			for(Node test : tmp)
+			{
+				s += test.getId()+" ";
+			
+			}
+			System.out.println("et aft je viens de  tmp : "+s);
 			boolean check = false;	
 			if(fils.getId() != n.getId())
 			{
@@ -80,7 +99,7 @@ public class ManageExplo {
 				{
 					if(fils.getId().equals(alreadyVisited.getId()))
 					{	
-						////////System.out.println("Noeud deja traite");
+						System.out.println("Noeud deja traite");
 						check = true;
 						break;
 					}
@@ -105,19 +124,23 @@ public class ManageExplo {
 
 					if(fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) && prof < 15)
 					{
+						System.out.println("j'ai trouvé ma premiere feuille");
 						find = false;
-						explo = path;
+						for(Node tmpA : path)
+						{
+							explo.add(tmpA);
+						}
 						explo.add(fils);
 					}else{
 						//System.out.println("SOLUTION TROUVEE 2");
-						//System.out.println("Je suis le Node FINAL :"+fils);
-						path.add(fils);
-						throw new StopParcoursException(path);	
+						System.out.println("Je suis le Node FINAL :"+fils);
+						tmp.add(fils);
+						throw new StopParcoursException(tmp);	
 					}
 				}
 				visited.add(fils);
-				path.add(fils);
-				closeByDepth(fils, path, value,prof++);
+				tmp.add(fils);
+				closeByDepth(fils, tmp, value,prof++);
 			}
 		}
 	}
@@ -160,14 +183,13 @@ public class ManageExplo {
 					path.add(fils);
 					throw new StopParcoursException(path);	
 				}
-			}
-			visited.add(fils);
-			ArrayList<Node> temp = path;
-			temp.add(fils);
-			if(!myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()))
-			{
+				visited.add(fils);
+				ArrayList<Node> temp = path;
+				temp.add(fils);
 				closeByDepth(fils, temp, goal,prof++);
 			}
+			
+
 
 		}
 	}
@@ -632,22 +654,27 @@ public class ManageExplo {
 			//System.out.println("DEBUG : breadthResearch : feuille ! "+ leafFound.getId());
 			finalNode = leafFound;
 		}else if(maxDepthNode != null){
-			//System.out.println("DEBUG : breadthResearch : profondeur max atteinte ! "+ maxDepthNode.getId() +" "+ depthDict.get(maxDepthNode));
-			other = true;
+			System.out.println("DEBUG : breadthResearch : profondeur max atteinte ! "+ maxDepthNode.getId() +" "+ depthDict.get(maxDepthNode));
+			System.out.println("je lance le nouveau"+other);
+			this.other = true;
+			System.out.println("je lance le nouveau apres test : "+other);
 			ManageExplo managerExplo = new ManageExplo(type,this.myFosymaAgent);
-
+			managerExplo.setOther(other);
 			return managerExplo.solveProblemByDepth(paramNode, goal,visited);
 		}else{
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			//			//System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			//			//System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
+						System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			//			path.add(paramNode);
 			//			return path;
 			// Je n'ai pas trouve de tresor ni de feuille et j'ai regarde tous les noeuds
-			other = true;
+			System.out.println("je lance le nouveau"+other);
+			this.other = true;
+			System.out.println("je lance le nouveau apres test : "+other);
 			ManageExplo managerExplo = new ManageExplo(type,this.myFosymaAgent);
+			managerExplo.setOther(other);
 			return managerExplo.solveProblemByDepth(paramNode,goal,visited);
 		}
 
@@ -750,6 +777,22 @@ public class ManageExplo {
 	//	path.remove(0); // On enleve le noeud racine qui est le noeud actuel ou se trouve l'agent
 	//	return path;
 	//}
+
+	public FosymaAgent getMyFosymaAgent() {
+		return myFosymaAgent;
+	}
+
+	public void setMyFosymaAgent(FosymaAgent myFosymaAgent) {
+		this.myFosymaAgent = myFosymaAgent;
+	}
+
+	public boolean isOther() {
+		return other;
+	}
+
+	public void setOther(boolean other) {
+		this.other = other;
+	}
 
 	public ArrayList<Node> getVisited() {
 		return visited;
