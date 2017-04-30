@@ -1,6 +1,7 @@
 package data;
 
 public enum Priorite {
+	FAIBLE("FAIBLE",0),
 	NORMAL("NORMAL",1),
 	PRIORITAIRE("PRIORITAIRE",2),
 	ATTENTE("ATTENTE",3);

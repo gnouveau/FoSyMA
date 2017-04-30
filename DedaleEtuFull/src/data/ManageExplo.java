@@ -146,53 +146,127 @@ public class ManageExplo {
 	}
 
 
-	private  void closeByDepth(Node n,ArrayList<Node> path, Node goal,int prof) throws StopParcoursException
+	
+	private  void closeByDepth(Node n,ArrayList<Node> path, Node goal, int prof) throws StopParcoursException
 	{
-
+		System.out.println("je suis "+n+" j ai pour fils : "+n.getFils());
+		String s="";
+		ArrayList<Node> tmp = new ArrayList<>();
+		for(Node test : path)
+		{
+			s += test.getId()+" ";
+			tmp.add(test);
+		}
+		
+		System.out.println("et je viens de : "+s);
 		for (Node fils : n.getFils())
 		{
+
 			fils  = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(fils.getId());
+			System.out.println("je pars sur le fils : "+fils);
+			tmp= new ArrayList<>();
+			s="";
+			for(Node test : path)
+			{
+				s += test.getId()+" ";
+				tmp.add(test);
+			}
+			
+			System.out.println("et aft je viens de : "+s);
+			s="";
+			for(Node test : tmp)
+			{
+				s += test.getId()+" ";
+			
+			}
+			System.out.println("et aft je viens de  tmp : "+s);
 			boolean check = false;	
 			if(fils.getId() != n.getId())
 			{
-
 				//	////////System.out.println("OK");
-
 				for(Node alreadyVisited : visited)
 				{
-
 					if(fils.getId().equals(alreadyVisited.getId()))
 					{	
-						//////////System.out.println("Noeud deja traite");
+						System.out.println("Noeud deja traite");
 						check = true;
 						break;
 					}
-
 				}
 			}
 			if(!check)
 			{
-				//System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
-				//System.out.println("je suis en profodeur : "+prof);
-				if(fils.getId().equals(goal.getId()) | prof>5)
+				if(!myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) && fils.getValue() ==-1)
 				{
+					//System.out.println("SA FUCK UP");
+					//System.out.println("le noeud qui bug : "+fils);
+					//System.out.println("adresse fils : "+fils.getClass()+"adresse du pere existant : "+myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoPere().get(fils.getId()));
 
-
-					//////////System.out.println("SOLUTION TROUVEE 1");
-					//////////System.out.println("Je suis le Node FINAL :"+fils);
-					path.add(fils);
-					throw new StopParcoursException(path);	
+					//System.out.println("il vient de  : "+ n);
+					//System.out.println("ma connaissance : "+this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
+					//System.out.println("fils : "+myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils());
+					//System.exit(0);
+				}
+//				System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
+				if(fils.getId().equals(goal.getId()) | prof < 15)
+				{  
+						tmp.add(fils);
+						throw new StopParcoursException(tmp);
 				}
 				visited.add(fils);
-				ArrayList<Node> temp = path;
-				temp.add(fils);
-				closeByDepth(fils, temp, goal,prof++);
+				tmp.add(fils);
+				closeByDepth(fils, tmp, goal,prof++);
 			}
-			
-
-
 		}
 	}
+
+//	private  void closeByDepth(Node n,ArrayList<Node> path, Node goal,int prof) throws StopParcoursException
+//	{
+//
+//		for (Node fils : n.getFils())
+//		{
+//			fils  = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(fils.getId());
+//			boolean check = false;	
+//			if(fils.getId() != n.getId())
+//			{
+//
+//				//	////////System.out.println("OK");
+//
+//				for(Node alreadyVisited : visited)
+//				{
+//
+//					if(fils.getId().equals(alreadyVisited.getId()))
+//					{	
+//						//////////System.out.println("Noeud deja traite");
+//						check = true;
+//						break;
+//					}
+//
+//				}
+//			}
+//			if(!check)
+//			{
+//				//System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
+//				//System.out.println("je suis en profodeur : "+prof);
+//				if(fils.getId().equals(goal.getId()) | prof>5)
+//				{
+//
+//
+//					//////////System.out.println("SOLUTION TROUVEE 1");
+//					//////////System.out.println("Je suis le Node FINAL :"+fils);
+//					path.add(fils);
+//					throw new StopParcoursException(path);	
+//				}
+//				visited.add(fils);
+//				ArrayList<Node> temp = path;
+//				temp.add(fils);
+//				closeByDepth(fils, temp, goal,prof++);
+//			}
+//			
+//
+//
+//		}
+//	}
 	private  void closeByDepth(Node n,ArrayList<Node> path) throws StopParcoursException
 	{
 
@@ -302,6 +376,7 @@ public class ManageExplo {
 		n = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(n.getId());
 		visited.add(n);
 		ArrayList<Node> path = new ArrayList<>();
+		other=true;
 		//		long t= ////////System.currentTimeMillis();
 		if(other)
 		{
@@ -314,7 +389,7 @@ public class ManageExplo {
 			return path;
 		}else{
 			System.out.println("je lance le large goal");
-			return breadthResearch(n, goal, myFosymaAgent.getMyKnowledge(), 20, visited);
+			return breadthResearch(n, goal, myFosymaAgent.getMyKnowledge(), 50, visited);
 		}
 
 
