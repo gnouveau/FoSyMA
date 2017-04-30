@@ -34,18 +34,8 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 		if(myPosition != ""){
 			if (myFosymaAgent.getMyPath().isEmpty()	) {
 				Node node = myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoPere().get(myPosition);
-//				ArrayList<Node> fatherNodeList = new ArrayList<Node>(dicoPere.values());
-//
-//				for (Node n : fatherNodeList) {
-//					if (n.getId().equals(myPosition)) {
-//						node = n;
-//						break;
-//					}
-//				}
+				
 				// Explo Gilles et mathias wombo combo
-
-			
-
 				int maxDepth = 16;
 
 				if(myFosymaAgent.getBackPackFreeSpace() != 0 && this.myFosymaAgent.getMyCapacity()<100)

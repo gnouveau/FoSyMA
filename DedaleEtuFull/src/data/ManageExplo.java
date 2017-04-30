@@ -354,7 +354,7 @@ public class ManageExplo {
 			 * A EXPLORER DONC EMPECHE D'ATTEINDRE LA PROFONDEUR MAX QUI EST AUSSI UN CAS D'ARRET
 			 */
 			if(nodeListToExplore.isEmpty()){
-				//				//System.out.println("DEBUG : breadthResearch : tous les noeuds observe et pas de tresor interessant");
+				//System.out.println("DEBUG : breadthResearch : tous les noeuds observe et pas de tresor interessant");
 				break;				
 			}
 
@@ -442,6 +442,21 @@ public class ManageExplo {
 			System.out.println("DEBUG : breadthResearch : pas de chemin objectif trouve !");
 			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("ma position courante : ");
+			System.out.println(paramNode);
+			System.out.println("ma liste de noeud pere : ");
+			System.out.println(myKnowledge.getListKnownMap().get(0).getDicoPere());
+			System.out.println("liste noeuds a explorer : ");
+			System.out.println(nodeListToExplore);
+			System.out.println("noeuds deja explores : ");
+			System.out.println(explored);
+			System.out.println("who's your daddy");
+			System.out.println(whoIsYourDaddy);
+			System.out.println("profondeur des noeuds");
+			System.out.println(depthDict);
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			
 			//			path.add(paramNode);
 			//			return path;
 			// Je n'ai pas trouve de tresor ni de feuille et j'ai regarde tous les noeuds

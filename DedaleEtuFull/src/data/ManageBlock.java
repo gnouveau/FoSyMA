@@ -112,7 +112,7 @@ public class ManageBlock {
 			int i;
 			ArrayList<Node> conflict = new ArrayList<>();
 			
-			Node nodeG1 = this.myCurrentPos;
+			Node nodeG1 = myGoal.get(0);
 			Node nodeG2 = c.getRight().get(0);
 
 			String name1 = nodeG1.getId();
