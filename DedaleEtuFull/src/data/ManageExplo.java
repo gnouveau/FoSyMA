@@ -124,7 +124,7 @@ public class ManageExplo {
 
 					if(fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) && prof < 15)
 					{
-						//System.out.println("j'ai trouvé ma premiere feuille");
+						//System.out.println("j'ai trouvÃ© ma premiere feuille");
 						find = false;
 						for(Node tmpA : path)
 						{
@@ -351,7 +351,7 @@ public class ManageExplo {
 			if (explo.isEmpty()) 
 			{
 
-				////System.out.println("je n'ai plus rien a explorer ou aucun tresor trouvé de capacité inférieure ou égale à "+value+" avec un type de : "+this.type);
+				////System.out.println("je n'ai plus rien a explorer ou aucun tresor trouvÃ© de capacitÃ© infÃ©rieure ou Ã©gale Ã  "+value+" avec un type de : "+this.type);
 				path.add(n);
 				return path;
 			}else{
@@ -362,11 +362,11 @@ public class ManageExplo {
 			return path;
 		}
 	}
-	// meme qu'avant avec ajout de noeud conflit et on cherche un noeud but à la place d'une valeur
+	// meme qu'avant avec ajout de noeud conflit et on cherche un noeud but Ã  la place d'une valeur
 	// ESQUIVE
 	public  ArrayList<Node> solveProblemByDepth(Node n, Node goal,ArrayList<Node> conflits)
 	{
-		//System.out.println("on cherche un autre chemin pour  : "+goal+"en partant de "+n+" avec debut à :"+other);
+		//System.out.println("on cherche un autre chemin pour  : "+goal+"en partant de "+n+" avec debut Ã  :"+other);
 		if(visited ==  null )
 		{
 			visited = new ArrayList<>();	

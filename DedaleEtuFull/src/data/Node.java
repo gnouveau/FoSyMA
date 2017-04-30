@@ -60,6 +60,8 @@ public class Node implements Serializable{
 		
 			}
 		}
+		//System.out.println("j'affiche mes nouveaux fils apres le switch");
+		//System.out.println(this.getFils());
 		
 	}
 	public String toString()
