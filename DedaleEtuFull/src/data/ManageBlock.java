@@ -183,7 +183,7 @@ public class ManageBlock {
 				indiceConflict = Math.max(indiceConflict, c.getRight());
 			}
 		}
-		System.out.println("on cherche Ã  dodge");
+		System.out.println("on cherche à dodge");
 		ArrayList<Node> pathAg1DodgeAg2 = managerExplo.solveProblemByDepth(this.myCurrentPos, pathGoalag1.get(indiceConflict +1), conflictNode.get(0).getRight());
 		managerExplo.setType(otherObjectGoal.getMyType());
 		ArrayList<Node> pathAg2DodgeAg1 = managerExplo.solveProblemByDepth(this.otherObjectGoal.getCurrentPos(), pathGoalag2.get(indiceConflict +1), conflictNode.get(0).getRight());
@@ -218,14 +218,14 @@ public class ManageBlock {
 			}else{
 				if(pathGoalag1.size() < pathGoalag2.size())
 				{
-					//on recupere les noeuds allant de la position de dÃ©but de l'agent au chemin le plus long jusqu'au noeud conflit
+					//on recupere les noeuds allant de la position de début de l'agent au chemin le plus long jusqu'au noeud conflit
 					ArrayList<Node> forbid = new ArrayList<>();
 					for(int i=0; i<indiceConflict;i++)
 					{
 						forbid.add(pathGoalag2.get(i));
 					}
 					finalGoal = managerExplo.solveProblemByDepth(this.myCurrentPos, forbid);
-					//on attend a l'emplacement trouvÃ© le temps que l'autre agent soit passer par le noeud conflit
+					//on attend a l'emplacement trouvé le temps que l'autre agent soit passer par le noeud conflit
 					if(finalGoal.size() < indiceConflict)
 					{
 						Node wait = finalGoal.get(finalGoal.size()-1);
@@ -240,7 +240,7 @@ public class ManageBlock {
 			}
 		}
 
-		// si la taille de leur 2 chemins sont Ã©gales alors je donne une prioritÃ© a un chemin en fonction de la valeur en ID du noeud de dÃ©part
+		// si la taille de leur 2 chemins sont égales alors je donne une priorité a un chemin en fonction de la valeur en ID du noeud de départ
 		if ((pathGoalag1.size() + sizePathDodgeAg2) ==  (sizePathDodgeAg1 + pathGoalag2.size()))
 		{
 			if( Integer.valueOf(pathGoalag1.get(0).getId()) > Integer.valueOf(pathGoalag2.get(0).getId()))
@@ -273,21 +273,21 @@ public class ManageBlock {
 		if (mygoal.getId().equals(ag2goal.getId()))
 		{
 			Integer valueTresor = mygoal.getValue();
-			// si ag1 a la capacitÃ© parfaite
-			System.out.println("On a le meme but \n On test si ag1 a la capacitÃ© parfaite");
+			// si ag1 a la capacité parfaite
+			System.out.println("On a le meme but \n On test si ag1 a la capacité parfaite");
 			if(valueTresor == myCapacity)
 			{
 				//si ag2 aussi
-				System.out.println("On test si ag2 a la capacitÃ© parfaite aussi");
+				System.out.println("On test si ag2 a la capacité parfaite aussi");
 				if(valueTresor == listCapcityAgents.get(0).getRight())
 				{
-					// si la taille de leur 2 chemins sont Ã©gales alors je donne une prioritÃ© a un chemin en fonction de la valeur en ID du noeud de dÃ©part 
+					// si la taille de leur 2 chemins sont égales alors je donne une priorité a un chemin en fonction de la valeur en ID du noeud de départ 
 					System.out.println("on teste si ils ont la meme taille de chemin");
 					if(myGoal.size() == goalAgents.get(0).getRight().size())
 					{
 						if( Integer.valueOf(this.myCurrentPos.getId()) > Integer.valueOf(otherObjectGoal.getCurrentPos().getId()))
 						{
-							System.out.println("Ag 2 change de chemin malgres Ã©galitÃ©");
+							System.out.println("Ag 2 change de chemin malgres égalité");
 							// on ajoute le noeud goal on noeud conflits de manaExplo
 							ArrayList<Node>temp = new ArrayList<>();
 							temp.add(mygoal);
@@ -298,7 +298,7 @@ public class ManageBlock {
 
 						}else{
 							//sinon c'est le goal de l'agent 1 qui change
-							System.out.println("Ag 1 change de chemin malgres Ã©galitÃ©");
+							System.out.println("Ag 1 change de chemin malgres égalité");
 							ArrayList<Node>temp = new ArrayList<>();
 							temp.add(mygoal);
 							managerExplo.setVisited(temp);
@@ -329,7 +329,7 @@ public class ManageBlock {
 					}
 				}else{
 					//sinon c'est l'ag2 qui doit changer
-					System.out.println("Ag 2 change de chemin car ag1 a une meilleur capacitÃ©");
+					System.out.println("Ag 2 change de chemin car ag1 a une meilleur capacité");
 					// on ajoute le noeud goal on noeud conflits de manaExplo
 					ArrayList<Node>temp = new ArrayList<>();
 					temp.add(mygoal);
@@ -340,9 +340,9 @@ public class ManageBlock {
 				}
 			}else if(valueTresor == listCapcityAgents.get(0).getRight())
 			{
-				//sinon je regarde si c'est l'agent 2 qui a une capacitÃ© Ã©gale
+				//sinon je regarde si c'est l'agent 2 qui a une capacité égale
 				//si oui c'est l'ag1 qui doit changer
-				System.out.println("on regarde si l'agent 2 Ã  une capacitÃ© parfaite");
+				System.out.println("on regarde si l'agent 2 à une capacité parfaite");
 
 				ArrayList<Node>temp = new ArrayList<>();
 				temp.add(mygoal);
@@ -351,7 +351,7 @@ public class ManageBlock {
 
 			}else if (myCapacity >listCapcityAgents.get(0).getRight())
 			{
-				System.out.println("on regarde si l'agent 1 Ã  un meilleur capa que ag 2");
+				System.out.println("on regarde si l'agent 1 à un meilleur capa que ag 2");
 
 				//c'est a l'agt2 de changer de but
 				// on ajoute le noeud goal on noeud conflits de manaExplo
