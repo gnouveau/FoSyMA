@@ -83,7 +83,13 @@ public class ManageExplo {
 				if(!myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()) && fils.getValue() ==-1)
 				{
 					System.out.println("SA FUCK UP");
-					//System.exit(0);
+					System.out.println("le noeud qui bug : "+fils);
+					System.out.println("adresse fils : "+fils.getClass()+"adresse du pere existant : "+myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoPere().get(fils.getId()));
+
+					System.out.println("il vient de  : "+ n);
+					System.out.println("ma connaissance : "+this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0));
+					System.out.println("fils : "+myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils());
+					System.exit(0);
 				}
 				//System.out.println("je suis le noeud : "+fils+" de valeur "+fils.getValue());
 				if((fils.getType().equals(this.type) && fils.getValue() <= value && fils.getValue()>0) || fils.getValue() ==-1 && fils.getValue() ==-1 && find && myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getDicoFils().containsKey(fils.getId()))
