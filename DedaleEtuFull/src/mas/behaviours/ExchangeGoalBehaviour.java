@@ -111,14 +111,6 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		 * CASE 3: Terminal case: the agent sent his goal and received all the goals he was waiting for
 		 */
 		else if(myFosymaAgent.getFilterGoalList().isEmpty() && goalSent){
-			// Resolution des conflits entre son propre chemin objectif et celui des autres agents
-			for(Goal g : othersGoalList){
-				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : MON BUT : "+ myFosymaAgent.getMyPath());
-				System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : RESOLUTION CONFLITS avec : "+ g.getNameAgt()+" qui a pour but : "+ g.getGoalPath());
-				
-				ManageBlock managerBlock = new ManageBlock(myGoal,g,myFosymaAgent);
-				myFosymaAgent.setMyGoal(managerBlock.solveBlock());				
-			}
 			finish = true;
 		}
 	}
@@ -129,6 +121,15 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 	}
 	
 	public int onEnd() {
+		// Resolution des conflits entre son propre chemin objectif et celui des autres agents
+		Goal myGoal = myFosymaAgent.getMyGoal();
+		for(Goal g : othersGoalList){
+			System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : MON BUT : "+ myFosymaAgent.getMyPath());
+			System.out.println("ExchangeGoalBehaviour : "+ myAgent.getName() +" : RESOLUTION CONFLITS avec : "+ g.getNameAgt()+" qui a pour but : "+ g.getGoalPath());
+			
+			ManageBlock managerBlock = new ManageBlock(myGoal,g,myFosymaAgent);
+			myFosymaAgent.setMyGoal(managerBlock.solveBlock());				
+		}
 		goalSent = false;
 		finish = false;
 		t = 0;
