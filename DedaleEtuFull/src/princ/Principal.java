@@ -34,13 +34,14 @@ public class Principal {
 		//0) Create the real environment and the observed one
 //		env= new Environment(ENVtype.GRID_T,4,null);
 //		env= new Environment(ENVtype.DOROGOVTSEV_T,15,null);
-		env=new Environment("map2016-2","map2016-2-config");
+//		env=new Environment("map2016-2","map2016-2-config");
+		env=new Environment("ressources/map2017","ressources/map2017config");
 //		env = new Environment("ressources/MP", "ressources/MP-config");
 		//1), create the platform (Main container (DF+AMS) + containers + monitoring agents : RMA and SNIFFER)
 		rt=emptyPlatform(containerList);
 
 		//2) create agents and add them to the platform.
-		int nbAgents = 5;
+		int nbAgents = 6;
 		agentList=createAgents(containerList,nbAgents);
 
 		//3) launch agents
@@ -230,7 +231,7 @@ public class Principal {
 		for(int i = 1;i<=nbAgents;i++)
 		{
 			c = containerList.get("container0");
-			agentName="Explo"+i;
+			agentName="Agent"+i;
 			try {
 				Object[] objtab=new Object[]{env};//used to give informations to the agent
 				AgentController	ag=c.createNewAgent(agentName,FosymaAgent.class.getName(),objtab);

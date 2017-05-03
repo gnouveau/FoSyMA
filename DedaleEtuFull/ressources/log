@@ -1,0 +1,1465 @@
+0 0
+2 2
+3 3
+4 4
+5 5
+6 6
+7 7
+8 8
+9 9
+10 10
+11 11
+12 12
+13 13
+14 14
+15 15
+16 16
+17 17
+18 18
+19 19
+20 20
+21 21
+22 22
+23 23
+24 24
+25 25
+26 26
+27 27
+28 28
+29 29
+30 30
+31 31
+32 32
+33 33
+34 34
+35 35
+36 36
+37 37
+38 38
+39 39
+40 40
+41 41
+42 42
+43 43
+44 44
+45 45
+46 46
+47 47
+48 48
+49 49
+50 50
+51 51
+52 52
+53 53
+54 54
+55 55
+56 56
+57 57
+58 58
+59 59
+60 60
+61 61
+62 62
+63 63
+64 64
+65 65
+66 66
+67 67
+68 68
+69 69
+70 70
+71 71
+72 72
+73 73
+74 74
+75 75
+76 76
+77 77
+78 78
+79 79
+80 80
+81 81
+82 82
+83 83
+84 84
+85 85
+86 86
+87 87
+88 88
+89 89
+90 90
+91 91
+92 92
+93 93
+94 94
+95 95
+96 96
+97 97
+98 98
+99 99
+101 101
+102 102
+103 103
+104 104
+105 105
+106 106
+107 107
+108 108
+109 109
+110 110
+111 111
+112 112
+113 113
+114 114
+115 115
+116 116
+117 117
+118 118
+119 119
+120 120
+121 121
+122 122
+124 124
+125 125
+126 126
+127 127
+128 128
+129 129
+130 130
+131 131
+132 132
+133 133
+Loading configuration for environment exam2017
+AGENT Agent1 deployed in 129
+AGENT Agent2 deployed in 130
+AGENT Agent3 deployed in 5
+AGENT Agent4 deployed in 99
+AGENT Agent5 deployed in 93
+AGENT Agent6 deployed in 32
+Launching a main-container...{main=true, port=8888, host=127.0.0.1}
+mai 03, 2017 11:45:13 PM jade.core.Runtime beginContainer
+INFOS: ----------------------------------
+    This is JADE 4.4.0 - revision 6778 of 21-12-2015 12:24:43
+    downloaded in Open Source, under LGPL restrictions,
+    at http://jade.tilab.com/
+----------------------------------------
+mai 03, 2017 11:45:13 PM jade.imtp.leap.LEAPIMTPManager initialize
+INFOS: Listening for intra-platform commands on address:
+- jicp://127.0.0.1:8888
+
+mai 03, 2017 11:45:14 PM jade.core.BaseService init
+INFOS: Service jade.core.management.AgentManagement initialized
+mai 03, 2017 11:45:14 PM jade.core.BaseService init
+INFOS: Service jade.core.messaging.Messaging initialized
+mai 03, 2017 11:45:14 PM jade.core.BaseService init
+INFOS: Service jade.core.resource.ResourceManagement initialized
+mai 03, 2017 11:45:14 PM jade.core.BaseService init
+INFOS: Service jade.core.mobility.AgentMobility initialized
+mai 03, 2017 11:45:14 PM jade.core.BaseService init
+INFOS: Service jade.core.event.Notification initialized
+mai 03, 2017 11:45:14 PM jade.mtp.http.HTTPServer <init>
+INFOS: HTTP-MTP Using XML parser com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser
+mai 03, 2017 11:45:14 PM jade.core.messaging.MessagingService boot
+INFOS: MTP addresses:
+http://pc-Gilles:7778/acc
+mai 03, 2017 11:45:14 PM jade.core.AgentContainerImpl joinPlatform
+INFOS: --------------------------------------
+Agent container Main-Container@127.0.0.1 is ready.
+--------------------------------------------
+Launching containers ...
+Launching container {main=true, port=8888}
+mai 03, 2017 11:45:14 PM jade.core.Runtime beginContainer
+INFOS: ----------------------------------
+    This is JADE 4.4.0 - revision 6778 of 21-12-2015 12:24:43
+    downloaded in Open Source, under LGPL restrictions,
+    at http://jade.tilab.com/
+----------------------------------------
+mai 03, 2017 11:45:15 PM jade.imtp.leap.LEAPIMTPManager initialize
+INFOS: Listening for intra-platform commands on address:
+- jicp://127.0.0.1:8888
+
+mai 03, 2017 11:45:15 PM jade.core.BaseService init
+INFOS: Service jade.core.management.AgentManagement initialized
+mai 03, 2017 11:45:15 PM jade.core.BaseService init
+INFOS: Service jade.core.messaging.Messaging initialized
+mai 03, 2017 11:45:15 PM jade.core.BaseService init
+INFOS: Service jade.core.resource.ResourceManagement initialized
+mai 03, 2017 11:45:15 PM jade.core.BaseService init
+INFOS: Service jade.core.mobility.AgentMobility initialized
+mai 03, 2017 11:45:15 PM jade.core.BaseService init
+INFOS: Service jade.core.event.Notification initialized
+mai 03, 2017 11:45:15 PM jade.core.PlatformManagerImpl localAddNode
+INFOS: Adding node <Container-1> to the platform
+mai 03, 2017 11:45:15 PM jade.core.PlatformManagerImpl$1 nodeAdded
+INFOS: --- Node <Container-1> ALIVE ---
+mai 03, 2017 11:45:15 PM jade.core.AgentContainerImpl joinPlatform
+INFOS: --------------------------------------
+Agent container Container-1@127.0.0.1 is ready.
+--------------------------------------------
+Launching container {main=true, port=8888}
+mai 03, 2017 11:45:16 PM jade.core.Runtime beginContainer
+INFOS: ----------------------------------
+    This is JADE 4.4.0 - revision 6778 of 21-12-2015 12:24:43
+    downloaded in Open Source, under LGPL restrictions,
+    at http://jade.tilab.com/
+----------------------------------------
+mai 03, 2017 11:45:16 PM jade.imtp.leap.LEAPIMTPManager initialize
+INFOS: Listening for intra-platform commands on address:
+- jicp://127.0.0.1:8888
+
+mai 03, 2017 11:45:16 PM jade.core.BaseService init
+INFOS: Service jade.core.management.AgentManagement initialized
+mai 03, 2017 11:45:16 PM jade.core.BaseService init
+INFOS: Service jade.core.messaging.Messaging initialized
+mai 03, 2017 11:45:16 PM jade.core.BaseService init
+INFOS: Service jade.core.resource.ResourceManagement initialized
+mai 03, 2017 11:45:16 PM jade.core.BaseService init
+INFOS: Service jade.core.mobility.AgentMobility initialized
+mai 03, 2017 11:45:16 PM jade.core.BaseService init
+INFOS: Service jade.core.event.Notification initialized
+mai 03, 2017 11:45:16 PM jade.core.PlatformManagerImpl localAddNode
+INFOS: Adding node <Container-2> to the platform
+mai 03, 2017 11:45:16 PM jade.core.AgentContainerImpl joinPlatform
+INFOS: --------------------------------------
+Agent container Container-2@127.0.0.1 is ready.
+--------------------------------------------
+Launching container {main=true, port=8888}
+mai 03, 2017 11:45:16 PM jade.core.PlatformManagerImpl$1 nodeAdded
+INFOS: --- Node <Container-2> ALIVE ---
+mai 03, 2017 11:45:16 PM jade.core.Runtime beginContainer
+INFOS: ----------------------------------
+    This is JADE 4.4.0 - revision 6778 of 21-12-2015 12:24:43
+    downloaded in Open Source, under LGPL restrictions,
+    at http://jade.tilab.com/
+----------------------------------------
+mai 03, 2017 11:45:17 PM jade.imtp.leap.LEAPIMTPManager initialize
+INFOS: Listening for intra-platform commands on address:
+- jicp://127.0.0.1:8888
+
+mai 03, 2017 11:45:17 PM jade.core.BaseService init
+INFOS: Service jade.core.management.AgentManagement initialized
+mai 03, 2017 11:45:17 PM jade.core.BaseService init
+INFOS: Service jade.core.messaging.Messaging initialized
+mai 03, 2017 11:45:17 PM jade.core.BaseService init
+INFOS: Service jade.core.resource.ResourceManagement initialized
+mai 03, 2017 11:45:17 PM jade.core.BaseService init
+INFOS: Service jade.core.mobility.AgentMobility initialized
+mai 03, 2017 11:45:17 PM jade.core.BaseService init
+INFOS: Service jade.core.event.Notification initialized
+mai 03, 2017 11:45:17 PM jade.core.PlatformManagerImpl localAddNode
+INFOS: Adding node <Container-3> to the platform
+mai 03, 2017 11:45:17 PM jade.core.AgentContainerImpl joinPlatform
+INFOS: --------------------------------------
+Agent container Container-3@127.0.0.1 is ready.
+--------------------------------------------
+Launching containers done
+Launching the rma agent on the main container ...
+mai 03, 2017 11:45:17 PM jade.core.PlatformManagerImpl$1 nodeAdded
+INFOS: --- Node <Container-3> ALIVE ---
+Launching  Sniffer agent on the main container...
+Plaform ok
+Launching agents...
+Agent1 launched
+Agent2 launched
+Agent3 launched
+Agent4 launched
+Agent5 launched
+Agent6 launched
+Agents launched...
+Starting agents...
+Agents started...
+the agent Agent2@127.0.0.1:8888/JADE is started
+Agent2@127.0.0.1:8888/JADE: INITIALISATION
+Press a key to allow the agent with type TreasureAgent2@127.0.0.1:8888/JADE to execute its next move
+the agent Agent4@127.0.0.1:8888/JADE is started
+Agent4@127.0.0.1:8888/JADE: INITIALISATION
+Press a key to allow the agent with type TreasureAgent4@127.0.0.1:8888/JADE to execute its next move
+the agent Agent3@127.0.0.1:8888/JADE is started
+Agent3@127.0.0.1:8888/JADE: INITIALISATION
+Press a key to allow the agent with type TreasureAgent3@127.0.0.1:8888/JADE to execute its next move
+the agent Agent6@127.0.0.1:8888/JADE is started
+Agent6@127.0.0.1:8888/JADE: INITIALISATION
+Press a key to allow the agent with type TreasureAgent6@127.0.0.1:8888/JADE to execute its next move
+the agent Agent5@127.0.0.1:8888/JADE is started
+Agent5@127.0.0.1:8888/JADE: INITIALISATION
+Press a key to allow the agent with type TreasureAgent5@127.0.0.1:8888/JADE to execute its next move
+the agent Agent1@127.0.0.1:8888/JADE is started
+Agent1@127.0.0.1:8888/JADE: INITIALISATION
+Press a key to allow the agent with type TreasureAgent1@127.0.0.1:8888/JADE to execute its next move
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<129,[]>, <130,[]>, <45,[]>]
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 80et une capacité estimée de 80 je peux prendre : Treasure
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<93,[]>, <94,[]>, <92,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<5,[]>, <4,[]>, <58,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+ObserveBehaviour : Agent4@127.0.0.1:8888/JADE -- list of observables: [<99,[]>, <83,[]>, <98,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 93. I'm moving in 94
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<94,[]>, <93,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 5. I'm moving in 4
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<4,[]>, <10,[]>, <3,[]>, <5,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent4@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent4@127.0.0.1:8888/JADE : I'm in position : 99. I'm moving in 99
+ObserveBehaviour : Agent4@127.0.0.1:8888/JADE -- list of observables: [<99,[]>, <83,[]>, <98,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent1@127.0.0.1:8888/JADE,<1493847981495,1493847981432>>]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'ATTENDS
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent2@127.0.0.1:8888/JADE,<1493847981432,1493847981495>>]
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent1@127.0.0.1:8888/JADE,<1493847981495,1493847981432>>]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent1@127.0.0.1:8888/JADE
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 94. I'm moving in 93
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<93,[]>, <94,[]>, <92,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 4. I'm moving in 10
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<10,[]>, <11,[]>, <4,[]>, <9,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent4@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent4@127.0.0.1:8888/JADE : I'm in position : 99. I'm moving in 99
+ObserveBehaviour : Agent4@127.0.0.1:8888/JADE -- list of observables: [<99,[]>, <83,[]>, <98,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent2@127.0.0.1:8888/JADE,<1493847981432,1493847981495>>]
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : MON BUT : [data.Node@6a0 Pere id : 45 value : -1
+ Fils : 
+]
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent2@127.0.0.1:8888/JADE qui a pour but : [data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 45 
+Le but de l'autre agent est : 130 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 45 
+Le but de l'autre agent est : 130 
+detection conflit
+Mon but est final est  : 45 
+data.Node@6a0 Pere id : 45 value : -1
+ Fils : 
+data.Node@6a0 Pere id : 45 value : -1
+ Fils : 
+
+je suis de priorité : NORMAL
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 129. I'm moving in 45
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<45,[]>, <37,[]>, <129,[]>, <44,[]>]
+jai un capacite de reele de : 80et une capacité estimée de 80 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent1@127.0.0.1:8888/JADE,<1493847981495,1493847981432>>]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : MON BUT : [data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent1@127.0.0.1:8888/JADE qui a pour but : [data.Node@6a0 Pere id : 45 value : -1
+ Fils : 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 130 
+Le but de l'autre agent est : 45 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 130 
+Le but de l'autre agent est : 45 
+detection conflit
+Mon but est final est  : 130 
+data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+
+je suis de priorité : FAIBLE
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 10. I'm moving in 11
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<11,[]>, <10,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent4@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent4@127.0.0.1:8888/JADE : I'm in position : 99. I'm moving in 99
+ObserveBehaviour : Agent4@127.0.0.1:8888/JADE -- list of observables: [<99,[]>, <83,[]>, <98,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 93. I'm moving in 92
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<92,[]>, <85,[]>, <91,[]>, <93,[]>, <82,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 11. I'm moving in 10
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<10,[]>, <11,[]>, <4,[]>, <9,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent2@127.0.0.1:8888/JADE,<1493847984979,1493847985003>>]
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE :J'ATTENDS
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent2@127.0.0.1:8888/JADE,<1493847984979,1493847985003>>]
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE :J'ATTENDS
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 45. I'm moving in 37
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<37,[]>, <38,[]>, <45,[]>]
+jai un capacite de reele de : 80et une capacité estimée de 80 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent1@127.0.0.1:8888/JADE,<1493847985003,1493847984979>>]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent1@127.0.0.1:8888/JADE
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent1@127.0.0.1:8888/JADE,<1493847985003,1493847984979>>]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : MON BUT : [data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent1@127.0.0.1:8888/JADE qui a pour but : [data.Node@683 Pere id : 37 value : -1
+ Fils : 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 130 
+Le but de l'autre agent est : 37 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 130 
+Le but de l'autre agent est : 37 
+detection conflit
+Mon but est final est  : 130 
+data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+
+je suis de priorité : FAIBLE
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeMapBehaviour : Agent5@127.0.0.1:8888/JADE : j'ai trop attendu je passe a la suite !
+ExchangeGoalBehaviour : Agent5@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent5@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : []
+ExchangeGoalBehaviour : Agent5@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 92. I'm moving in 85
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<85,[]>, <86,[]>, <83,[]>, <84,[]>, <87,[]>, <82,[]>, <92,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 10. I'm moving in 9
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<9,[]>, <10,[]>, <8,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 85. I'm moving in 86
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<86,[]>, <84,[]>, <85,[]>, <87,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent1@127.0.0.1:8888/JADE,<1493847988201,1493847988226>>]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'ATTENDS
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent2@127.0.0.1:8888/JADE,<1493847988226,1493847988201>>]
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 9. I'm moving in 8
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<8,[]>, <7,[]>, <12,[]>, <9,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent1@127.0.0.1:8888/JADE,<1493847988201,1493847988226>>]
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent2@127.0.0.1:8888/JADE
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent1@127.0.0.1:8888/JADE
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 86. I'm moving in 84
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<84,[]>, <86,[]>, <85,[]>, <82,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent1@127.0.0.1:8888/JADE,<1493847988201,1493847988226>>]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : MON BUT : [data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent1@127.0.0.1:8888/JADE qui a pour but : [data.Node@684 Pere id : 38 value : -1
+ Fils : 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 130 
+Le but de l'autre agent est : 38 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 130 
+Le but de l'autre agent est : 38 
+detection conflit
+Mon but est final est  : 130 
+data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+
+je suis de priorité : FAIBLE
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent2@127.0.0.1:8888/JADE,<1493847988226,1493847988201>>]
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : MON BUT : [data.Node@684 Pere id : 38 value : -1
+ Fils : 
+]
+ExchangeGoalBehaviour : Agent1@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent2@127.0.0.1:8888/JADE qui a pour but : [data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 38 
+Le but de l'autre agent est : 130 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 38 
+Le but de l'autre agent est : 130 
+detection conflit
+Mon but est final est  : 38 
+data.Node@684 Pere id : 38 value : -1
+ Fils : 
+data.Node@684 Pere id : 38 value : -1
+ Fils : 
+
+je suis de priorité : NORMAL
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 37. I'm moving in 38
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<38,[(Diamonds,6)]>, <37,[]>, <46,[]>]
+jai un capacite de reele de : 80et une capacité estimée de 80 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 8. I'm moving in 7
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<7,[]>, <2,[]>, <6,[]>, <8,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 84. I'm moving in 82
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<82,[]>, <84,[]>, <85,[]>, <92,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 38. I'm moving in 46
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<46,[]>, <38,[]>, <47,[]>]
+jai un capacite de reele de : 80et une capacité estimée de 80 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 7. I'm moving in 2
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<2,[]>, <7,[]>, <3,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 82. I'm moving in 85
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<85,[]>, <86,[]>, <83,[]>, <84,[]>, <87,[]>, <82,[]>, <92,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 46. I'm moving in 47
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<47,[]>, <39,[]>, <46,[]>]
+jai un capacite de reele de : 80et une capacité estimée de 80 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 2. I'm moving in 3
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<3,[]>, <2,[]>, <4,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 85. I'm moving in 83
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 47. I'm moving in 39
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<39,[]>, <47,[]>, <48,[]>]
+jai un capacite de reele de : 80et une capacité estimée de 80 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 3. I'm moving in 2
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<2,[]>, <7,[]>, <3,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 39. I'm moving in 48
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<48,[]>, <41,[]>, <39,[]>]
+jai un capacite de reele de : 80et une capacité estimée de 80 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 2. I'm moving in 7
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<7,[]>, <2,[]>, <6,[]>, <8,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 48. I'm moving in 41
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<41,[]>, <42,[]>, <34,[]>, <48,[]>]
+jai un capacite de reele de : 80et une capacité estimée de 80 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 7. I'm moving in 6
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<6,[(Treasure,6)]>, <7,[]>, <0,[]>]
+jai un capacite de reele de : 41et une capacité estimée de 41 je peux prendre : Treasure
+Je suis l'agent Agent3@127.0.0.1:8888/JADE Je prend un tresors de type :TREASUREavec une capacite reelle actuelle de :41
+je suis l'agent : Agent3@127.0.0.1:8888/JADEj'ai apres pick une capacité réelle de 35
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<6,[]>, <7,[]>, <0,[]>]
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 41. I'm moving in 42
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<42,[(Treasure,17)]>, <50,[]>, <41,[]>]
+jai un capacite de reele de : 80et une capacité estimée de 80 je peux prendre : Treasure
+Je suis l'agent Agent1@127.0.0.1:8888/JADE Je prend un tresors de type :TREASUREavec une capacite reelle actuelle de :80
+je suis l'agent : Agent1@127.0.0.1:8888/JADEj'ai apres pick une capacité réelle de 63
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<42,[]>, <50,[]>, <41,[]>]
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 6. I'm moving in 0
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<0,[]>, <6,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 42. I'm moving in 50
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<50,[]>, <95,[]>, <42,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 0. I'm moving in 6
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<6,[]>, <7,[]>, <0,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 50. I'm moving in 95
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<95,[]>, <50,[]>, <96,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 6. I'm moving in 7
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<7,[]>, <2,[]>, <6,[]>, <8,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 95. I'm moving in 96
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<96,[(Diamonds,77)]>, <95,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 7. I'm moving in 8
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<8,[]>, <7,[]>, <12,[]>, <9,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 96. I'm moving in 95
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<95,[]>, <50,[]>, <96,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 8. I'm moving in 12
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<12,[]>, <13,[]>, <8,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 95. I'm moving in 50
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<50,[]>, <95,[]>, <42,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 12. I'm moving in 13
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<13,[]>, <12,[]>, <14,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 50. I'm moving in 42
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<42,[]>, <50,[]>, <41,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 13. I'm moving in 14
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<14,[(Diamonds,57)]>, <13,[]>, <15,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 42. I'm moving in 41
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<41,[]>, <42,[]>, <34,[]>, <48,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 14. I'm moving in 15
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<15,[]>, <17,[]>, <19,[]>, <14,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 41. I'm moving in 34
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<34,[]>, <41,[]>, <23,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 15. I'm moving in 17
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<17,[]>, <28,[]>, <27,[]>, <15,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 34. I'm moving in 23
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<23,[]>, <22,[]>, <34,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 23. I'm moving in 22
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<22,[]>, <51,[]>, <16,[]>, <97,[]>, <23,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent6@127.0.0.1:8888/JADE,<1493848014179,1493848014183>>]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE :J'ATTENDS
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent3@127.0.0.1:8888/JADE,<1493848014183,1493848014179>>]
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent6@127.0.0.1:8888/JADE,<1493848014179,1493848014183>>]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent6@127.0.0.1:8888/JADE
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent3@127.0.0.1:8888/JADE
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent3@127.0.0.1:8888/JADE,<1493848014183,1493848014179>>]
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : MON BUT : [data.Node@67e Pere id : 32 value : 0
+ Fils : 31, 
+]
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent3@127.0.0.1:8888/JADE qui a pour but : [data.Node@665 Pere id : 28 value : -1
+ Fils : 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 32 
+Le but de l'autre agent est : 28 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 32 
+Le but de l'autre agent est : 28 
+detection conflit
+Mon but est final est  : 32 
+data.Node@67e Pere id : 32 value : 0
+ Fils : 31, 
+data.Node@67e Pere id : 32 value : 0
+ Fils : 31, 
+
+je suis de priorité : FAIBLE
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent6@127.0.0.1:8888/JADE,<1493848014179,1493848014183>>]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : MON BUT : [data.Node@665 Pere id : 28 value : -1
+ Fils : 
+]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent6@127.0.0.1:8888/JADE qui a pour but : [data.Node@67e Pere id : 32 value : 0
+ Fils : 31, 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 28 
+Le but de l'autre agent est : 32 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 28 
+Le but de l'autre agent est : 32 
+detection conflit
+Mon but est final est  : 28 
+data.Node@665 Pere id : 28 value : -1
+ Fils : 
+data.Node@665 Pere id : 28 value : -1
+ Fils : 
+
+je suis de priorité : NORMAL
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 17. I'm moving in 28
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<28,[]>, <17,[]>, <29,[]>, <81,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 22. I'm moving in 51
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<51,[]>, <22,[]>, <67,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 28. I'm moving in 29
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<29,[]>, <28,[]>, <35,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 51. I'm moving in 67
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<67,[]>, <52,[]>, <66,[]>, <51,[]>, <71,[]>, <68,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 29. I'm moving in 35
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<35,[]>, <29,[]>, <44,[]>, <43,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 67. I'm moving in 52
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<52,[]>, <66,[]>, <53,[]>, <67,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 35. I'm moving in 44
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<44,[]>, <36,[]>, <43,[]>, <57,[]>, <35,[]>, <45,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 52. I'm moving in 66
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<66,[]>, <52,[]>, <49,[]>, <54,[]>, <67,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent3@127.0.0.1:8888/JADE,<1493848021503,1493848021508>>]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'ATTENDS
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 66. I'm moving in 49
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<49,[]>, <66,[]>, <40,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent2@127.0.0.1:8888/JADE,<1493848021508,1493848021503>>]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent3@127.0.0.1:8888/JADE,<1493848021503,1493848021508>>]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent2@127.0.0.1:8888/JADE
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent3@127.0.0.1:8888/JADE
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent2@127.0.0.1:8888/JADE,<1493848021508,1493848021503>>]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : MON BUT : [data.Node@682 Pere id : 36 value : -1
+ Fils : 
+]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent2@127.0.0.1:8888/JADE qui a pour but : [data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 36 
+Le but de l'autre agent est : 130 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 36 
+Le but de l'autre agent est : 130 
+detection conflit
+Mon but est final est  : 36 
+data.Node@682 Pere id : 36 value : -1
+ Fils : 
+data.Node@682 Pere id : 36 value : -1
+ Fils : 
+
+je suis de priorité : NORMAL
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 44. I'm moving in 36
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<36,[]>, <30,[]>, <44,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent3@127.0.0.1:8888/JADE,<1493848021503,1493848021508>>]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : MON BUT : [data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+]
+ExchangeGoalBehaviour : Agent2@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent3@127.0.0.1:8888/JADE qui a pour but : [data.Node@682 Pere id : 36 value : -1
+ Fils : 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 130 
+Le but de l'autre agent est : 36 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 130 
+Le but de l'autre agent est : 36 
+detection conflit
+Mon but est final est  : 130 
+data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+data.Node@be6d Pere id : 130 value : 0
+ Fils : 132, 133, 129, 131, 
+
+je suis de priorité : FAIBLE
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 49. I'm moving in 40
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<40,[]>, <33,[]>, <49,[]>, <59,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent6@127.0.0.1:8888/JADE,<1493848024701,1493848024697>>]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE :J'ATTENDS
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent6@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent1@127.0.0.1:8888/JADE : I'm in position : 40. I'm moving in 33
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<33,[(Treasure,46)]>, <40,[]>, <25,[]>, <24,[]>]
+jai un capacite de reele de : 63et une capacité estimée de 63 je peux prendre : Treasure
+Je suis l'agent Agent1@127.0.0.1:8888/JADE Je prend un tresors de type :TREASUREavec une capacite reelle actuelle de :63
+je suis l'agent : Agent1@127.0.0.1:8888/JADEj'ai apres pick une capacité réelle de 17
+ObserveBehaviour : Agent1@127.0.0.1:8888/JADE -- list of observables: [<33,[]>, <40,[]>, <25,[]>, <24,[]>]
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent3@127.0.0.1:8888/JADE,<1493848024697,1493848024701>>]
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE :J'ENVOIS MON GOAL
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 1
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent6@127.0.0.1:8888/JADE,<1493848024701,1493848024697>>]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent6@127.0.0.1:8888/JADE
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE :J'AI RECU LE GOAL DE : Agent3@127.0.0.1:8888/JADE
+ExplorationBehaviour : Agent5@127.0.0.1:8888/JADE : I'm in position : 83. I'm moving in 99
+ObserveBehaviour : Agent5@127.0.0.1:8888/JADE -- list of observables: [<83,[]>, <85,[]>, <99,[]>, <89,[]>, <88,[]>]
+jai un capacite de reele de : 50et une capacité estimée de 50 je peux prendre : Treasure
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+je suis l'agent : Agent2@127.0.0.1:8888/JADE
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+ExplorationBehaviour : Agent2@127.0.0.1:8888/JADE : I'm in position : 130. I'm moving in 130
+ObserveBehaviour : Agent2@127.0.0.1:8888/JADE -- list of observables: [<130,[]>, <132,[]>, <133,[]>, <129,[]>, <131,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent3@127.0.0.1:8888/JADE,<1493848024697,1493848024701>>]
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : MON BUT : [data.Node@67e Pere id : 32 value : 0
+ Fils : 31, 
+]
+ExchangeGoalBehaviour : Agent6@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent3@127.0.0.1:8888/JADE qui a pour but : [data.Node@67c Pere id : 30 value : -1
+ Fils : 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 32 
+Le but de l'autre agent est : 30 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 32 
+Le but de l'autre agent est : 30 
+detection conflit
+Mon but est final est  : 32 
+data.Node@67e Pere id : 32 value : 0
+ Fils : 31, 
+data.Node@67e Pere id : 32 value : 0
+ Fils : 31, 
+
+je suis de priorité : FAIBLE
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent6@127.0.0.1:8888/JADE : I'm in position : 32. I'm moving in 32
+ObserveBehaviour : Agent6@127.0.0.1:8888/JADE -- list of observables: [<32,[]>, <31,[]>]
+jai un capacite de reele de : 0et une capacité estimée de 0 je peux prendre : Treasure
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : debut de ExchangeGoalBehaviour taille getFilterGoalList : 0
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : [<Agent6@127.0.0.1:8888/JADE,<1493848024701,1493848024697>>]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : MON BUT : [data.Node@67c Pere id : 30 value : -1
+ Fils : 
+]
+ExchangeGoalBehaviour : Agent3@127.0.0.1:8888/JADE : RESOLUTION CONFLITS avec : Agent6@127.0.0.1:8888/JADE qui a pour but : [data.Node@67e Pere id : 32 value : 0
+ Fils : 31, 
+]
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\ 
+ Mon but est : 30 
+Le but de l'autre agent est : 32 
+On test si on a le meme but
+apres detection du meme but on reaffiche les goals choisis
+Mon but est : 30 
+Le but de l'autre agent est : 32 
+detection conflit
+Mon but est final est  : 30 
+data.Node@67c Pere id : 30 value : -1
+ Fils : 
+data.Node@67c Pere id : 30 value : -1
+ Fils : 
+
+je suis de priorité : NORMAL
+/!\ /!\ /!\ /!\ /!\ SYSOUT SOLVE BLOCK /!\ /!\ /!\ /!\ /!\
+ExplorationBehaviour : Agent3@127.0.0.1:8888/JADE : I'm in position : 36. I'm moving in 30
+ObserveBehaviour : Agent3@127.0.0.1:8888/JADE -- list of observables: [<30,[]>, <31,[]>, <36,[]>]
+jai un capacite de reele de : 35et une capacité estimée de 35 je peux prendre : Treasure

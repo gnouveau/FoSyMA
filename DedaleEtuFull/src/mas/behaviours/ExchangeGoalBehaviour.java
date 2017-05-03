@@ -40,7 +40,7 @@ public class ExchangeGoalBehaviour extends SimpleBehaviour {
 		
 		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : debut de ExchangeGoalBehaviour taille getFilterGoalList : "+myFosymaAgent.getFilterGoalList().size());
 //		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : mon list_IdConversation() : "+ myFosymaAgent.getList_IdConversation());
-//		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : "+ myFosymaAgent.getList_IdConvGoal());
+		System.out.println("ExchangeGoalBehaviour : "+ myFosymaAgent.getName() +" : mon list_IdConvGoal(), J'ENVOIS QU'A EUX : "+ myFosymaAgent.getList_IdConvGoal());
 		
 		// Creation de son propre but qu'il veut transmettre
 		ArrayList<Node> goalPath = myFosymaAgent.getMyPath();

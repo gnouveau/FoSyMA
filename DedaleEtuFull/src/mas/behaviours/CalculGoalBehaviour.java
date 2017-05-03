@@ -54,6 +54,9 @@ public class CalculGoalBehaviour extends SimpleBehaviour {
 					ArrayList<Node> tmp = new ArrayList<Node>();
 					tmp.add(node);
 					Goal g = myFosymaAgent.getMyGoal();
+					if(g == null){
+						g = new Goal(myFosymaAgent.getName(), tmp, myFosymaAgent.getMyCapacity(), myFosymaAgent.getMyTreasureType(),node,Priorite.PRIORITAIRE.NORMAL);
+					}
 					g.setPriorite(Priorite.FAIBLE);
 					g.setGoalPath(tmp);
 					myFosymaAgent.setMyGoal(g);

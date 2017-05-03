@@ -116,7 +116,7 @@ public class ManageBlock {
 			ArrayList<Node> tmpag1 = (ArrayList<Node>) myGoal.clone();
 			ArrayList<Node> tmpag2 = (ArrayList<Node>) c.getRight().clone();
 			tmpag1.add(0, myCurrentPos);
-			tmpag2.add(0,otherObjectGoal.getCurrentPos());
+			tmpag2.add(0,otherObjectGoal.getCurrentPos()); 
 			System.out.println("detection conflit");
 			int i=0;
 			ArrayList<Node> conflict = new ArrayList<>();
@@ -186,7 +186,7 @@ public class ManageBlock {
 				}
 				if(name22.equals(name11))
 				{
-					conflict.add(nodeG1);
+					conflict.add(nodeG11);
 					sortie = true;
 					break;
 				}
@@ -336,46 +336,54 @@ public class ManageBlock {
 		Node ag2goal = goalAgents.get(0).getRight().get(goalAgents.get(0).getRight().size()-1);
 
 		
-		if(myObjectGoal.getPriorite().value < otherObjectGoal.getPriorite().value)
-		{
-			//sinon c'est a l'agt1 de changer de but
-			System.out.println("c'est a l'agt1 de changer de but car non  prio");
-			ArrayList<Node>temp = new ArrayList<>();
-			temp.add(mygoal);
-			managerExplo.setVisited(temp);
-			myGoal = managerExplo.solveProblemByDepth(this.myCurrentPos, myCapacity);
-			return;
-		}
-		if(myObjectGoal.getPriorite().value > otherObjectGoal.getPriorite().value)
-		{
-			//c'est a l'agt2 de changer de but
-			// on ajoute le noeud goal on noeud conflits de manaExplo
-			System.out.println("c'est a l'agt2 de changer de but car non prio");
-			ArrayList<Node>temp = new ArrayList<>();
-			temp.add(mygoal);
-			System.out.println("le but a eviter est :"+ temp);
-			managerExplo.setVisited(temp);
-			managerExplo.setType(ag2goal.getType());
-			//on fait un nouveau chemin pour ag2
-			ArrayList<Node> newPath = managerExplo.solveProblemByDepth(otherObjectGoal.getCurrentPos(),listCapcityAgents.get(0).getRight());
 
-			String s="";
-			for(Node n : newPath)
-			{
-				s += n.getId()+" ";
-			}
-			System.out.println("le nouveau but est: "+s);
-			System.out.println("fin de sysout dans sameGoal");
-			Couple<String, ArrayList<Node>> c = new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), newPath);
-			goalAgents.set(0 , c);
-			return;
-		}
-		//prio égale donc on resout
+	
 		
 		//si ils ont le meme but
 		System.out.println("On test si on a le meme but");
 		if (mygoal.getId().equals(ag2goal.getId()))
 		{
+			
+			
+			
+			if(myObjectGoal.getPriorite().value < otherObjectGoal.getPriorite().value)
+			{
+				//sinon c'est a l'agt1 de changer de but
+				System.out.println("c'est a l'agt1 de changer de but car non  prio");
+				ArrayList<Node>temp = new ArrayList<>();
+				temp.add(mygoal);
+				managerExplo.setVisited(temp);
+				myGoal = managerExplo.solveProblemByDepth(this.myCurrentPos, myCapacity);
+				return;
+			}
+			if(myObjectGoal.getPriorite().value > otherObjectGoal.getPriorite().value)
+			{
+				//c'est a l'agt2 de changer de but
+				// on ajoute le noeud goal on noeud conflits de manaExplo
+				System.out.println("c'est a l'agt2 de changer de but car non prio");
+				ArrayList<Node>temp = new ArrayList<>();
+				temp.add(mygoal);
+				System.out.println("le but a eviter est :"+ temp);
+				managerExplo.setVisited(temp);
+				managerExplo.setType(ag2goal.getType());
+				//on fait un nouveau chemin pour ag2
+				ArrayList<Node> newPath = managerExplo.solveProblemByDepth(otherObjectGoal.getCurrentPos(),listCapcityAgents.get(0).getRight());
+
+				String s="";
+				for(Node n : newPath)
+				{
+					s += n.getId()+" ";
+				}
+				System.out.println("le nouveau but est: "+s);
+				System.out.println("fin de sysout dans sameGoal");
+				Couple<String, ArrayList<Node>> c = new Couple<String, ArrayList<Node>>(goalAgents.get(0).getLeft(), newPath);
+				goalAgents.set(0 , c);
+				return;
+			}
+			
+			//prio égale donc on resout
+			
+			
 			Integer valueTresor = mygoal.getValue();
 			// si ag1 a la capacité parfaite
 			System.out.println("On a le meme but \n On test si ag1 a la capacité parfaite");

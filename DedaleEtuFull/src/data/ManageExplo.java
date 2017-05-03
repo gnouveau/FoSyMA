@@ -60,7 +60,7 @@ public class ManageExplo {
 
 	private  void closeByDepth(Node n,ArrayList<Node> path, Integer value, int prof) throws StopParcoursException
 	{
-		//System.out.println("je suis "+n+" j ai pour fils : "+n.getFils());
+		System.out.println("je suis "+n+" j ai pour fils : "+n.getFils());
 		String s="";
 		ArrayList<Node> tmp = new ArrayList<>();
 		for(Node test : path)
@@ -69,12 +69,12 @@ public class ManageExplo {
 			tmp.add(test);
 		}
 		
-		//System.out.println("et je viens de : "+s);
+		System.out.println("et je viens de : "+s);
 		for (Node fils : n.getFils())
 		{
 
 			fils  = this.myFosymaAgent.getMyKnowledge().getListKnownMap().get(0).getNodeInMap(fils.getId());
-			//System.out.println("je pars sur le fils : "+fils);
+			System.out.println("je pars sur le fils : "+fils);
 			tmp= new ArrayList<>();
 			s="";
 			for(Node test : path)
@@ -83,14 +83,14 @@ public class ManageExplo {
 				tmp.add(test);
 			}
 			
-			//System.out.println("et aft je viens de : "+s);
+			System.out.println("et aft je viens de : "+s);
 			s="";
 			for(Node test : tmp)
 			{
 				s += test.getId()+" ";
 			
 			}
-			//System.out.println("et aft je viens de  tmp : "+s);
+			System.out.println("et aft je viens de  tmp : "+s);
 			boolean check = false;	
 			if(fils.getId() != n.getId())
 			{
@@ -132,8 +132,8 @@ public class ManageExplo {
 						}
 						explo.add(fils);
 					}else{
-						////System.out.println("SOLUTION TROUVEE 2");
-						//System.out.println("Je suis le Node FINAL :"+fils);
+						System.out.println("SOLUTION TROUVEE 2");
+						System.out.println("Je suis le Node FINAL :"+fils);
 						tmp.add(fils);
 						throw new StopParcoursException(tmp);	
 					}
