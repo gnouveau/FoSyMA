@@ -50,7 +50,7 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 		if (firstContactMsg != null) {
 //			System.out.println("InitConversationBehaviourBehaviour : "+ myFosymaAgent.getName() +" : ON M'A CONTACTE");
 			IdTickTime = System.currentTimeMillis();
-			onContact = true;
+//			onContact = true;
 			
 			ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
 			msg.setSender(this.myAgent.getAID());
@@ -67,7 +67,7 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 						
 		} else if (firstContactResponseMsg != null) {
 //			System.out.println("InitConversationBehaviourBehaviour : "+ myFosymaAgent.getName() +" : ON M'A REPONDU");
-			onContact = true;
+//			onContact = true;
 						
 			Couple<String, String> c1 = new Couple<String, String>(String.valueOf(IdTickTime),firstContactResponseMsg.getConversationId());
 			Couple<String, Couple<String, String>> c2 = new Couple<String, Couple<String, String>>(firstContactResponseMsg.getSender().getName(), c1);
@@ -105,7 +105,7 @@ public class InitConversationBehaviour extends SimpleBehaviour {
 	 }
 	 
 	 public int onEnd(){				
-		 if(onContact){				
+		 if(!myFosymaAgent.getList_IdConversation().isEmpty()){				
 			for (Couple<String, Couple<String, String>> couple : myFosymaAgent.getList_IdConversation()) {
 				String name = couple.getLeft();
 				String id = couple.getRight().getRight();
